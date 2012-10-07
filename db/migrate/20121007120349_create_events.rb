@@ -11,7 +11,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :email
       t.string :address
       t.string :website
-      t.integer :preferred_contact
+      t.integer :contact_id
       
       t.date :date
       t.time :time
@@ -26,7 +26,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :referral_id, :null => false
       t.string :joining_process
       t.string :target_id, :null => false
-      t.string :tags_id
+      t.string :tag_id
       
       t.string :directions_car
       t.string :directions_walking

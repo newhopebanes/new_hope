@@ -1,17 +1,41 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= semantic_form_for @event do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :organisation %>
+    <%= f.input :description %>
+    
+    <%= f.input :contact_person %>
+    <%= f.input :contact_role %>
+    <%= f.input :phone %>
+    <%= f.input :email %>
+    <%= f.input :address %>
+    <%= f.input :contact, :as => :radio %>
+    
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :ongoing %>
+    <%= f.input :frequency, :as => :select  %>
+    <%= f.input :day, :as => :select %>
+    
+    <%= f.input :cost %>
+    
+    <%= f.input :access, :as => :radio %>
+    <%= f.input :access_details %>
+    
+    <%= f.input :referral, :as => :radio %>
+    <%= f.input :joining_process %>
+    <%= f.input :target, :as => :check_boxes %>
+    <%= f.input :tag, :as => :check_boxes %>
+    
+    <%= f.input :directions_walking %>
+    <%= f.input :directions_bus %>
+    <%= f.input :directions_train %>
+    <%= f.input :directions_car %>
+    
+    <%= f.input :other%>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :button %>
+    <%= f.action :cancel, :as => :link %>
+  <% end %>
 <% end %>

@@ -2,6 +2,8 @@ HopeTest::Application.routes.draw do
   resources :groups
 
   resources :events
+  
+  resources :home
 
   get "home/contact"
 

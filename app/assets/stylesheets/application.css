@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+.top_links
+{
+  background-color: #B90504;
+  font: arial;
+}
