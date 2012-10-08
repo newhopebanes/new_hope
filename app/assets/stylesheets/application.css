@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+*= require formtastic
+*= require my_formtastic_changes
+
 .top_links
 {
   background-color: #B90504;
