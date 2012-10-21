@@ -43,39 +43,39 @@
    Referral.find_or_create_by_title(attributes)
   end
     
-[
-  {:title => "Adults (18+)",     :position => 1},
-  {:title => "Under 18's", :position => 2},
-  {:title => "Men Only",    :position => 3},
-  {:title => "Women Only",  :position => 4},
-  {:title => "People with mental health issues",  :position => 5},
-  {:title => "People with learning dificulties",  :position => 6},
-  {:title => "People with drug or alcohol issues",  :position => 7},
-  {:title => "People with homelessness issues",  :position => 8},
-  {:title => "Carers",  :position => 9},
-  {:title => "Carers for those with mental health issues",  :position => 10},
-  {:title => "Any vulnerable person",  :position => 11},
-  {:title => "Anyone",  :position => 12},
-  {:title => "Other",  :position => 13}
-].each do |attributes|
-   Target.find_or_create_by_title(attributes)
-  end
+# [
+#   {:title => "Adults (18+)",     :position => 1},
+#   {:title => "Under 18's", :position => 2},
+#   {:title => "Men Only",    :position => 3},
+#   {:title => "Women Only",  :position => 4},
+#   {:title => "People with mental health issues",  :position => 5},
+#   {:title => "People with learning dificulties",  :position => 6},
+#   {:title => "People with drug or alcohol issues",  :position => 7},
+#   {:title => "People with homelessness issues",  :position => 8},
+#   {:title => "Carers",  :position => 9},
+#   {:title => "Carers for those with mental health issues",  :position => 10},
+#   {:title => "Any vulnerable person",  :position => 11},
+#   {:title => "Anyone",  :position => 12},
+#   {:title => "Other",  :position => 13}
+# ].each do |attributes|
+#    Target.find_or_create_by_title(attributes)
+#   end
   
-[
-  {:title => "Arts and Crafts",     :position => 1},
-  {:title => "Sports", :position => 2},
-  {:title => "Outdoors",    :position => 3},
-  {:title => "Creative",  :position => 4},
-  {:title => "Wellbeing",  :position => 5},
-  {:title => "Social",  :position => 6},
-  {:title => "Faith",  :position => 7},
-  {:title => "Food",  :position => 8},
-  {:title => "Learning",  :position => 9},
-  {:title => "Exersise",  :position => 10},
-  {:title => "Lifestyle",  :position => 11},
-  {:title => "Other",  :position => 12}
-].each do |attributes|
-   Tag.find_or_create_by_title(attributes)
-  end
+# [
+#   {:title => "Arts and Crafts",     :position => 1},
+#   {:title => "Sports", :position => 2},
+#   {:title => "Outdoors",    :position => 3},
+#   {:title => "Creative",  :position => 4},
+#   {:title => "Wellbeing",  :position => 5},
+#   {:title => "Social",  :position => 6},
+#   {:title => "Faith",  :position => 7},
+#   {:title => "Food",  :position => 8},
+#   {:title => "Learning",  :position => 9},
+#   {:title => "Exersise",  :position => 10},
+#   {:title => "Lifestyle",  :position => 11},
+#   {:title => "Other",  :position => 12}
+# ].each do |attributes|
+#    Tag.find_or_create_by_title(attributes)
+#   end
   
 

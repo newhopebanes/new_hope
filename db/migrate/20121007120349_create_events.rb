@@ -23,10 +23,35 @@ class CreateEvents < ActiveRecord::Migration
       t.string :cost, :null => false
       t.boolean :access, :null => false
       t.string :access_details
-      t.integer :referral_id, :null => false
+      t.integer :referral_id# , :null => false
       t.string :joining_process
-      t.string :target_id, :null => false
-      t.string :tag_id
+      
+      t.boolean :adults
+      t.boolean :under_18
+      t.boolean :target_men
+      t.boolean :target_women
+      t.boolean :target_mental_health
+      t.boolean :target_learning_difficulties
+      t.boolean :target_drug_alcohol
+      t.boolean :target_homelessness
+      t.boolean :target_carers
+      t.boolean :target_carers_mental_health
+      t.boolean :target_vulnerable
+      t.boolean :target_anyone
+      t.string  :target_other
+      
+      t.boolean :tag_arts
+      t.boolean :tag_sports
+      t.boolean :tag_outdoors
+      t.boolean :tag_creative
+      t.boolean :tag_wellbeing
+      t.boolean :tag_social
+      t.boolean :tag_faith
+      t.boolean :tag_food
+      t.boolean :tag_learning
+      t.boolean :tag_exersise
+      t.boolean :tag_lifestyle
+      t.string  :tag_other
       
       t.string :directions_car
       t.string :directions_walking
