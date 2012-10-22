@@ -5,9 +5,9 @@ class Event < ActiveRecord::Base
   belongs_to :referral
   belongs_to :contact
   
-  #   validates :name, :presence => true
-  #   validates :organisation,  :presence => true
-  #   validates :cost, :presence => true
-  #   validates :access,  :presence => true
-  #   validates :referral_id, :presence => true
+    validates :name, :presence => true
+    validates :organisation,  :presence => true
+    validates :cost, :presence => true
+    validates :access,  :presence => true
+    validates :referral_id, :presence => true
 end

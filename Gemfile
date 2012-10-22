@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-#gem 'bootstrap-sass'
-# gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'simple_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'formtastic'
+#gem 'formtastic'
 
 group :production do
   gem 'pg'
