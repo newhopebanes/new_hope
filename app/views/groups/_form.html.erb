@@ -1,4 +1,14 @@
 <%= simple_form_for @group do |f| %>
-   <%= f.inputs %>
-   <%= f.actions %>
+   <%= f.input :name %>
+   <%= f.input :description, :as => :text %>
+   <%= f.input :date %>
+   <%= f.input :time %>
+   <%= f.input :venue %>
+   <%= f.input :joining %>
+   <%= f.input :contact %>
+   <%= f.input :cost %>
+   <%= f.input :access %>
+   
+   <%= f.button :submit, :class => 'btn-primary'  %>
+   
  <% end %>

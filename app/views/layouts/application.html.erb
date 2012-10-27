@@ -19,12 +19,12 @@
 </div>
 </br>
 <div class="top-links">
-  <a href="home">Home</a>
-  <a href="events">What's On'</a>
-  <a href="about">New Hope</a>
-  <a href="groups">Peer Led Groups</a>
-  <a href="contact">Contact</a>
-  <a href="links">Links</a>
+  <%= link_to "Home", 'home' %>
+  <%= link_to "What's On", events_path %>
+  <%= link_to "New Hope", about_path %>
+  <%= link_to "Peer Led groups", groups_path %>
+  <%= link_to "Contact", contact_path %>
+  <%= link_to "Links", links_path %>
 </div>
   
 </div>
@@ -32,12 +32,12 @@
 <div class="left-bar">
 
 <div class="left-links">
-  <a href="home">Home</a></br>
-  <%= link_to "What's On'", events_path %></br>
-  <a href="about">New Hope</a></br>
-  <%= link_to 'Peer Led Groups', groups_path %></br></br>
-  <a href="contact">Contact</a></br>
-  <a href="links">Links</a></br>
+  <%= link_to "Home", 'home' %></br>
+  <%= link_to "What's On", events_path %></br>
+  <%= link_to "New Hope", about_path %></br>
+  <%= link_to 'Peer Led Groups', groups_path %></br>
+  <%= link_to "Contact", contact_path %></br>
+  <%= link_to "Links", links_path %>
 </div>  
   
 </div>
