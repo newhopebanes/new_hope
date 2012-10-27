@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
+  #before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
   
   def new
     @user = User.new
