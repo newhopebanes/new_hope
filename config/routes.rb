@@ -1,4 +1,6 @@
 HopeTest::Application.routes.draw do
+  get "users/new"
+
   get '/about' => 'static_pages#about'
 
   get '/links' => 'static_pages#links'

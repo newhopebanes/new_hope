@@ -1,10 +1,9 @@
 # == Schema Information
 #
-# Table name: frequencies
+# Table name: users
 #
 #  id         :integer          not null, primary key
-#  title      :string(255)
-#  position   :integer
+#  name       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -12,9 +11,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  position: 1
+  name: MyString
 
 two:
-  title: MyString
-  position: 1
+  name: MyString
