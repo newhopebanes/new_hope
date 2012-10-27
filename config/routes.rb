@@ -1,9 +1,9 @@
 HopeTest::Application.routes.draw do
-  get "static_pages/about"
+  get '/about' => 'static_pages#about'
 
-  get "static_pages/links"
-
-  get "static_pages/contact"
+  get '/links' => 'static_pages#links'
+  
+  get '/contact' => 'static_pages#contact'
 
   resources :groups
 
@@ -11,11 +11,7 @@ HopeTest::Application.routes.draw do
   
   resources :home
 
-  get "home/contact"
 
-  get "home/about"
-
-  get "home/links"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
