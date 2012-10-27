@@ -15,7 +15,9 @@
 
 <div class="top-title">
   <h1>NEW HOPE</h1> <h2>Making a difference in Mental Health </h2>
- 
+  <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
 </div>
 </br>
 <div class="top-links">

@@ -11,7 +11,9 @@ HopeTest::Application.routes.draw do
 
   resources :events
   
-  resources :home
+  resources :users
+  
+  get '/home' => 'static_pages#home'
 
 
 
