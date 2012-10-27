@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
+  before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
   
   def new
     @user = User.new
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:success] = "Welcome to the Sample App!"
-        format.html { redirect_to '/', notice: 'User was successfully created.' }
+        format.html { redirect_to home_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
