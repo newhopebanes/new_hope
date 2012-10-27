@@ -24,7 +24,6 @@ end
 
 gem 'jquery-rails'
 
-#gem 'formtastic'
 
 group :production do
   gem 'pg'
