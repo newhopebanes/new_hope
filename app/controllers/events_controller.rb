@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+  before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
+  
   def index
     @events = Event.all
 
@@ -24,17 +26,12 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    if admin
+
       @event = Event.new
-
-
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @event }
       end
-    else
-      redirect_to events_path
-    end
   end
 
   # GET /events/1/edit
@@ -87,5 +84,18 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.json { head :no_content }
     end
+  end
+
+
+
+  
+end
+
+private
+def verify_is_admin
+  if admin
+    return
+  else
+    redirect_to events_path
   end
 end

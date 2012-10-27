@@ -4,6 +4,10 @@ module SessionsHelper
     session[:remember_token] = user.id
   end
   
+  def sign_out
+    session[:remember_token] = nil
+  end
+  
   def admin
     value = false
     if session[:remember_token] then

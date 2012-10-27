@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
+  
   def new
     @user = User.new
 
@@ -22,5 +24,14 @@ class UsersController < ApplicationController
       end
     end
     
+  end
+end
+
+private
+def verify_is_admin
+  if admin
+    return
+  else
+    redirect_to home_path
   end
 end

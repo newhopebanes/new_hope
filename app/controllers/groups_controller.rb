@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
+  
+  before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
+  
   def index
     @groups = Group.all
 
@@ -83,5 +86,14 @@ class GroupsController < ApplicationController
       format.html { redirect_to groups_url }
       format.json { head :no_content }
     end
+  end
+end
+
+private
+def verify_is_admin
+  if admin
+    return
+  else
+    redirect_to groups_path
   end
 end
