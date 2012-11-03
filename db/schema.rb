@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103154505) do
+ActiveRecord::Schema.define(:version => 20121103162421) do
 
   create_table "contacts", :force => true do |t|
     t.string   "title"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20121103154505) do
   end
 
   create_table "events", :force => true do |t|
-    t.string   "name",                         :null => false
-    t.string   "organisation",                 :null => false
+    t.string   "name",               :null => false
+    t.string   "organisation",       :null => false
     t.string   "description"
     t.string   "contact_person"
     t.string   "contact_role"
@@ -43,31 +43,18 @@ ActiveRecord::Schema.define(:version => 20121103154505) do
     t.boolean  "ongoing"
     t.integer  "frequency_id"
     t.integer  "day_id"
-    t.string   "cost",                         :null => false
-    t.boolean  "access",                       :null => false
+    t.string   "cost",               :null => false
+    t.boolean  "access",             :null => false
     t.string   "access_details"
     t.integer  "referral_id"
     t.string   "joining_process"
-    t.boolean  "adults"
-    t.boolean  "under_18"
-    t.boolean  "target_men"
-    t.boolean  "target_women"
-    t.boolean  "target_mental_health"
-    t.boolean  "target_learning_difficulties"
-    t.boolean  "target_drug_alcohol"
-    t.boolean  "target_homelessness"
-    t.boolean  "target_carers"
-    t.boolean  "target_carers_mental_health"
-    t.boolean  "target_vulnerable"
-    t.boolean  "target_anyone"
-    t.string   "target_other"
     t.string   "directions_car"
     t.string   "directions_walking"
     t.string   "directions_bus"
     t.string   "directions_train"
     t.string   "other"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "frequencies", :force => true do |t|
@@ -109,11 +96,30 @@ ActiveRecord::Schema.define(:version => 20121103154505) do
     t.boolean  "faith"
     t.boolean  "food"
     t.boolean  "learning"
-    t.boolean  "exersise"
+    t.boolean  "exercise"
     t.boolean  "lifestyle"
     t.string   "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "targetsets", :force => true do |t|
+    t.integer  "event_id"
+    t.boolean  "adults"
+    t.boolean  "under_18"
+    t.boolean  "men"
+    t.boolean  "women"
+    t.boolean  "mental_health"
+    t.boolean  "learning_difficulties"
+    t.boolean  "drug_alcohol"
+    t.boolean  "homelessness"
+    t.boolean  "carers"
+    t.boolean  "carers_mental_health"
+    t.boolean  "vulnerable"
+    t.boolean  "anyone"
+    t.string   "other"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -26,20 +26,6 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :referral_id# , :null => false
       t.string :joining_process
       
-      t.boolean :adults
-      t.boolean :under_18
-      t.boolean :target_men
-      t.boolean :target_women
-      t.boolean :target_mental_health
-      t.boolean :target_learning_difficulties
-      t.boolean :target_drug_alcohol
-      t.boolean :target_homelessness
-      t.boolean :target_carers
-      t.boolean :target_carers_mental_health
-      t.boolean :target_vulnerable
-      t.boolean :target_anyone
-      t.string  :target_other
-      
       t.string :directions_car
       t.string :directions_walking
       t.string :directions_bus

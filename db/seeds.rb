@@ -43,6 +43,12 @@
    Referral.find_or_create_by_title(attributes)
   end
   
+[
+  {:name => "etti",  :password => 'foobar', :password_confirmation => 'foobar'}
+].each do |attributes|
+   User.find_or_create_by_name(attributes)
+  end
+  
 
     
 # [

@@ -11,7 +11,7 @@ class CreateTagsets < ActiveRecord::Migration
       t.boolean :faith
       t.boolean :food
       t.boolean :learning
-      t.boolean :exersise
+      t.boolean :exercise
       t.boolean :lifestyle
       t.string  :other 
 
