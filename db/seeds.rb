@@ -42,6 +42,8 @@
 ].each do |attributes|
    Referral.find_or_create_by_title(attributes)
   end
+  
+
     
 # [
 #   {:title => "Adults (18+)",     :position => 1},

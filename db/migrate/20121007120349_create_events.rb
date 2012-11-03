@@ -40,19 +40,6 @@ class CreateEvents < ActiveRecord::Migration
       t.boolean :target_anyone
       t.string  :target_other
       
-      t.boolean :tag_arts
-      t.boolean :tag_sports
-      t.boolean :tag_outdoors
-      t.boolean :tag_creative
-      t.boolean :tag_wellbeing
-      t.boolean :tag_social
-      t.boolean :tag_faith
-      t.boolean :tag_food
-      t.boolean :tag_learning
-      t.boolean :tag_exersise
-      t.boolean :tag_lifestyle
-      t.string  :tag_other
-      
       t.string :directions_car
       t.string :directions_walking
       t.string :directions_bus

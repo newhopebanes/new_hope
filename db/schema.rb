@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027142628) do
+ActiveRecord::Schema.define(:version => 20121103154505) do
 
   create_table "contacts", :force => true do |t|
     t.string   "title"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20121027142628) do
     t.string   "cost",                         :null => false
     t.boolean  "access",                       :null => false
     t.string   "access_details"
-    t.integer  "referral_id",                  :null => false
+    t.integer  "referral_id"
     t.string   "joining_process"
     t.boolean  "adults"
     t.boolean  "under_18"
@@ -61,18 +61,6 @@ ActiveRecord::Schema.define(:version => 20121027142628) do
     t.boolean  "target_vulnerable"
     t.boolean  "target_anyone"
     t.string   "target_other"
-    t.boolean  "tag_arts"
-    t.boolean  "tag_sports"
-    t.boolean  "tag_outdoors"
-    t.boolean  "tag_creative"
-    t.boolean  "tag_wellbeing"
-    t.boolean  "tag_social"
-    t.boolean  "tag_faith"
-    t.boolean  "tag_food"
-    t.boolean  "tag_learning"
-    t.boolean  "tag_exersise"
-    t.boolean  "tag_lifestyle"
-    t.string   "tag_other"
     t.string   "directions_car"
     t.string   "directions_walking"
     t.string   "directions_bus"
@@ -106,6 +94,24 @@ ActiveRecord::Schema.define(:version => 20121027142628) do
   create_table "referrals", :force => true do |t|
     t.string   "title"
     t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tagsets", :force => true do |t|
+    t.integer  "event_id"
+    t.boolean  "arts"
+    t.boolean  "sports"
+    t.boolean  "outdoors"
+    t.boolean  "creative"
+    t.boolean  "wellbeing"
+    t.boolean  "social"
+    t.boolean  "faith"
+    t.boolean  "food"
+    t.boolean  "learning"
+    t.boolean  "exersise"
+    t.boolean  "lifestyle"
+    t.string   "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

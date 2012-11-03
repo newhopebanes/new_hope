@@ -48,24 +48,21 @@
         <div class="Xtarget-other">  
           <%= f.input :target_other, :as => :string %>
         </div>
-        <label class="tag">Tags</label>
-        <div class="Xtag-left">   
-          <%= f.input :tag_sports, :as => :boolean %>
-          <%= f.input :tag_outdoors, :as => :boolean %>
-          <%= f.input :tag_creative, :as => :boolean %>
-          <%= f.input :tag_wellbeing, :as => :boolean %>
-          <%= f.input :tag_social, :as => :boolean %>
-        <div class="Xtag-right">
-        </div>   
-          <%= f.input :tag_faith, :as => :boolean %>
-          <%= f.input :tag_food, :as => :boolean %>
-          <%= f.input :tag_learning, :as => :boolean %>
-          <%= f.input :tag_exersise, :as => :boolean %>
-          <%= f.input :tag_lifestyle, :as => :boolean %>
-        </div>
-        <div class="Xtag-other"> 
-          <%= f.input :tag_other, :as => :string %>
-        </div> 
+        
+        <%= f.simple_fields_for :tagset do |t| %>
+              <%= t.input :sports, :as => :boolean %>
+              <%= t.input :outdoors, :as => :boolean %>
+              <%= t.input :creative, :as => :boolean %>
+              <%= t.input :wellbeing, :as => :boolean %>
+              <%= t.input :social, :as => :boolean %>
+              <%= t.input :faith, :as => :boolean %>
+              <%= t.input :food, :as => :boolean %>
+              <%= t.input :learning, :as => :boolean %>
+              <%= t.input :exersise, :as => :boolean %>
+              <%= t.input :lifestyle, :as => :boolean %>
+              <%= t.input :other, :as => :string %>
+        <% end %>
+
 
     
         <%= f.input :directions_walking %>
