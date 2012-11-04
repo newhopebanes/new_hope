@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="span6 offset3">
-    <%= simple_form_for @event do |f| %>
+  <div class="span10 offset1">
+    <%= simple_form_for @event, :defaults => { :input_html => { :class => 'span6' } }, :html => {:class => 'form-horizontal'} do |f| %>
 
-        <%= f.input :name %>
+        <%= f.input :name, :input_html => { :class => 'span8' } %>
         <%= f.input :organisation %>
         <%= f.input :description, :as => :text, :input_html => { :rows => 3 } %>
     
@@ -28,33 +28,44 @@
         <%= f.input :joining_process %>
 
         <%= f.simple_fields_for :targetset do |t| %>
+        <div class="row">
+          <div class="span4">
               <%= t.input :adults, :as => :boolean, :label => "Adults over 18" %>
               <%= t.input :under_18, :as => :boolean, :label => "People under 18"  %>
               <%= t.input :men, :as => :boolean, :label => "Men"  %>
               <%= t.input :women, :as => :boolean, :label => "Women"  %>
               <%= t.input :mental_health, :as => :boolean, :label => "People with mental health issues"  %>
               <%= t.input :learning_difficulties, :as => :boolean, :label => "People with learning difficulties"  %>
+          </div>
+          <div class="span4 offset1">
               <%= t.input :drug_alcohol, :as => :boolean, :label => "People with Drug / Alcohol Issues"  %>
               <%= t.input :homelessness, :as => :boolean, :label => "People with homelessness issues"  %>
               <%= t.input :carers, :as => :boolean, :label => "Carers"  %>
               <%= t.input :carers_mental_health, :as => :boolean, :label => "Carers for people with mental health issues"  %>
               <%= t.input :vulnerable, :as => :boolean, :label => "Vulnerable people"  %>
               <%= t.input :anyone, :as => :boolean, :label => "Anyone"  %>  
+          </div>
+        </div>
               <%= t.input :other, :as => :string %>
         <% end %>
         
         <%= f.simple_fields_for :tagset do |t| %>
-              <%= t.input :sports, :as => :boolean, :label => "Sports and Games"  %>
-              <%= t.input :outdoors, :as => :boolean, :label => "Outdoors activities"  %>
-              <%= t.input :creative, :as => :boolean, :label => "Creative Arts"  %>
-              <%= t.input :wellbeing, :as => :boolean, :label => "Health and Wellbeing"  %>
-              <%= t.input :social, :as => :boolean, :label => "Social activities"  %>
-              <%= t.input :faith, :as => :boolean, :label => "Faith"  %>
-              <%= t.input :food, :as => :boolean, :label => "Food and Drink"  %>
-             <%= t.input :learning, :as => :boolean, :label => "Learning"  %>
-              <%= t.input :exercise, :as => :boolean, :label => "Fitness and exercise"  %>
-              <%= t.input :lifestyle, :as => :boolean, :label => "Lifestyle"  %>
-              <%= t.input :other, :as => :string %>
+        <div class="row">
+          <div class="span4">
+            <%= t.input :sports, :as => :boolean, :label => "Sports and Games"  %>
+            <%= t.input :outdoors, :as => :boolean, :label => "Outdoors activities"  %>
+            <%= t.input :creative, :as => :boolean, :label => "Creative Arts"  %>
+            <%= t.input :wellbeing, :as => :boolean, :label => "Health and Wellbeing"  %>
+            <%= t.input :social, :as => :boolean, :label => "Social activities"  %>
+          </div>
+          <div class="span4 offset1">
+            <%= t.input :faith, :as => :boolean, :label => "Faith"  %>
+            <%= t.input :food, :as => :boolean, :label => "Food and Drink"  %>
+            <%= t.input :learning, :as => :boolean, :label => "Learning"  %>
+            <%= t.input :exercise, :as => :boolean, :label => "Fitness and exercise"  %>
+            <%= t.input :lifestyle, :as => :boolean, :label => "Lifestyle"  %>
+        </div>
+            <%= t.input :other, :as => :string %>
         <% end %>
 
 
@@ -66,7 +77,7 @@
     
         <%= f.input :other%>
 
-        <%= f.button :submit, :class => 'btn-primary'  %>
+        <%= f.button :submit, :class => 'btn-primary btn-large btn-block'  %>
 
 
     <% end %>

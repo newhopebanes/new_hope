@@ -1,40 +1,56 @@
-<h1>Listing events</h1>
+<div class="row">
+  <div class="span12">
+  <h1>Listing events</h1>  
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Group</th>
-    <th>Time</th>
-    <th>What is this</th>
-    <th>Organisation</th>
-    <th>Referral Process</th>
-    <th>Cost</th>
-    <th>Where</th>
-    <th>Who To Contact</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row">
+  <div class="span1"><h5>Group</h5></div>
+  <div class="span2"><h5>Time</h5></div>
+  <div class="span1"><h5>What is this</h5></div>
+  <div class="span2"><h5>Organisation</h5></div>
+  <div class="span2"><h5>Referral Process</h5></div>
+  <div class="span1"><h5>Cost</h5></div>
+  <div class="span2"><h5>Where</h5></div>
+  <div class="span1"><h5>Who to Contact</h5></div>
+</div>
+
+</br>
+
 
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.time %></td>
-    <td><%= event.description %></td>
-    <td><%= event.organisation %></td>
-    <td><%= event.referral.title %></td>
-    <td><%= event.cost %></td>
-    <td><%= event.address %></td>
-    <td><%= event.contact_person %></td>
-    <td><%= link_to 'Show', event %></td>
-    <% if admin %>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+  <%= link_to(event_path(event), :class => 'event-link') do %>
+   <div class="event-entry">
+ 
+     <div class="row">
+       <div class="span1"><span><%= event.name == '' ? 'Unknown' : event.name %></span></div>
+       <div class="span2"><span><%= event.time.strftime("%b %e, %l:%M %p") %></span></div>
+       <div class="span1"><span><%= event.description == '' ? 'Unknown' : event.description %></span></div>
+       <div class="span2"><span><%= event.organisation  == '' ? 'Unknown' : event.organisation %></span></div>
+       <div class="span2"><span><%= event.referral.title  == '' ? 'Unknown' : event.referral.title %></span></div>
+       <div class="span1"><span><%= event.cost  == '' ? 'Unknown' : event.cost %></span></div>
+       <div class="span2"><span><%= event.address  == '' ? 'Unknown' : event.address %></span></div>
+       <div class="span1"><span><%= event.contact_person  == '' ? 'Unknown' : event.contact_person %></span></div>
+     </div>
 
+   
+     <% if admin %>
+       <div class="row">
+         <div class="span6">
+         <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event), :class => 'btn-primary btn-block event-edit' %></span>
+         </div>
+         <div class="span6">
+         <span><%= link_to "Click here to DELETE #{event.name}", event,:class => 'btn-danger btn-block event-delete', method: :delete, data: { confirm: 'Are you sure?' } %></span>
+         </div>
+       </div>
+     <% end %>
+
+     
+   </div>
+  <% end %> 
+<% end %>
 <br />
+
 <% if admin %>
-<%= link_to 'New Event', new_event_path %>
+  <%= link_to 'New Event', new_event_path %>
 <% end %>

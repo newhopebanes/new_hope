@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>HopeTest</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "all"  %> 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -43,7 +43,20 @@
   <%= link_to 'Peer Led Groups', groups_path %></br>
   <%= link_to "Contact", contact_path %></br>
   <%= link_to "Links", links_path %>
-</div>  
+</div>
+
+<% if current_page?(events_path) %>
+
+<div class="event-links">
+  <%= link_to "Sports", events_path(:search => 'sports') %></br>
+  <%= link_to "Social", events_path(:search => 'social') %></br>
+  <%= link_to "New Hope", about_path %></br>
+  <%= link_to 'Peer Led Groups', groups_path %></br>
+  <%= link_to "Contact", contact_path %></br>
+  <%= link_to "Links", links_path %>
+</div>
+
+<% end %> 
   
 </div>
 

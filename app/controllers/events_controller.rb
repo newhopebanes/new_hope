@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
   
   def index
-    @events = Event.all
+    if params[:search]
+      @events = Event.for_tag(params[:search])
+    else
+      @events = Event.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
