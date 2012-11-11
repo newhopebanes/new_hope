@@ -20,6 +20,7 @@ HopeTest::Application.routes.draw do
   match '/signout', to: 'sessions#destroy'#, via: :delete
   
   get '/home' => 'static_pages#home'
+  root :to => 'static_pages#home'
 
 
 
