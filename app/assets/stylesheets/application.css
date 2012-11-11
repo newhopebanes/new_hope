@@ -103,18 +103,3 @@ h1{
   z-index:-50;
 }
 
-div .event-entry{
-  border-style: solid;
-  border-width:2px;
-  
-}
-
-a.event-link:hover{
-  background-color: #5E1729;
-  color: #7F6B6C;
-  
-}
-
-.event-edit{
-  color:#FFFFFF;
-}

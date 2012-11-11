@@ -37,10 +37,10 @@
      <% if admin %>
        <div class="row">
          <div class="span6">
-         <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event), :class => 'btn-primary btn-block event-edit' %></span>
+         <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event), :class => 'btn btn-primary btn-block event-edit' %></span>
          </div>
          <div class="span6">
-         <span><%= link_to "Click here to DELETE #{event.name}", event,:class => 'btn-danger btn-block event-delete', method: :delete, data: { confirm: 'Are you sure?' } %></span>
+         <span><%= link_to "Click here to DELETE #{event.name}", event,:class => 'btn btn-danger btn-block event-delete', method: :delete, data: { confirm: 'Are you sure?' } %></span>
          </div>
        </div>
      <% end %>
