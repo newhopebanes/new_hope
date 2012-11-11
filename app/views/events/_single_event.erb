@@ -1,0 +1,47 @@
+
+ <div class='event-entry' onclick="toggleDetails(<%= event.id.to_s %>)">
+<div class="<%= 'event-summary_' + event.id.to_s %>">
+   <div class="row">
+     <div class="span1"><span><%= event.name == '' ? 'Unknown' : event.name %></span></div>
+     <div class="span2"><span><%= event.time.strftime("%b %e, %l:%M %p") %></span></div>
+     <div class="span1"><span><%= event.description == '' ? 'Unknown' : event.description %></span></div>
+     <div class="span2"><span><%= event.organisation  == '' ? 'Unknown' : event.organisation %></span></div>
+     <div class="span2"><span><%= event.referral.title  == '' ? 'Unknown' : event.referral.title %></span></div>
+     <div class="span1"><span><%= event.cost  == '' ? 'Unknown' : event.cost %></span></div>
+     <div class="span2"><span><%= event.address  == '' ? 'Unknown' : event.address %></span></div>
+     <div class="span1"><span><%= event.contact_person  == '' ? 'Unknown' : event.contact_person %></span></div>
+   </div>
+</div>
+<div class="<%= 'event-details_' + event.id.to_s %>" hidden='true'>
+   <h3><%= event.name == '' ? 'Unknown' : event.name %> - <%= event.organisation  == '' ? '' : event.organisation %></h3>
+   <p><%= event.description == '' ? 'Unknown' : event.description %></p>
+</div>
+</br>
+
+   <% if admin %>
+     <div class="row">
+       <div class="span6">
+       <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event), 
+                        :class => 'btn btn-primary btn-block event-edit'      %></span>
+       </div>
+       <div class="span6">
+       <span><%= link_to "Click here to DELETE #{event.name}", event,
+              :class => 'btn btn-danger btn-block event-delete', 
+              method: :delete, 
+              data: { confirm: 'Are you sure?' } %></span>
+       </div>
+     </div>
+   <% end %>
+
+   
+ </div>
+
+<script type="text/javascript" charset="utf-8">
+ function toggleDetails(id){
+
+   $('.event-summary_' + id).toggle();
+
+   $('.event-details_' + id).toggle();
+ };
+</script>
+
