@@ -17,7 +17,9 @@
 #
 
 class Group < ActiveRecord::Base
-  attr_accessible :name, :description, :date, :time, :venue, :joining, :contact, :cost, :access
+  attr_accessible :name, :description, :date, :time, :venue, :joining, :contact, :cost, :access, :address_id, :address_attributes
+  belongs_to :address
+  accepts_nested_attributes_for :address
   validates :name, :presence => true
   validates :description,  :presence => true
     

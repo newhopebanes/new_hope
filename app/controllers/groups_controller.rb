@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.json
   def new
     @group = Group.new
+    @group.address = Address.new
 
     respond_to do |format|
       format.html # new.html.erb

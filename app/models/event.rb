@@ -35,14 +35,15 @@
 
 
 class Event < ActiveRecord::Base
-  attr_accessible :name, :organisation, :description, :contact_person, :contact_role, :phone, :email, :address, :website, :contact_id, :date, :time, :ongoing, :frequency_id, :day_id, :cost, :access, :access_details, :referral_id, :joining_process, :directions_car, :directions_walking, :directions_bus, :directions_train, :other, :tagset_attributes, :targetset_attributes
+  attr_accessible :name, :organisation, :description, :contact_person, :contact_role, :phone, :email, :address_id, :website, :contact_id, :date, :time, :ongoing, :frequency_id, :day_id, :cost, :access, :access_details, :referral_id, :joining_process, :directions_car, :directions_walking, :directions_bus, :directions_train, :other, :tagset_attributes, :targetset_attributes, :address_attributes
+  belongs_to :address
   belongs_to :day
   belongs_to :frequency
   belongs_to :referral
   belongs_to :contact
   has_one :tagset
   has_one :targetset
-  accepts_nested_attributes_for :tagset, :targetset
+  accepts_nested_attributes_for :tagset, :targetset, :address
   
   validates :name, :presence => true
   validates :organisation,  :presence => true

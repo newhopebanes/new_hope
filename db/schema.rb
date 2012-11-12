@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103162421) do
+ActiveRecord::Schema.define(:version => 20121112190907) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "number"
+    t.string   "street"
+    t.string   "district"
+    t.string   "town"
+    t.string   "county"
+    t.string   "postcode"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "contacts", :force => true do |t|
     t.string   "title"
@@ -55,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20121103162421) do
     t.string   "other"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "address_id"
   end
 
   create_table "frequencies", :force => true do |t|
@@ -76,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20121103162421) do
     t.string   "access"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "address_id"
   end
 
   create_table "referrals", :force => true do |t|
