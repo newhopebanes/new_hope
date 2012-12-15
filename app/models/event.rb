@@ -35,12 +35,15 @@
 
 
 class Event < ActiveRecord::Base
-  attr_accessible :name, :organisation, :description, :contact_person, :contact_role, :phone, :email, :address_id, :website, :contact_id, :date, :time, :ongoing, :frequency_id, :day_id, :cost, :access, :access_details, :referral_id, :joining_process, :directions_car, :directions_walking, :directions_bus, :directions_train, :other, :tagset_attributes, :targetset_attributes, :address_attributes
-  belongs_to :address
+  attr_accessible :name, :organisation, :description, :contact_person, :contact_role, :phone, :email, :address_id,
+                  :website,:contact_id, :date, :time, :ongoing, :frequency_id, :day_id, :cost, :access, :access_details,
+                  :referral_id, :joining_process, :directions_car, :directions_walking, :directions_bus, :directions_train,
+                  :other, :tagset_attributes, :targetset_attributes, :address_attributes
   belongs_to :day
   belongs_to :frequency
   belongs_to :referral
   belongs_to :contact
+  has_one :address
   has_one :tagset
   has_one :targetset
   accepts_nested_attributes_for :tagset, :targetset, :address
@@ -54,6 +57,8 @@ class Event < ActiveRecord::Base
   scope :for_tag, lambda{|tag| joins(:tagset).where(tag + ' = ?',  true)}
   scope :for_target, lambda{|target| joins(:targetset).where(target + ' = ?',  true)}
   
-  
+  def display_address
+    "#{address.number}, #{address.street}, #{address.postcode}"
+  end
   
 end
