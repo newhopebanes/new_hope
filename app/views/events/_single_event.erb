@@ -3,7 +3,7 @@
 <div class="<%= 'event-summary_' + event.id.to_s %>">
    <div class="row">
      <div class="span1"><span><%= event.name == '' ? 'Unknown' : event.name %></span></div>
-     <div class="span2"><span><%= event.time.strftime("%b %e, %l:%M %p") %></span></div>
+     <div class="span2"><span><%= event.complex_date.time == nil ? 'Unknown' : event.complex_date.time.strftime("%b %e, %l:%M %p") %></span></div>
      <div class="span1"><span><%= event.description == '' ? 'Unknown' : event.description %></span></div>
      <div class="span2"><span><%= event.organisation  == '' ? 'Unknown' : event.organisation %></span></div>
      <div class="span2"><span><%= event.referral.title  == '' ? 'Unknown' : event.referral.title %></span></div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112190907) do
+ActiveRecord::Schema.define(:version => 20121216131541) do
 
   create_table "addresses", :force => true do |t|
     t.string   "event_id"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(:version => 20121112190907) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "complex_dates", :force => true do |t|
+    t.string   "event_id",           :null => false
+    t.integer  "date_type_id",       :null => false
+    t.date     "fixed_date"
+    t.time     "time"
+    t.integer  "offset_type_id"
+    t.integer  "fixed_offset_id"
+    t.integer  "dynamic_offset_id"
+    t.integer  "frequency_id"
+    t.integer  "fixed_frequency_id"
+    t.integer  "day_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "contacts", :force => true do |t|
     t.string   "title"
     t.integer  "position"
@@ -32,7 +47,21 @@ ActiveRecord::Schema.define(:version => 20121112190907) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "date_types", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "days", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dynamic_offsets", :force => true do |t|
     t.string   "title"
     t.integer  "position"
     t.datetime "created_at", :null => false
@@ -50,11 +79,7 @@ ActiveRecord::Schema.define(:version => 20121112190907) do
     t.string   "address"
     t.string   "website"
     t.integer  "contact_id"
-    t.date     "date"
-    t.time     "time"
-    t.boolean  "ongoing"
-    t.integer  "frequency_id"
-    t.integer  "day_id"
+    t.integer  "complex_date_id"
     t.string   "cost",               :null => false
     t.boolean  "access",             :null => false
     t.string   "access_details"
@@ -67,6 +92,21 @@ ActiveRecord::Schema.define(:version => 20121112190907) do
     t.string   "other"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "address_id"
+  end
+
+  create_table "fixed_frequencies", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "fixed_offsets", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "frequencies", :force => true do |t|
@@ -89,6 +129,13 @@ ActiveRecord::Schema.define(:version => 20121112190907) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "address_id"
+  end
+
+  create_table "offset_types", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "referrals", :force => true do |t|

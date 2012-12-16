@@ -13,11 +13,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :website
       t.integer :contact_id
       
-      t.date :date
-      t.time :time
-      t.boolean :ongoing
-      t.integer :frequency_id
-      t.integer :day_id
+      t.integer :complex_date_id
       
       
       t.string :cost, :null => false

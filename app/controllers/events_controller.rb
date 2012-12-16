@@ -35,6 +35,7 @@ class EventsController < ApplicationController
       @event.tagset = Tagset.new
       @event.targetset = Targetset.new
       @event.address = Address.new
+      @event.complex_date = ComplexDate.new
       respond_to do |format|
         format.html # new.html.erb
         format.json { render json: @event }
