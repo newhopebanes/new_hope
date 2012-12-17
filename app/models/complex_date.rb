@@ -13,4 +13,8 @@ class ComplexDate < ActiveRecord::Base
   belongs_to :day
   accepts_nested_attributes_for :date_type, :offset_type, :fixed_offset, :dynamic_offset, :frequency, :fixed_frequency, :day
   
+  def month
+    fixed_date.month || 0
+  end
+  
 end

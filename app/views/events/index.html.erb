@@ -1,10 +1,10 @@
 <div class="row">
   <div class="span12">
-  <h1 class='page-title'>Listing events</h1>  
+  <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%B')) %></h1>  
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="span1"><h5>Group</h5></div>
   <div class="span2"><h5>Time</h5></div>
   <div class="span1"><h5>What is this</h5></div>
@@ -13,13 +13,21 @@
   <div class="span1"><h5>Cost</h5></div>
   <div class="span2"><h5>Where</h5></div>
   <div class="span1"><h5>Who to Contact</h5></div>
-</div>
+</div> -->
 
 </br>
-
+<div class="event-links">
+  <%= link_to "All", events_path %></br>
+  <%= link_to "Sports", events_path(:search => 'sports') %></br>
+  <%= link_to "Social", events_path(:search => 'social') %></br>
+  <%= link_to "New Hope", about_path %></br>
+  <%= link_to 'Peer Led Groups', groups_path %></br>
+  <%= link_to "Contact", contact_path %></br>
+  <%= link_to "Links", links_path %>
+</div>
 
 <% @events.each do |event| %>
-  <%= render :partial => 'single_event', :locals => {:event => event} %>
+  <%= render :partial => 'single_event_2', :locals => {:event => event} %>
 <% end %>
 <br />
 

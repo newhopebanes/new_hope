@@ -8,13 +8,18 @@
      <div class="span2"><span><%= event.organisation  == '' ? 'Unknown' : event.organisation %></span></div>
      <div class="span2"><span><%= event.referral.title  == '' ? 'Unknown' : event.referral.title %></span></div>
      <div class="span1"><span><%= event.cost  == '' ? 'Unknown' : event.cost %></span></div>
-     <div class="span2"><span><%= event.address  == '' ? 'Unknown' : event.display_address %></span></div>
+     <div class="span2"><span><%= event.display_address %></span></div>
      <div class="span1"><span><%= event.contact_person  == '' ? 'Unknown' : event.contact_person %></span></div>
    </div>
 </div>
 <div class="<%= 'event-details_' + event.id.to_s %>" hidden='true'>
-   <h3><%= event.name == '' ? 'Unknown' : event.name %> - <%= event.organisation  == '' ? '' : event.organisation %></h3>
-   <p><%= event.description == '' ? 'Unknown' : event.description %></p>
+   <h2><%= event.name == '' ? 'Unknown' : event.name %></h2>
+   <h3><%= event.organisation  == '' ? '' : event.organisation %></h3>
+   <h5>Time: <%= event.complex_date.time.strftime("%b %e, %l:%M %p") %></h5>
+   <h5>Place: <%= event.display_address %></h5>
+   <hr>
+   <p>Details: <%= event.description == '' ? 'Unknown' : event.description %></p>
+   <p>Contact: <%= event.contact_person %></p>
 </div>
 </br>
 

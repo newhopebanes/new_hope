@@ -45,9 +45,10 @@
   <%= link_to "Links", links_path %>
 </div>
 
-<% if current_page?(events_path) %>
+<!-- <% if current_page?(events_path) %>
 
 <div class="event-links">
+  <%= link_to "All", events_path %></br>
   <%= link_to "Sports", events_path(:search => 'sports') %></br>
   <%= link_to "Social", events_path(:search => 'social') %></br>
   <%= link_to "New Hope", about_path %></br>
@@ -56,7 +57,7 @@
   <%= link_to "Links", links_path %>
 </div>
 
-<% end %> 
+<% end %>  -->
   
 </div>
 

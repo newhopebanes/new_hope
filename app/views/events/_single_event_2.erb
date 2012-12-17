@@ -1,0 +1,50 @@
+
+ <div class='event-entry' onclick="toggleDetails(<%= event.id.to_s %>)">
+<div class="<%= 'event-summary_' + event.id.to_s %>">
+  
+       <span style="margin-right: 10px;"><%= event.complex_date.time == nil ? 'Unknown' : event.complex_date.time.strftime("%b %e, %l:%M %p") %></span> | 
+   
+       <span style="margin-right: 10px;margin-left: 10px; font-weight: bold;"><%= event.name == '' ? 'Unknown' : event.name %></span> |
+<span><%= event.display_address %></span> | 
+    <span style="float:right; margin-right:5px;">
+       Cost: <span><%= event.cost  == '' ? 'Unknown' : event.cost %></span> |
+  
+      Contact: <span><%= event.contact_person  == '' ? 'Unknown' : event.contact_person %></span>
+      </span>
+   </div>
+
+
+
+<div class="<%= 'event-details_' + event.id.to_s %>" hidden='true'>
+   <h3><%= event.name == '' ? 'Unknown' : event.name %> - <%= event.organisation  == '' ? '' : event.organisation %></h3>
+   <p><%= event.description == '' ? 'Unknown' : event.description %></p>
+</div>
+</br>
+
+   <% if admin %>
+     <div class="row">
+       <div class="span6">
+       <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event), 
+                        :class => 'btn btn-primary btn-block event-edit'      %></span>
+       </div>
+       <div class="span6">
+       <span><%= link_to "Click here to DELETE #{event.name}", event,
+              :class => 'btn btn-danger btn-block event-delete', 
+              method: :delete, 
+              data: { confirm: 'Are you sure?' } %></span>
+       </div>
+     </div>
+   <% end %>
+
+   
+ </div>
+
+<script type="text/javascript" charset="utf-8">
+ function toggleDetails(id){
+
+   $('.event-summary_' + id).toggle();
+
+   $('.event-details_' + id).toggle();
+ };
+</script>
+

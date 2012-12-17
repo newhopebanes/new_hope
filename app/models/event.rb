@@ -56,8 +56,18 @@ class Event < ActiveRecord::Base
   scope :for_tag, lambda{|tag| joins(:tagset).where(tag + ' = ?',  true)}
   scope :for_target, lambda{|target| joins(:targetset).where(target + ' = ?',  true)}
   
+  
   def display_address
-    "#{address.number}, #{address.street}, #{address.postcode}"
+    result = "#{address.number}, #{address.street}, #{address.postcode}"
+    if result.length > 5
+      result
+    else
+      'Unknown'
+    end
+    
+
   end
+  
+
   
 end
