@@ -32,7 +32,7 @@ h1{
   width:100%;
   height:15%;
   color: #7F6B6C;
-  background-color: #4F0419;
+  background-color: #74030C;
   /*background-color: #990100;*/
   
   
@@ -43,7 +43,7 @@ h1{
   top:0%;
 /*  background-color: #990100;*/
   color: #7F6B6C;
-  background-color: #4F0419;
+  background-color: #74030C;
   float: right;
   
 }
@@ -51,7 +51,7 @@ h1{
 
 .top-links{
   /*background-color: #b90504;*/
-  background-color: #5E1729;
+  background-color: #000000;
   color: #7F6B6C;
   float:right;
   width: 100%;
@@ -75,7 +75,7 @@ h1{
   
 .left-bar{
 /*  background-color: #990100;*/
-  background-color: #4F0419;
+  background-color: #74030C;
   float: left;
   position:fixed;
   left:0px;

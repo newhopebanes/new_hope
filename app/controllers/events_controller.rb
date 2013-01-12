@@ -4,8 +4,12 @@ class EventsController < ApplicationController
   before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
   
   def index
-    if params[:search]
-      @events = Event.for_tag(params[:search])
+    if params[:tag]
+      @events = Event.for_tag(params[:tag])
+    elsif params[:target]
+      @events = Event.for_target(params[:target])
+    elsif params[:week]
+      @events = Event.this_week()
     else
       @events = Event.all
     end

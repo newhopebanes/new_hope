@@ -18,12 +18,20 @@
 </br>
 <div class="event-links">
   <%= link_to "All", events_path %></br>
-  <%= link_to "Sports", events_path(:search => 'sports') %></br>
-  <%= link_to "Social", events_path(:search => 'social') %></br>
-  <%= link_to "New Hope", about_path %></br>
-  <%= link_to 'Peer Led Groups', groups_path %></br>
-  <%= link_to "Contact", contact_path %></br>
-  <%= link_to "Links", links_path %>
+  <%= link_to "This week", events_path(:week => 'true') %></br>
+  <%= link_to "Sports", events_path(:tag => 'sports') %></br>
+  <%= link_to "Outdoors", events_path(:tag => 'outdoors') %></br>
+  <%= link_to "Creative", events_path(:tag => 'creative') %></br>
+  <%= link_to "Wellbeing", events_path(:tag => 'wellbeing') %></br>
+  <%= link_to "Social", events_path(:tag => 'social') %></br>
+  <%= link_to "Faith", events_path(:tag => 'faith') %></br>
+  <%= link_to "Food", events_path(:tag => 'food') %></br>
+  <%= link_to "Learning", events_path(:tag => 'learning') %></br>
+  <%= link_to "Exercise", events_path(:tag => 'exercise') %></br>
+  <%= link_to "Lifestyle", events_path(:tag => 'lifestyle') %></br>
+  
+  <%= link_to "Adults", events_path(:target => 'adults') %></br>
+  <!-- :adults, :under_18, :men, :women, :mental_health, :learning_difficulties, :drug_alcohol, :homelessness, :carers, :carers_mental_health, :vulnerable, :anyone, :other -->
 </div>
 
 <% @events.each do |event| %>
