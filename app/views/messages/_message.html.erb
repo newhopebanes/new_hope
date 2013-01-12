@@ -1,0 +1,31 @@
+<div id="message_sender">
+  
+<p>Send us a message</p>
+
+  <%= simple_form_for @message do |f| %>
+     <p>Who would you like to send the mail to?</p>
+      <%= f.input :new_hope do %>
+        <%= check_box_tag :bridges %>
+      <% end %>
+      
+     <p>Your details</p>
+     <%= f.input :name %>
+     <%= f.input :phone %>
+     <%= f.input :email %>
+     <%= check_box_tag 'message[confirmation]' %>
+     <p>Send a confirmation email to yourself?</p>
+     <%= f.input :subject %>
+     <%= f.input :content, :as => :text %>
+   
+ 
+     <%= f.button :submit, :class => 'btn-primary'  %>
+   
+  <% end %>
+</div>
+
+
+<!--
+%= f.input :new_hope, :as => :checkbox, :label => "New Hope" %>
+%= f.input :bridges, :as => :checkbox, :label => "Building Bridges" %>
+%= f.input :confirmation, :as => :checkbox, :label => "Send a copy to your email?" %>
+-->

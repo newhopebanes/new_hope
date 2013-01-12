@@ -1,4 +1,6 @@
 HopeTest::Application.routes.draw do
+
+
   get "users/new"
 
   get '/about' => 'static_pages#about'
@@ -14,6 +16,12 @@ HopeTest::Application.routes.draw do
   resources :users
   
   resources :sessions, only: [:new, :create, :destroy]
+  
+  resources :messages, only: [:new, :create]
+  
+  # match 'messages/new' => 'messages#new'
+  # 
+  # match 'messages/send' => 'messages#create'
   
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
