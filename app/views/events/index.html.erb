@@ -1,6 +1,6 @@
 <div class="row">
   <div class="span12">
-  <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%B')) %></h1>  
+  <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%e %B %Y')) %>
   </div>
 </div>
 
@@ -18,7 +18,13 @@
 </br>
 <div class="event-links">
   <%= link_to "All", events_path %></br>
+  
+  <h4>Filter by Date</h4>
+  <%= link_to "Today", events_path(:day => 'true') %></br>
   <%= link_to "This week", events_path(:week => 'true') %></br>
+  <%= link_to "This month", events_path(:month => 'true') %></br>
+  
+  <h4>Filter by Tag</h4>
   <%= link_to "Sports", events_path(:tag => 'sports') %></br>
   <%= link_to "Outdoors", events_path(:tag => 'outdoors') %></br>
   <%= link_to "Creative", events_path(:tag => 'creative') %></br>

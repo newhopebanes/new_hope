@@ -19,6 +19,7 @@ class Event < ActiveRecord::Base
   
   scope :for_tag, lambda{|tag| joins(:tagset).where(tag + ' = ?',  true)}
   scope :for_target, lambda{|target| joins(:targetset).where(target + ' = ?',  true)}
+  #scope :this_week, self.where(self.this_week?)}
   
   
   
@@ -37,15 +38,21 @@ class Event < ActiveRecord::Base
     today = Date.today
     start_of_week = Date.new(today.year, today.month, ( today.day - ( today.wday - 1 )))
     end_of_week = Date.new(today.year, today.month, ( today.day - ( 7 - today.wday )))
-    
-    complex_date.fixed_date < start_of_week and complex_date.fixed_date < end_of_week
+    puts "Today: #{today}"
+    puts "start_of_week: #{start_of_week}"
+    puts "end_of_week: #{end_of_week}"
+    puts "complex_date.fixed_date: #{complex_date.fixed_date}"
+    complex_date.fixed_date >  start_of_week and complex_date.fixed_date < end_of_week
   end
   
   def this_month?
     today = Date.today
-    
     complex_date.fixed_date.month == today.month
-    
+  end
+  
+  def today?
+    today = Date.today
+    complex_date.fixed_date == today
   end
 
   

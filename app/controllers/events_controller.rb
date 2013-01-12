@@ -8,8 +8,33 @@ class EventsController < ApplicationController
       @events = Event.for_tag(params[:tag])
     elsif params[:target]
       @events = Event.for_target(params[:target])
+    elsif params[:day]
+      temp = Event.all
+      @events = Array.new
+      
+      temp.each do |e|
+        if e.today?
+          @events << e
+        end
+      end
     elsif params[:week]
-      @events = Event.this_week()
+      temp = Event.all
+      @events = Array.new
+      
+      temp.each do |e|
+        if e.this_week?
+          @events << e
+        end
+      end
+    elsif params[:month]
+      temp = Event.all
+      @events = Array.new
+      
+      temp.each do |e|
+        if e.this_month?
+          @events << e
+        end
+      end
     else
       @events = Event.all
     end
