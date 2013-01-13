@@ -7,7 +7,7 @@ HopeTest::Application.routes.draw do
 
   get '/links' => 'static_pages#links'
   
-  get '/contact' => 'static_pages#contact'
+  get '/contact' => 'messages#new'
 
   resources :groups
 

@@ -1,3 +1,108 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*================================================================*/
+/* Message Sender Section*/
+/*================================================================*/
+
+.contact_us_by_email_section
+{
+  width: 50%;
+  float: left;
+}
+.message_sender
+{
+  border: solid;
+  border-radius: 10px;
+  width: 100%;
+  height: 10%;
+  padding: 10px;
+
+}
+
+.message_sender_textbox label
+{
+  display: inline;
+  margin-left: 2px;
+}
+
+.message_sender_textbox input
+{
+  height: 30px;
+  margin-bottom: 0px;
+  width: 80%;
+  border-color: white;
+
+}
+
+.message_sender_textarea, .message_sender_textbox
+{
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-bottom: 5px
+
+}
+
+.message_sender_textarea textarea
+{
+  width: 97%;
+  border-color: white;
+
+}
+
+.message_sender_checkboxes
+{
+  float: left;
+  width: 45%;
+
+}
+
+.message_sender_checkboxes label
+{
+  display: inline;
+}
+
+.message_sender_checkboxes input
+{
+  margin-bottom: 4px;
+}
+
+.message_sender_submit
+{
+  width: 50%;
+  clear: both;
+}
+span#disclaimer
+{
+  font-size: 8pt;
+}
+
+/*================================================================*/
+/* Who to Contact Section*/
+/*================================================================*/
+
+.who_to_contact_section
+{
+  width: 50%;
+  float: right;
+}
+
+.who_to_contact_section h2
+{
+  float: right;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.who_to_contact
+{
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: right;
+  width: 90%;
+  height: 100%
+}
+

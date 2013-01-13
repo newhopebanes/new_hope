@@ -1,35 +1,58 @@
-<div id="message_sender">
-  
-<p>Send us a message</p>
+<%= simple_form_for @message do |f| %>
+   
+   <div class="message_sender"> 
+    
+     <div class="message_sender_textbox message_sender_name">
+     <%= label_tag('message[name]', "Name:") %>
+     <%= text_field_tag('message[name]') %>
+     </div>
 
-  <%= simple_form_for @message do |f| %>
-     <p>Who would you like to send the mail to?</p>
-      
-     <span>Send email to New Hope</span>
+     <div class="message_sender_textbox message_sender_phone">
+     <%= label_tag('message[phone]', "Phone:") %>
+     <%= text_field_tag('message[phone]') %>
+     </div>
+
+     <div class="message_sender_textbox message_sender_email">
+     <%= label_tag('message[email]', "Email:") %>
+     <%= text_field_tag('message[email]') %>
+     </div>
+
+     <div class="message_sender_textbox message_sender_subject">
+     <%= label_tag('message[subject]', "Subject:") %>
+     <%= text_field_tag('message[subject]') %>
+     </div>
+
+     <div class="message_sender_textarea message_sender_content">
+     <%= text_area_tag('message[content]','- Type Message Here -' ,:rows => 10) %>
+     </div>
+
+     <span class="message_sender_checkboxes">
+     <%= label_tag('message[new_hope]', "Send to New Hope:") %>
      <%= check_box_tag 'message[new_hope]' %>
-   </br>
+     
+     </br>
+    <%= label_tag('message[bridges]', "Send to Building Bridges:") %> 
+    <%= check_box_tag 'message[bridges]' %>
+    </br>
+    <%= label_tag('message[confirmation]', "Send copy to your email:") %>
+    <%= check_box_tag 'message[confirmation]' %>
+     </span>
+     
 
-     <span>Send email to Building Bridges</span>
-     <%= check_box_tag 'message[bridges]' %>
-      
-     <p>Your details</p>
-     <%= f.input :name %>
-     <%= f.input :phone %>
-     <%= f.input :email %>
-     <span>Send a copy of the message to your email</span>
-     <%= check_box_tag 'message[confirmation]' %>
-     <%= f.input :subject %>
-     <%= f.input :content, :as => :text %>
-   
+     <span class="message_sender_submit">
+      <span id="disclaimer"> 
+        Please note we can only respond to messages where contact details are given.
+        New hope messages are checked weekly.
+      </span>
+    </br>
+
+     <%= f.button :submit, :class => 'btn-primary', :value => "Send"  %>
+
+     </span>
+  
+
+   </div>
  
-     <%= f.button :submit, :class => 'btn-primary'  %>
-   
-  <% end %>
-</div>
+<% end %>
 
 
-<!--
-%= f.input :new_hope, :as => :checkbox, :label => "New Hope" %>
-%= f.input :bridges, :as => :checkbox, :label => "Building Bridges" %>
-%= f.input :confirmation, :as => :checkbox, :label => "Send a copy to your email?" %>
--->
