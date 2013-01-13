@@ -4,16 +4,20 @@
 
   <%= simple_form_for @message do |f| %>
      <p>Who would you like to send the mail to?</p>
-      <%= f.input :new_hope do %>
-        <%= check_box_tag :bridges %>
-      <% end %>
+      
+     <span>Send email to New Hope</span>
+     <%= check_box_tag 'message[new_hope]' %>
+   </br>
+
+     <span>Send email to Building Bridges</span>
+     <%= check_box_tag 'message[bridges]' %>
       
      <p>Your details</p>
      <%= f.input :name %>
      <%= f.input :phone %>
      <%= f.input :email %>
+     <span>Send a copy of the message to your email</span>
      <%= check_box_tag 'message[confirmation]' %>
-     <p>Send a confirmation email to yourself?</p>
      <%= f.input :subject %>
      <%= f.input :content, :as => :text %>
    

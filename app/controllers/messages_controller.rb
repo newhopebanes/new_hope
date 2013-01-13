@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     if @message.valid?
-      ContactMailer.query_mail(@message).deliver
+      @message.send_email
       flash[:notice] = "Message sent! Thank you for contacting us."
       render :action => 'new'
     else
