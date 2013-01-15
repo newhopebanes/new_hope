@@ -1,32 +1,23 @@
 <h1 class='page-title'>Listing groups</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @groups.each do |group| %>
-  <tr>
-    <td><%= group.name %></td>
-    <td><%= group.description %></td>
-    <td><%= group.date %></td>
-    <td><%= group.time %></td>
-    <% if admin %>
-    <td><%= link_to 'Show', group %></td>
-    <td><%= link_to 'Edit', edit_group_path(group) %></td>
-    <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-
-<br />
 <% if admin %>
 <%= link_to 'New Group', new_group_path %>
 <% end %>
+
+<ul>
+    <% @groups.sort_by! {|g| g.name } %>
+    <% @groups.each do |group| %>
+        
+        <li>
+            <%= link_to group.name , group %>
+            <% if admin %>
+            |
+                
+                <%= link_to 'Edit', edit_group_path(group) %>
+                <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            
+        </li>
+    <% end %>
+
+</ul>

@@ -47,3 +47,15 @@
     </div >
   </span>
 </div>
+
+<script>
+$(function(){
+  $(".message_sender_content textarea").focus(function() {
+  console.log('in func')
+  var m = '- Type Message Here -'
+  var t = $(this).text();
+  if (m === t) {$(this).text('')};
+});
+})
+    
+</script>
