@@ -14,14 +14,8 @@ class Message
   attr_accessor :name, :new_hope, :bridges, :phone, :email, :confirmation, :subject, :content
   validates_presence_of :name
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
-  validates_length_of :content, :maximum => 1
-  # validates :new_hope, :acceptance => true, :allow_nil => false
-  # validates :bridges, :acceptance => true, :unless => Proc.new { |message| message.new_hope == true }
-    
+  validate :has_outgoing_email
   
-  
-  
-
 
   @to
   #Build an address array based on bool flags
@@ -73,6 +67,12 @@ END
   end
   
   private
+
+  def has_outgoing_email
+    unless new_hope == true or bridges == true
+      errors.add(:base, "You must set at least one outgoing email address")
+    end
+  end
 
 
 
