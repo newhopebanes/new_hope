@@ -53,14 +53,30 @@ a.event-edit a.event-delete {
 .event-entry{
   cursor:pointer;
   margin-bottom:1px;
-  width: 920px;
+  width: 82%;
   float: right;
+  border-radius: 5px;
 
 }
 
 .event-links{
+  color: white;
   border: solid;
-  width :200px;
-  height: 70%;
+  width :15%;
+  height: 84%;
   float: left;
+  padding-left: 5px;
+  border-radius: 10px;
+  border-color: #990100;
+  background-color: #333;
+}
+
+.event-links a{
+  color: white;
+  &:hover{
+    color:white;
+  }
+  &:visited{
+    color:white;
+  }
 }

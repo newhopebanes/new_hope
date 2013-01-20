@@ -19,7 +19,6 @@ class Event < ActiveRecord::Base
   
   scope :for_tag, lambda{|tag| joins(:tagset).where(tag + ' = ?',  true)}
   scope :for_target, lambda{|target| joins(:targetset).where(target + ' = ?',  true)}
-  #scope :this_week, self.where(self.this_week?)}
   
   
   

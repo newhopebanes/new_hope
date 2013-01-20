@@ -41,10 +41,10 @@
 </div>
 
 <% @events.each do |event| %>
-  <%= render :partial => 'single_event_2', :locals => {:event => event} %>
+  <%= render :partial => 'single_event', :locals => {:event => event} %>
 <% end %>
 <br />
 
 <% if admin %>
-  <%= link_to 'New Event', new_event_path %>
+  <%= link_to 'New Event', new_event_path, :class => 'btn btn-success' %>
 <% end %>

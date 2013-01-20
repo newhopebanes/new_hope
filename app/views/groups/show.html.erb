@@ -35,5 +35,7 @@
     <p><%= @group.access %></p>
 </div>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<% if admin %>
+  | <%= link_to 'Edit', edit_group_path(@group) %>
+  | <%= link_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

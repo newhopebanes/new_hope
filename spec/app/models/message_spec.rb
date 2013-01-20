@@ -1,11 +1,14 @@
 require 'spec_helper'
 require_relative File.expand_path('../../../../app/models/message.rb', __FILE__)
 
+CHECKED = "1"
+UNCHECKED = "0"
+
 describe 'Message' do
   
   before do
-    @message = Message.new(name: "John Doe", new_hope: false, bridges: false,
-      phone: "0123456789", email: "john@doe.com", confirmation: false, 
+    @message = Message.new(name: "John Doe", new_hope: CHECKED, bridges: 0,
+      phone: "0123456789", email: "john@doe.com", confirmation: UNCHECKED, 
       subject: "Test Subject", content: "Test Content")
   end
 
@@ -26,7 +29,19 @@ describe 'Message' do
     expect(@message.email).to eq 'john@doe.com'
   end
 
-  it 'needs a correctly formatted email to be valid' do
+  it 'email address allowed to be empty' do
+    @message.email = ''
+    expect(@message.valid?).to eq true
+  end
+
+  it 'email address must be entered if confirmation is true' do
+    @message.email = "dsjdsakdjsal"
+    @message.confirmation = CHECKED
+    expect(@message.valid?).to eq false
+    expect(@message.errors.messages[:email].first).to eq "is invalid"
+  end
+
+  it 'needs a correctly formatted email if it is supplied' do
     @message.email = "@.com.incorrect"
     expect(@message.valid?).to eq false
   end
@@ -39,30 +54,34 @@ describe 'Message' do
     expect(@message.content).to eq 'Test Content'
   end
 
-  it 'adds new hopw email address if new_hope is true' do
-    @message.new_hope = true
+  it 'adds new hope email address if new_hope is true' do
+    @message.new_hope = CHECKED
+    @message.bridges = UNCHECKED
     expect(@message.to.first).to eq "newhope.reciever@gmail.com"
   end
 
   it 'adds bridges email address if bridges is true' do
-    @message.bridges = true
+    @message.new_hope = UNCHECKED
+    @message.bridges = CHECKED
     expect(@message.to.first).to eq "building_briges@email.com"
   end
 
   it 'adds user email address if confirmation is true' do
-    @message.confirmation = true
+    @message.new_hope = UNCHECKED
+    @message.bridges = UNCHECKED
+    @message.confirmation = CHECKED
     expect(@message.to.first).to eq @message.email
   end
 
   it 'can send mail to multiple addresses' do
-    @message.new_hope = true
-    @message.confirmation = true
+    @message.new_hope = CHECKED
+    @message.confirmation = CHECKED
     expect(@message.to.length).to eq 2
   end
 
   it 'must have one outgoing email address to be valid' do
-    @message.new_hope = false
-    @message.bridges = false
+    @message.new_hope = UNCHECKED
+    @message.bridges = UNCHECKED
     expect(@message.valid?).to eq false
   end
 

@@ -13,56 +13,65 @@
 
 
 
-<div class="top-bar">
+  <div class="outer-container">
+    <div class="top-section">
+    <div class="top-bar">
 
-<div class="top-title">
+      <div class="top-title">
+        <h1>NEW HOPE</h1>
+        <h2>Making a difference in Mental Health </h2>
+      </div>
 
-  <h1 style="color:black; font-family: arial;"><img class="logo" src="assets/new_hope_logo.png" alt="">NEW HOPE</h1> <h2>Making a difference in Mental Health </h2>
+      <div class="top-links">
+        <%= link_to "Links", links_path %>
+        <%= link_to "Contact", contact_path %>
+        <%= link_to "Peer Led groups", groups_path %>
+        <%= link_to "New Hope", about_path %>
+        <%= link_to "What's On", events_path %>
+        <%= link_to "Home", home_path %>
+        <% if admin %>
+          <%= link_to "Sign Out", signout_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+    
 
-</div>
-</br>
-<div class="top-links">
-  <%= link_to "Links", links_path %>
-  <%= link_to "Contact", contact_path %>
-  <%= link_to "Peer Led groups", groups_path %>
-  <%= link_to "New Hope", about_path %>
-  <%= link_to "What's On", events_path %>
-  <%= link_to "Home", home_path %>
-  <% if admin %>
-    <%= link_to "Sign Out", signout_path %>
-  <% end %>
-</div>
-  
-</div>
+  <div class="bottom-section">
+    
+    <div class="left-bar">
+      <div class="left-links">
+        <div class="left-links-link">
+          <%= link_to "Home", home_path %></br>
+        </div>
+        <div class="left-links-link">
+          <%= link_to "What's On", events_path %></br>
+        </div>
+        <div class="left-links-link">
+          <%= link_to "New Hope", about_path %></br>
+        </div>
+        <div class="left-links-link">
+          <%= link_to 'Peer Led Groups', groups_path %></br>
+        </div>
+        <div class="left-links-link">
+          <%= link_to "Contact", contact_path %></br>
+        </div>
+        <div class="left-links-link">
+          <%= link_to "Links", links_path %>
+        </div>
+                        
+      </div>
+          </div>
 
-<div class="left-bar">
+     <div class="content">
+      <div class="content-inner">
+        <%= yield %>
+      </div>
+      
+    </div>
 
-<div class="left-links">
-  <%= link_to "Home", home_path %></br>
-  <%= link_to "What's On", events_path %></br>
-  <%= link_to "New Hope", about_path %></br>
-  <%= link_to 'Peer Led Groups', groups_path %></br>
-  <%= link_to "Contact", contact_path %></br>
-  <%= link_to "Links", links_path %>
-</div>
-
-<!-- <% if current_page?(events_path) %>
-
-<div class="event-links">
-  <%= link_to "All", events_path %></br>
-  <%= link_to "Sports", events_path(:search => 'sports') %></br>
-  <%= link_to "Social", events_path(:search => 'social') %></br>
-  <%= link_to "New Hope", about_path %></br>
-  <%= link_to 'Peer Led Groups', groups_path %></br>
-  <%= link_to "Contact", contact_path %></br>
-  <%= link_to "Links", links_path %>
-</div>
-
-<% end %>  -->
-  
-</div>
-
-<div class="content"><%= yield %></div>
+  </div>
+  </div>
 
 
 </body>

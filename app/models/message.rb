@@ -6,14 +6,18 @@ class Message
   extend ActiveModel::Naming
 
   USER_NAME = 'newhope.webapp@gmail.com'
-  PASSWORD = 'newhopepassword' 
+  PASSWORD = 'newhopepassword'
+  CHECKED = "1"
   
   NEW_HOPE = 'newhope.reciever@gmail.com'
   BRIDGES = 'building_briges@email.com'
 
+  # NEW_HOPE = 'turners8n@hotmail.com'
+  # BRIDGES = 'turners8n@hotmail.com'
+
   attr_accessor :name, :new_hope, :bridges, :phone, :email, :confirmation, :subject, :content
   validates_presence_of :name
-  validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
+  validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i, :if => :validate_email?
   validate :has_outgoing_email
   
 
@@ -21,13 +25,13 @@ class Message
   #Build an address array based on bool flags
   def to
     @to = Array.new
-    if new_hope
+    if new_hope == CHECKED
       @to << NEW_HOPE
     end
-    if bridges
+    if bridges == CHECKED
       @to << BRIDGES
     end
-    if confirmation
+    if confirmation == CHECKED
       @to << @email
     end
     @to
@@ -68,11 +72,21 @@ END
   
   private
 
-  def has_outgoing_email
-    unless new_hope == true or bridges == true
-      errors.add(:base, "You must set at least one outgoing email address")
+    def has_outgoing_email
+      unless new_hope == CHECKED or bridges == CHECKED
+        puts "New hope: #{new_hope.to_s}"
+        puts "Bridges: #{bridges.to_s} #{bridges.class}"
+        errors.add(:base, "You must set at least one outgoing email address")
+      end
+      return true
     end
-  end
+
+    def validate_email?
+      if confirmation == CHECKED
+        return true
+      end
+      email != nil and email != ''
+    end
 
 
 

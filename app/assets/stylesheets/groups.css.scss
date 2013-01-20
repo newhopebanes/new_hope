@@ -3,6 +3,11 @@ h1.group-name{
   
 }
 
+h1.page-title{
+
+  margin-bottom: 15px;
+}
+
 hr{
   border-color:#000000;
   margin:0px;
@@ -21,3 +26,11 @@ div.group-description{
   margin-right:2px;
 }
 
+li.group-entry
+{
+  margin-bottom: 5px;
+}
+
+a.group-name{
+  font-weight: bold;
+}

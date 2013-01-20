@@ -13,55 +13,67 @@
  */
 /*Colour palette: http://www.colourlovers.com/palette/2509985/belkina */
 
-body{
-  
-  background-color: #990100;
+html, body{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  /*background-color: #990100;*/
+  /*padding: 0px;*/
 }
 
-img.logo{
-
-  height:70px;
-  margin-left: 5px;
-
+div.outer-container{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
 }
-h1{
-  /*color:#30373F;*/
-  /*color: #7F6B6C;*/
-  color: black;
-  font-family: arial;
-/*  color:#333333;*/
+
+body h1, body h2{
+  margin: 0px;
+}
+
+/*==========================
+--------TOP SECTION
+===========================*/
+
+div.top-section{
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
 }
 
 .top-bar{
-  z-index:-20;
-  position:fixed;
-  left:0px;
-  top:0px;
   width:100%;
-  height:15%;
+  height:100%;
   color: #7F6B6C;
-/*  background-color: #74030C;*/
+  overflow: hidden;
   background-color: #990100;
   
   
 }
-.top-bar h2{
-  position:fixed;
-  right:0%;
-  top:0%;
-  background-color: #990100;
-  /*color: #7F6B6C;*/
+
+.top-title h1{
   color: black;
-  /*background-color: #74030C;*/
+  font-family: arial;
+  margin-top: 0px;
+  display: inline;
+}
+
+.top-title h2{
+  background-color: #990100;
+  display: inline;
+  color: black;
   float: right;
   font-family: arial;
   
 }
-.top-title{}
+.top-title{
+  overflow: hidden;
+}
 
 .top-links{
   background-color: #333;
-  /*background-color: #000000;*/
   color: white;
   float:right;
   width: 100%;
@@ -70,7 +82,7 @@ h1{
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: -25px;
+  margin-top: 7px;
   z-index:-10;
   border-top-style: solid;
   border-top-width: 2px;
@@ -90,26 +102,41 @@ h1{
 }
 
 .top-links a:hover{
-  background-color: #5E1729;
+  background-color: #333;
   color: white;
   font-family: arial;
+  font-weight: bold;
 }
 .top-links a:visited{
   color: white;
   font-family: arial;
 }
   
+
+
+/*==========================
+--------BOTTOM SECTION
+===========================*/
+
+div.bottom-section{
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  width: 100%;
+  height: 100%%;
+  overflow: hidden;
+
+}
+
 .left-bar{
   background-color: #990100;
-  /*background-color: #74030C;*/
   float: left;
   position:fixed;
-  left:0px;
-  top:15%;
   height: 100%;
-  width:10%;
+  width:100px;
   z-index:-30;
   border-right-style: solid;
+  overflow: hidden;
   border-right-width: 2px;
   border-right-color: #333;
 }
@@ -118,20 +145,32 @@ h1{
 
   margin-top:5px;
   padding-top: 10px;
+  overflow: hidden;
+}
+
+div.left-links-link{
+  background-color: #333;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #B90504;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #B90504;
 }
 
 .left-links a{
   margin-left: 2px;
   font-family: arial;
-  color: black;
+  color: white;
 }
 
+
 .left-links a:hover{
-  background-color: #5E1729;
-  color: black;
+  background-color: #333
+  color: white;
   font-family: arial;
 }.left-links a:visited{
-  color: black;
+  color: white;
   font-family: arial;
 }
 
@@ -141,15 +180,202 @@ h1{
 
 .content{
   position:fixed;
-  left:10%;
-  top:15%;
-  height:89%;
-  width:90%;
+  left:100px;
+  height:100%;
   padding: 5px;
-  overflow:scroll;
-  z-index:-50;
+}
+.content-inner
+{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-h1.page-title{
-  padding:7px;
+
+/*======================
+-------BACKUP
+========================
+
+html, body{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
 }
+
+div.outer-container{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+
+h1{
+  margin: 0px;
+}
+h2{
+  margin: 0px;
+}
+/*==========================
+--------TOP SECTION
+===========================
+
+div.top-section{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 15%;
+  max-height: 15%;
+  min-height: 15%;
+}
+
+.top-bar{
+  width:100%;
+  height:100%;
+  color: #7F6B6C;
+  overflow: hidden;
+  background-color: #990100;
+  
+  
+}
+
+.top-title h1{
+  color: black;
+  font-family: arial;
+  margin-top: 0px;
+  display: inline;
+}
+
+.top-title h2{
+  background-color: #990100;
+  display: inline;
+  color: black;
+  float: right;
+  font-family: arial;
+  
+}
+.top-title{
+  overflow: hidden;
+}
+
+.top-links{
+  background-color: #333;
+  color: white;
+  float:right;
+  width: 100%;
+  font-size:14pt;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 7px;
+  z-index:-10;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #B90504;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #B90504;
+
+}
+
+.top-links a{
+  float:right;
+  padding-left:15px;
+  padding-right:15px;
+  font-family: arial;
+  color: white;
+}
+
+.top-links a:hover{
+  background-color: #333;
+  color: white;
+  font-family: arial;
+  font-weight: bold;
+}
+.top-links a:visited{
+  color: white;
+  font-family: arial;
+}
+  
+
+
+/*==========================
+--------BOTTOM SECTION
+===========================
+
+div.bottom-section{
+  width: 100%;
+  height: 85%;
+  min-height: 15%;
+  max-height: 85%;
+  overflow: hidden;
+
+}
+
+.left-bar{
+  background-color: #990100;
+  float: left;
+  height: 100%;
+  width:10%;
+  z-index:-30;
+  border-right-style: solid;
+  overflow: hidden;
+  border-right-width: 2px;
+  border-right-color: #333;
+}
+
+.left-links{
+
+  margin-top:5px;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+div.left-links-link{
+  background-color: #333;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #B90504;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #B90504;
+}
+
+.left-links a{
+  margin-left: 2px;
+  font-family: arial;
+  color: white;
+}
+
+
+.left-links a:hover{
+  background-color: #333
+  color: white;
+  font-family: arial;
+
+}.left-links a:visited{
+  color: white;
+  font-family: arial;
+}
+
+.event-links{
+  padding-top: 10px;
+}
+
+.content{
+  position:relative;
+  height:98%;
+  width:89%;
+  padding: 5px;
+  overflow: scroll;
+}
+.content-inner
+{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+*/

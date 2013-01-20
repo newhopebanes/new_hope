@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
       flash[:notice] = "Message sent! Thank you for contacting us."
       render :action => 'new'
     else
-      render :action => 'new'
+      render :action => "new"
     end
   end
 end
