@@ -50,9 +50,16 @@ a.event-edit a.event-delete {
   }
 }
 
+a.event-new
+{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 .event-entry{
   cursor:pointer;
-  margin-bottom:1px;
+  margin-bottom:5px;
+  padding: 2px;
   width: 82%;
   float: right;
   border-radius: 5px;
@@ -79,4 +86,39 @@ a.event-edit a.event-delete {
   &:visited{
     color:white;
   }
+}
+
+/*===============================
+-----EVENT SUMMARY
+===============================*/
+
+span.summary-datetime
+{
+  margin-right: 10px;
+  display: inline-block;
+width: 118px;
+}
+
+span.summary-date
+{
+  font-weight: bold;
+
+}
+
+span.summary-time
+{
+
+}
+
+span.summary-name
+{
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+span.summary-right
+{
+  float:right;
+  margin-right:5px;
 }

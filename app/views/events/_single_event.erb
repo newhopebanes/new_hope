@@ -1,16 +1,19 @@
 
 <div class='event-entry' onclick="toggleDetails(<%= event.id.to_s %>)">
   <div class="<%= 'event-summary_' + event.id.to_s %>">
-    <span style="margin-right: 10px;"><%= event.complex_date.time == nil ? 'Unknown' : event.complex_date.time.strftime("%b %e, %l:%M %p") %></span> | 
+    <span class='summary-datetime'>
+      <span class='summary-date'><%= event.complex_date.time == nil ? 'Unknown' : event.complex_date.time.strftime("%b %e") %></span> - 
+      <span class='summary-time'><%= event.complex_date.time == nil ? '' : event.complex_date.time.strftime("%l:%M %p") %></span>
+    </span> | 
      
-    <span style="margin-right: 10px;margin-left: 10px; font-weight: bold;"><%= event.name == '' ? 'Unknown' : event.name %></span> |
+    <span class='summary-name'><%= event.name == '' ? 'Unknown' : event.name %></span> |
   
-    <span><%= event.display_address %></span> | 
+    <span class='summary-address'><%= event.display_address %></span> | 
       
-    <span style="float:right; margin-right:5px;">
-      Cost: <span><%= event.cost  == '' ? 'Unknown' : event.cost %></span> |
+    <span class='summary-right'>
+      Cost: <span class='summary-cost'><%= event.cost  == '' ? 'Unknown' : event.cost %></span> |
     
-      Contact: <span><%= event.contact_person  == '' ? 'Unknown' : event.contact_person %></span>
+      Contact: <span class='summary-contact'><%= event.contact_person  == '' ? 'Unknown' : event.contact_person %></span>
     </span>
   </div>
 

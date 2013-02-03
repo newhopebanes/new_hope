@@ -4,16 +4,6 @@
   </div>
 </div>
 
-<!-- <div class="row">
-  <div class="span1"><h5>Group</h5></div>
-  <div class="span2"><h5>Time</h5></div>
-  <div class="span1"><h5>What is this</h5></div>
-  <div class="span2"><h5>Organisation</h5></div>
-  <div class="span2"><h5>Referral Process</h5></div>
-  <div class="span1"><h5>Cost</h5></div>
-  <div class="span2"><h5>Where</h5></div>
-  <div class="span1"><h5>Who to Contact</h5></div>
-</div> -->
 
 </br>
 <div class="event-links">
@@ -37,7 +27,6 @@
   <%= link_to "Lifestyle", events_path(:tag => 'lifestyle') %></br>
   
   <%= link_to "Adults", events_path(:target => 'adults') %></br>
-  <!-- :adults, :under_18, :men, :women, :mental_health, :learning_difficulties, :drug_alcohol, :homelessness, :carers, :carers_mental_health, :vulnerable, :anyone, :other -->
 </div>
 
 <% @events.each do |event| %>
@@ -46,5 +35,5 @@
 <br />
 
 <% if admin %>
-  <%= link_to 'New Event', new_event_path, :class => 'btn btn-success' %>
+  <%= link_to 'New Event', new_event_path, :class => 'btn btn-success event-new' %>
 <% end %>

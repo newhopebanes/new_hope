@@ -34,3 +34,24 @@ li.group-entry
 a.group-name{
   font-weight: bold;
 }
+
+input.create-group
+{
+  position: fixed;
+  bottom: 25px;
+  left:120px;
+  width: 125px;
+}
+
+.back-group
+{
+  position: fixed;
+  bottom: 25px;
+  left:250px;
+}
+
+.tab-content input
+{
+  height: 30px;
+  width: 600px;
+}
