@@ -60,7 +60,7 @@ a.event-new
   cursor:pointer;
   margin-bottom:5px;
   padding: 2px;
-  width: 82%;
+  width: 99%;
   float: right;
   border-radius: 5px;
 
@@ -76,6 +76,18 @@ a.event-new
   border-radius: 10px;
   border-color: #990100;
   background-color: #333;
+}
+
+.event-list{
+  width: 82%;
+height: 72%;
+float: right;
+margin-right: 5px;
+overflow-y: scroll;
+padding: 5px;
+  border-color: #333;
+border-style: solid;
+border-radius: 5px;
 }
 
 .event-links a{
@@ -115,10 +127,38 @@ span.summary-name
   margin-right: 10px;
   margin-left: 10px;
   font-weight: bold;
+  color: red;
 }
 
 span.summary-right
 {
   float:right;
   margin-right:5px;
+}
+
+/*===============================
+-----EVENT CREATION
+===============================*/
+
+#event_complex_date_attributes_fixed_date_1i
+{
+  width: 70px;
+}
+
+#event_complex_date_attributes_fixed_date_2i
+{
+  width: 150px;
+}
+
+#event_complex_date_attributes_fixed_date_3i,
+#event_complex_date_attributes_time_4i,
+#event_complex_date_attributes_time_5i
+{
+  width: 50px;
+}
+
+.tab-content
+{
+  overflow-x: hidden;
+
 }

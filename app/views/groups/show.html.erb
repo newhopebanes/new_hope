@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class='group-name page-title'><%= @group.name%></h1><hr>
+<h1 class='group-name page-title'><%= @group.name%></h1>
+<hr>
+</br>
+<div class="group-description">
+  <h3>Description</h3>
+  <p><%= @group.description %></p>
+</div>
 
 <div class ='basic-details'>
-  <h5 class='group-time'><%= @group.date %> - <%= @group.time %> - <%= @group.venue %></h5>
+  <h5 class='group-time'>When:  <%= @group.date %> - <%= @group.time %></h5>
+  <h5 class='group-time'>Where: <%= @group.venue == nil ? 'Unknown' : @group.venue %></h5>
+
 </div>
 
 <hr>
@@ -15,10 +23,7 @@
 <hr>
 </br>
 
-<div class="group-description">
-  <h3>Description</h3>
-  <p><%= @group.description %></p>
-</div>
+
 
 
 <div class='further-details'>

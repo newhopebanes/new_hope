@@ -26,6 +26,11 @@ div.group-description{
   margin-right:2px;
 }
 
+#group_description
+{
+  width: 600px;
+}
+
 li.group-entry
 {
   margin-bottom: 5px;
@@ -54,4 +59,9 @@ input.create-group
 {
   height: 30px;
   width: 600px;
+}
+
+.tab-content input.btn
+{
+  width: 115px;
 }

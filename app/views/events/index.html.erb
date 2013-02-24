@@ -29,11 +29,24 @@
   <%= link_to "Adults", events_path(:target => 'adults') %></br>
 </div>
 
-<% @events.each do |event| %>
-  <%= render :partial => 'single_event', :locals => {:event => event} %>
-<% end %>
+<div class="event-list">
+  <% @events.each do |event| %>
+    <%= render :partial => 'single_event', :locals => {:event => event} %>
+  <% end %>
+</div>
+
 <br />
 
 <% if admin %>
   <%= link_to 'New Event', new_event_path, :class => 'btn btn-success event-new' %>
 <% end %>
+
+
+<script type="text/javascript" charset="utf-8">
+ function toggleDetails(id){
+
+   $('.event-summary_' + id).toggle();
+
+   $('.event-details_' + id).toggle();
+ };
+</script>

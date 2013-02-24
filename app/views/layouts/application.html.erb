@@ -7,9 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% flash.each do |key, value| %>
+ <!--  <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
+  <% end %> -->
 
 
 
@@ -18,7 +18,7 @@
     <div class="top-bar">
 
       <div class="top-title">
-        <h1>NEW HOPE</h1>
+        <%= image_tag("logo.png") %>
         <h2>Making a difference in Mental Health </h2>
       </div>
 
