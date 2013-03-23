@@ -48,6 +48,14 @@ class Event < ActiveRecord::Base
       refine_referral
     end
 
+    if @@search_critera.quick_date.include?(@@params[:quick_date])
+      refine_quickdate
+    end
+
+    if @@params[:date] and @@params[:date].length == 10
+      refine_date
+    end
+
     @@result
   end
 
@@ -70,6 +78,40 @@ class Event < ActiveRecord::Base
       @@result.keep_if do |e|
         e.referral.position == index
       end
+    end
+
+    def self.refine_date
+      @@result.keep_if do |e|
+        e.complex_date.fixed_date == create_date_from_params
+      end
+    end
+
+    def self.create_date_from_params
+      r = @@params[:date].split(/((\d+)[\/](\d+)[\/](\d+))/)
+      Date.parse("#{r[4]}-#{r[2]}-#{r[3]}")
+    end
+
+    def self.refine_quickdate
+      search = @@params[:quick_date]
+
+      if search == 'day'
+        @@result.keep_if do |e|
+          e.today?
+        end
+      end
+
+      if search == 'week'
+        @@result.keep_if do |e|
+          e.this_week?
+        end
+      end
+
+      if search == 'month'
+        @@result.keep_if do |e|
+          e.this_month?
+        end
+      end
+
     end
 
 

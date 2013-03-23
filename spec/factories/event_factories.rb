@@ -6,6 +6,11 @@ FactoryGirl.define do
     cost         "Free"
     access       "1" 
     referral
+    
+    factory :date_today do
+      association :complex_date, :fixed_date => Date.today
+    end
+
   end
 
   factory :populated_event, :class => Event do
@@ -15,23 +20,21 @@ FactoryGirl.define do
     access       "1" 
     referral
     complex_date
-    
-    trait :all_tags do
     tagset
-    end
-
-    trait :no_sports_tags do
-    association :tagset, :factory => :tagset, :sports => "0"
-    end
-
-    trait :all_targets do
     targetset
+
+    factory :no_sports_tags do
+      association :tagset, :factory => :tagset, :sports => "0"
     end
 
-    trait :no_women_targets do
-    association :targetset, :factory => :targetset, :women => "0"
+
+    factory :no_women_targets do
+      association :targetset, :factory => :targetset, :women => "0"
     end
 
+    factory :today do
+      association :complex_date, :factory => :complex_date, :fixed_date => Date.today
+    end
   end
 
   factory :self_event, :class => Event do
@@ -41,7 +44,6 @@ FactoryGirl.define do
     access       "1" 
     association :referral, :factory => :referral_self
   end
-
 
   factory :referral do
     position  "1"
@@ -86,7 +88,7 @@ FactoryGirl.define do
 
   factory :complex_date do
     event_id           "1"
-    fixed_date         Date.today
+    fixed_date         Date.new(2001,2,3)
     time               Time.now
     date_type
     offset_type
@@ -131,6 +133,5 @@ FactoryGirl.define do
     position  "1"
     title     "NOT IMPORTANT FOR NOW"
   end
-
  
 end

@@ -17,6 +17,10 @@ class Search
     %w[1 2 3]  #[Proffessional, Self, Other]
   end
 
+  def quick_date
+    %w[day week month]  #[Proffessional, Self, Other]
+  end
+
 
 
 end

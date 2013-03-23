@@ -9,6 +9,8 @@
 <div class="event-links">
   <form action="<%= events_search_path %>" method="post">
   
+    <button class="btn" >Filter</button>
+    <a href="<%= events_path %>" class="btn">Reset</a>
     <h4>Date</h4>
     <span class='search-filters'>
       <%= render :partial => 'date_drop_down' %>
@@ -33,8 +35,6 @@
 
     </span>
 
-    <button class="btn" >Filter</button>
-    <a href="<%= events_path %>" class="btn">Reset</a>
 
   </form>
 

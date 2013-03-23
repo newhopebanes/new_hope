@@ -40,7 +40,7 @@ describe 'Event' do
   describe 'date' do
 
     before do
-    @event = FactoryGirl.create(:populated_event)
+    @event = FactoryGirl.create(:date_today)
   end
 
     it 'knows whether the event is today' do
@@ -68,8 +68,8 @@ describe 'Events' do
     @params = {}
     @events = Array.new
     2.times do
-    @events << FactoryGirl.create(:populated_event, :all_tags, :all_targets)
-    # @events.each{ |e| puts e.complex_date.month}
+
+    @events << FactoryGirl.create(:populated_event)
     end
 
   end
@@ -88,20 +88,60 @@ describe 'Events' do
     result.length.should eq(2)
   end
 
-  it  'filters list on tag' do
-    @events << FactoryGirl.create(:populated_event, :no_sports_tags, :all_targets)
+  it 'filters list on tag' do
+    @events << FactoryGirl.create(:no_sports_tags)
 
     result = Event.get_events({:tag => 'sports'})
 
     result.length.should eq(2)
   end
 
-  it  'filters list on target' do
-    @events << FactoryGirl.create(:populated_event, :all_tags, :no_women_targets)
+  it 'filters list on target' do
+    @events << FactoryGirl.create(:no_women_targets)
 
     result = Event.get_events({:target => 'women'})
 
     result.length.should eq(2)
   end
+
+  it 'filters list on events that occur today' do
+    @events << FactoryGirl.create(:today)
+
+    result = Event.get_events({ :quick_date => 'day' })
+
+    result.length.should eq(1)
+  end
+
+  it 'filters list on events that occur this week' do
+    @events << FactoryGirl.create(:today)
+
+    result = Event.get_events({ :quick_date => 'week' })
+
+    result.length.should eq(1)
+  end
+
+  it 'filters list on events that occur this month' do
+    @events << FactoryGirl.create(:today)
+
+    result = Event.get_events({ :quick_date => 'month' })
+
+    result.length.should eq(1)
+  end
+
+  it 'filters list on events that occur on a given day' do
+    dated_event = FactoryGirl.build(:today)
+    selected_date = Date.new(2013, 02, 15)
+    dated_event.complex_date.fixed_date = selected_date
+    dated_event.save
+
+    @events <<  dated_event
+
+    result = Event.get_events({ :date => "02/15/2013" })
+
+    result.length.should eq(1)
+  end
+
+
+
 
 end
