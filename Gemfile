@@ -7,6 +7,7 @@ gem 'bcrypt-ruby'
 gem 'gmail_sender'
 gem 'factory_girl_rails'
 gem 'jquery-rails'
+gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'annotate'

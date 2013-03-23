@@ -7,16 +7,23 @@
 
 </br>
 <div class="event-links">
-  
-  <h4>Date</h4>
-  <%= link_to "Today", events_path(:day => 'true') %></br>
-  <%= link_to "This week", events_path(:week => 'true') %></br>
-  <%= link_to "This month", events_path(:month => 'true') %></br>
-  
-  <h4>Filters</h4>
-
-
   <form action="<%= events_search_path %>" method="post">
+  
+    <h4>Date</h4>
+    <span class='search-filters'>
+      <%= render :partial => 'date_drop_down' %>
+    </span>
+
+
+    <div class="input-prepend">
+      <input class='search-datepicker' type="text" name='date' data-behaviour='datepicker'>
+      <span class="add-on"><i class="icon-calendar"></i></span>
+    </div>
+
+  
+    <h4>Filters</h4>
+
+
     <span class='search-filters'>
       
     
@@ -59,6 +66,7 @@
 
 
 
+
 <script type="text/javascript" charset="utf-8">
  function toggleDetails(id){
 
@@ -66,6 +74,9 @@
 
    $('.event-details_' + id).toggle();
  };
+
+ $('[data-behaviour~=datepicker]').datepicker()
+
 
 
 

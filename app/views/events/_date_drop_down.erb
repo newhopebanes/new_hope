@@ -1,0 +1,6 @@
+<select name="quick_date">
+  <option value=""      <%= params[:date] == nil ? "selected ='selected'" : "false" %> >Quick Date</option>
+  <option value="day"     <%= params[:date] == 'day' ? "selected ='selected'" : "false" %> >Today</option>
+  <option value="week"     <%= params[:date] == 'week' ? "selected ='selected'" : "false" %>>This week</option>
+  <option value="month"     <%= params[:date] == 'month' ? "selected ='selected'" : "false" %>>This month</option>
+</select>
