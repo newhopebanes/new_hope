@@ -174,16 +174,18 @@ div.left-links-link{
   font-family: Verdana, Geneva, sans-serif;
 }
 
+.search-filters select
+{
+  width: 185px;
+}
+
 .event-links{
   padding-top: 10px;
 }
 
 .content{
-  position:fixed;
-  left:100px;
-  height:100%;
+  height:95%;
   padding: 5px;
-  width:91%;
 }
 .content-inner
 {

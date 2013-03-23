@@ -1,0 +1,14 @@
+<select name="tag">
+  <option value=""           <%= params[:tag] == nil ? "selected ='selected'" : "false" %> >Categories</option>
+  <option value="arts"       <%= params[:tag] == 'arts' ? "selected ='selected'" : "false" %> >Arts</option>
+  <option value="sports"     <%= params[:tag] == 'sports' ? "selected ='selected'" : "false" %>>Sports</option>
+  <option value="outdoors"   <%= params[:tag] == 'outdoors' ? "selected ='selected'" : "false" %>>Outdoors</option>
+  <option value="creative"   <%= params[:tag] == 'creative' ? "selected ='selected'" : "false" %>>Creative</option>
+  <option value="wellbeing"  <%= params[:tag] == 'wellbeing' ? "selected ='selected'" : "false" %>>Wellbeing</option>
+  <option value="social"     <%= params[:tag] == 'social' ? "selected ='selected'" : "false" %>>Social</option>
+  <option value="faith"      <%= params[:tag] == 'faith' ? "selected ='selected'" : "false" %>>Faith</option>
+  <option value="food"       <%= params[:tag] == 'food' ? "selected ='selected'" : "false" %>>Food</option>
+  <option value="learning"   <%= params[:tag] == 'learning' ? "selected ='selected'" : "false" %>>Learning</option>
+  <option value="exercise"   <%= params[:tag] == 'exercise' ? "selected ='selected'" : "false" %>>Exercise</option>
+  <option value="lifestyle"  <%= params[:tag] == 'lifestyle' ? "selected ='selected'" : "false" %>>Lifestyle</option>
+</select>

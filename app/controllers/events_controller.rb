@@ -3,41 +3,27 @@ class EventsController < ApplicationController
   # GET /events.json
   before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
   
-  def index
-    if params[:tag]
-      @events = Event.for_tag(params[:tag])
-    elsif params[:target]
-      @events = Event.for_target(params[:target])
-    elsif params[:day]
-      temp = Event.all
-      @events = Array.new
-      
-      temp.each do |e|
-        if e.today?
-          @events << e
-        end
-      end
-    elsif params[:week]
-      temp = Event.all
-      @events = Array.new
-      
-      temp.each do |e|
-        if e.this_week?
-          @events << e
-        end
-      end
-    elsif params[:month]
-      temp = Event.all
-      @events = Array.new
-      
-      temp.each do |e|
-        if e.this_month?
-          @events << e
-        end
-      end
-    else
-      @events = Event.all
+  def search
+
+    @search = Search.new
+    @events = Event.get_events(params)
+    
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @event, status: :created, location: @event }
     end
+  end
+
+  def index
+
+    puts params
+    @search = Search.new
+    @events = Event.get_events(params)
+    if params[:event]
+      p = params[:event]
+      @mem = {:tag => p[:tag], :target => p[:target], :referral => p[:referral], }
+    end
+    
 
     respond_to do |format|
       format.html # index.html.erb

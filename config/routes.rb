@@ -12,6 +12,8 @@ HopeTest::Application.routes.draw do
   resources :groups
 
   resources :events
+
+  match '/events/search' => 'events#search', :method => 'post'
   
   resources :users
   

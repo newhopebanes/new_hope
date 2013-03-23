@@ -108,7 +108,7 @@ span.summary-datetime
 {
   margin-right: 10px;
   display: inline-block;
-width: 118px;
+  width: 130px;
 }
 
 span.summary-date
@@ -161,4 +161,21 @@ span.summary-right
 {
   overflow-x: hidden;
 
+}
+
+
+/*===============================
+-----EVENT SEARCH
+===============================*/
+
+.event-links a.btn{
+  color: #333;
+}
+
+.search-target{
+  margin-bottom: 5px;
+}
+
+.search-target input{
+  margin-right: 5px;
 }
