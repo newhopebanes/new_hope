@@ -36,6 +36,10 @@ class Event < ActiveRecord::Base
     @@params = params
     @@search_critera = Search.new
 
+    if @@search_critera.cost.include?(@@params[:cost])
+      refine_cost
+    end    
+
     if @@search_critera.taglist.include?(@@params[:tag])
       refine_tags
     end
@@ -52,7 +56,7 @@ class Event < ActiveRecord::Base
       refine_quickdate
     end
 
-    if @@params[:date] and @@params[:date].length == 10
+    if @@params.include?(:date) and @@params[:date].length == 10 
       refine_date
     end
 
@@ -60,6 +64,31 @@ class Event < ActiveRecord::Base
   end
 
   private
+
+    def self.refine_cost
+      # MONEY_REGEX = /(\d+)\.*(\d*)/
+
+      @@result.keep_if do |e|
+        puts e.cost
+        puts @@params[:cost]
+
+        if e.cost.downcase.strip == 'free'
+          true
+        
+
+        elsif @@params[:cost] == 'less'
+          result = /(\d+)\.*(\d*)/.match(e.cost)
+          true if result and result[1].to_i <= 5
+        
+
+        elsif @@params[:cost] == 'more'
+          result = /(\d+)\.*(\d*)/.match(e.cost)
+          true if result and result[1].to_i >= 5
+        end
+
+      end
+      
+    end  
 
     def self.refine_tags
       @@result.keep_if do |e|
@@ -82,7 +111,7 @@ class Event < ActiveRecord::Base
 
     def self.refine_date
       @@result.keep_if do |e|
-        e.complex_date.fixed_date == create_date_from_params
+        e.complex_date.fixed_date == Date.parse(@@params[:date])
       end
     end
 

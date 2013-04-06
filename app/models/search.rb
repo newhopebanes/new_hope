@@ -18,7 +18,11 @@ class Search
   end
 
   def quick_date
-    %w[day week month]  #[Proffessional, Self, Other]
+    %w[day week month]
+  end
+
+  def cost
+    %w[free less more]
   end
 
 

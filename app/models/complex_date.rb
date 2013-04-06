@@ -21,15 +21,15 @@ class ComplexDate < ActiveRecord::Base
 
   def this_week?
     today = Date.today
-    start_of_week = Date.new(today.year, today.month, ( today.day - ( today.wday - 1 )))
-    end_of_week   = Date.new(today.year, today.month, ( today.day + ( 7 - today.wday )))
+    start_of_week = today.prev_day(calculate_start_day(today))
+    end_of_week = today.next_day(calculate_end_day(today))
     # puts "Today: #{today}"
     # puts "start_of_week: #{start_of_week}"
     # puts "end_of_week: #{end_of_week}"
     # puts "fixed_date: #{fixed_date}"
-    fixed_date >  start_of_week and fixed_date < end_of_week
+    fixed_date >=  start_of_week and fixed_date <= end_of_week
   end
-  
+
   def this_month?
     today = Date.today
     fixed_date.month == today.month
@@ -38,6 +38,17 @@ class ComplexDate < ActiveRecord::Base
   def today?
     today = Date.today
     fixed_date == today
+  end
+
+  private
+  def calculate_start_day day
+    return 6 if day.wday == 0
+    6 - (7 - day.wday)
+  end
+
+  def calculate_end_day day
+    return 0 if day.wday == 0
+    7 - day.wday
   end
   
 end

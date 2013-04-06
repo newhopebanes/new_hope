@@ -9,9 +9,7 @@
 <div class="event-links">
   <form action="<%= events_search_path %>" method="post">
   
-    <button class="btn" >Filter</button>
-    <a href="<%= events_path %>" class="btn">Reset</a>
-    <h4>Date</h4>
+    <h5>Date</h5>
     <span class='search-filters'>
       <%= render :partial => 'date_drop_down' %>
     </span>
@@ -23,18 +21,20 @@
     </div>
 
   
-    <h4>Filters</h4>
+    <h5>Filters</h5>
 
 
     <span class='search-filters'>
       
-    
+    <%= render :partial => 'cost_drop_down' %>
     <%= render :partial => 'referral_drop_down' %>
     <%= render :partial => 'tag_drop_down' %>
     <%= render :partial => 'target_drop_down' %>
 
     </span>
 
+    <button class="btn btn-primary" >Search</button>
+    <a href="<%= events_path %>" class="btn btn-info">Reset</a>
 
   </form>
 
@@ -75,8 +75,11 @@
    $('.event-details_' + id).toggle();
  };
 
- $('[data-behaviour~=datepicker]').datepicker()
-
+$("[data-behaviour~='datepicker']").datepicker({
+    "format": "yyyy-mm-dd",
+    "weekStart": 1,
+    "autoclose": true
+});
 
 
 

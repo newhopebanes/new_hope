@@ -1,40 +1,40 @@
 <div class="search-target">
   
 <div>
-<input type='checkbox' value="adults"                  <%= params[:target] == 'adults' ? "checked='true'" : "false" %> >Adults</input>
+<input type='checkbox' name="target[adults]" value="1"                <%= "checked='true'" if params[:target] and params[:target][:adults] == '1' %> >Adults</input>
 </div>
 <div>
-<input type='checkbox' value="under_18"                <%= params[:target] == 'under_18' ? "checked='true'" : "false" %>>Under 18's</input>
+<input type='checkbox' name="target[under_18]"  value="1"               <%= "checked='true'" if params[:target] and params[:target][:under_18] == '1' %> >Under 18's</input>
 </div>
 <div>
-  <input type='checkbox' value="men"                   <%= params[:target] == 'men' ? "checked='true'" : "false" %>>Men</input>
+  <input type='checkbox' name="target[men]"  value="1"                  <%= "checked='true'" if params[:target] and params[:target][:men] == '1' %>>Men</input>
   </div>
 <div>
-<input type='checkbox' value="women"                   <%= params[:target] == 'women' ? "checked='true'" : "false" %>>Women</input>
+<input type='checkbox' name="target[women]"  value="1"                  <%= "checked='true'" if params[:target] and params[:target][:women] == '1' %>>Women</input>
 </div>
 <div>
-<input type='checkbox' value="mental_health"           <%= params[:target] == 'mental_health' ? "checked='true'" : "false" %>>Mental Health Issues</input>
+<input type='checkbox' name="target[mental_health]" value="1"           <%= "checked='true'" if params[:target] and params[:target][:mental_health] == '1' %>>Mental Health Issues</input>
 </div>
 <div>
-<input type='checkbox' value="learning_difficulties"   <%= params[:target] == 'learning_difficulties' ? "checked='true'" : "false" %>>Learning difficulties</input>
+<input type='checkbox' name="target[learning_difficulties]" value="1"  <%= "checked='true'" if params[:target] and params[:target][:learning_difficulties] == '1' %>>Learning difficulties</input>
 </div>
 <div>
-<input type='checkbox' value="drug_alcohol"            <%= params[:target] == 'drug_alcohol' ? "checked='true'" : "false" %>>Drug alcohol problems</input>
+<input type='checkbox' name="target[drug_alcohol]"  value="1"           <%= "checked='true'" if params[:target] and params[:target][:drug_alcohol] == '1' %>>Drug alcohol problems</input>
 </div>
 <div>
-<input type='checkbox' value="homelessness"            <%= params[:target] == 'homelessness' ? "checked='true'" : "false" %>>Homelessness</input>
+<input type='checkbox' name="target[homelessness]" value="1"            <%= "checked='true'" if params[:target] and params[:target][:homelessness] == '1' %>>Homelessness</input>
 </div>
 <div>
-<input type='checkbox' value="carers"                  <%= params[:target] == 'carers' ? "checked='true'" : "false" %>>Carers</input>
+<input type='checkbox' name="target[carers]"   value="1"               <%= "checked='true'" if params[:target] and params[:target][:carers] == '1' %>>Carers</input>
 </div>
 <div>
-<input type='checkbox' value="carers_mental_health"    <%= params[:target] == 'carers_mental_health' ? "checked='true'" : "false" %>>Carers (mental health)</input>
+<input type='checkbox' name="target[carers_mental_health]" value="1"   <%= "checked='true'" if params[:target] and params[:target][:carers_mental_health] == '1' %>>Carers (mental health)</input>
 </div>
 <div>
-<input type='checkbox' value="vulnerable"              <%= params[:target] == 'vulnerable' ? "checked='true'" : "false" %>>Vulnerable people</input>
+<input type='checkbox' name="target[vulnerable]"    value="1"          <%= "checked='true'" if params[:target] and params[:target][:vulnerable] == '1' %>>Vulnerable people</input>
 </div>
 <div>
-<input type='checkbox' value="anyone"                  <%= params[:target] == 'anyone' ? "checked='true'" : "false" %>>Anyone</input>
+<input type='checkbox' name="target[anyone]"    value="1"              <%= "checked='true'" if params[:target] and params[:target][:anyone] == '1' %>>Anyone</input>
 </div>
 
 </div>

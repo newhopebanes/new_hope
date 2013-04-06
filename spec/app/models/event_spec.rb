@@ -79,7 +79,16 @@ describe 'Events' do
     result.length.should eq(2)
   end
 
-  it 'filters list on Referral Type' do
+  it 'filters list on cost' do
+
+    @events << FactoryGirl.create(:self_event, :paid)
+
+    result = Event.get_events({:cost => 'free'})
+
+    result.length.should eq(2)
+  end
+
+  it 'filters list on referral type' do
 
     @events << FactoryGirl.create(:self_event)
 
@@ -136,7 +145,7 @@ describe 'Events' do
 
     @events <<  dated_event
 
-    result = Event.get_events({ :date => "02/15/2013" })
+    result = Event.get_events({ :date => "2013-02-15" })
 
     result.length.should eq(1)
   end
