@@ -81,7 +81,7 @@ describe 'Events' do
 
   it 'filters list on cost' do
 
-    @events << FactoryGirl.create(:self_event, :paid)
+    @events << FactoryGirl.create(:paid_event)
 
     result = Event.get_events({:cost => 'free'})
 

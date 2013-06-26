@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 FactoryGirl.define do
 
   factory :event do
@@ -41,6 +43,14 @@ FactoryGirl.define do
     name         "Self event name"
     organisation "Test Organisation"
     cost         "Free"
+    access       "1" 
+    association :referral, :factory => :referral_self
+  end
+
+  factory :paid_event, :class => Event do
+    name         "Self event name"
+    organisation "Test Organisation"
+    cost         "£5.00"
     access       "1" 
     association :referral, :factory => :referral_self
   end

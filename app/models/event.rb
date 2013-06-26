@@ -69,8 +69,6 @@ class Event < ActiveRecord::Base
       # MONEY_REGEX = /(\d+)\.*(\d*)/
 
       @@result.keep_if do |e|
-        puts e.cost
-        puts @@params[:cost]
 
         if e.cost.downcase.strip == 'free'
           true
