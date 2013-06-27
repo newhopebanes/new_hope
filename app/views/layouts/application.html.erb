@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>HopeTest</title>
   <%= stylesheet_link_tag    "application", :media => "all"  %> 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
- <!--  <% flash.each do |key, value| %>
+  <!--
+  <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %> -->
+  <% end %>
+  -->
 
 
 
   <div class="outer-container">
+
     <div class="top-section">
-    <div class="top-bar">
+      <div class="top-bar">
 
-      <div class="top-title">
-        <%= image_tag("logo.png") %>
-        <h2>Making a difference in Mental Health </h2>
-      </div>
+        <div class="top-title">
+          <%= image_tag("logo.png") %>
+          <h2>Making a difference in Mental Health </h2>
+        </div>
 
-      <div class="top-links">
-        <%= link_to "Links", links_path %>
-        <%= link_to "Contact", contact_path %>
-        <%= link_to "Peer Led groups", groups_path %>
-        <%= link_to "New Hope", about_path %>
-        <%= link_to "What's On", events_path %>
-        <%= link_to "Home", home_path %>
-        <% if admin %>
-          <%= link_to "Sign Out", signout_path %>
-        <% end %>
+        <div class="top-links">
+          <%= link_to "Links", links_path %>
+          <%= link_to "Contact", contact_path %>
+          <%= link_to "Peer Led groups", groups_path %>
+          <%= link_to "New Hope", about_path %>
+          <%= link_to "What's On", events_path %>
+          <%= link_to "Home", home_path %>
+          <% if admin %>
+            <%= link_to "Sign Out", signout_path %>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
@@ -39,38 +46,10 @@
 
   <div class="bottom-section">
     
-<!--     <div class="left-bar">
-      <div class="left-links">
-        <div class="left-links-link">
-          <%= link_to "Home", home_path %></br>
-        </div>
-        <div class="left-links-link">
-          <%= link_to "What's On", events_path %></br>
-        </div>
-        <div class="left-links-link">
-          <%= link_to "New Hope", about_path %></br>
-        </div>
-        <div class="left-links-link">
-          <%= link_to 'Peer Led Groups', groups_path %></br>
-        </div>
-        <div class="left-links-link">
-          <%= link_to "Contact", contact_path %></br>
-        </div>
-        <div class="left-links-link">
-          <%= link_to "Links", links_path %>
-        </div>
-                        
-      </div>
-          </div> -->
-
      <div class="content">
-      <div class="content-inner">
         <%= yield %>
-      </div>
-      
     </div>
 
-  </div>
   </div>
 
 

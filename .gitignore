@@ -16,3 +16,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#Ignore swap files
+/.swp
+
+#Ignore ds_store files
+/.DS_STORE

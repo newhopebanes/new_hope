@@ -108,19 +108,23 @@ border-radius: 5px;
 span.summary-datetime
 {
   margin-right: 10px;
+  padding-right: 5px;
   display: inline-block;
-  width: 130px;
+  width: auto;
+  border-right-style: solid;
+  border-right-width: 2px;
 }
 
 span.summary-date
 {
   font-weight: bold;
+  font-size: 20px;
 
 }
 
 span.summary-time
 {
-
+  font-size: 18px;
 }
 
 span.summary-name

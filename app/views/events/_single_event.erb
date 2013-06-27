@@ -2,9 +2,10 @@
 <div class='event-entry' onclick="toggleDetails(<%= event.id.to_s %>)">
   <div class="<%= 'event-summary_' + event.id.to_s %>">
     <span class='summary-datetime'>
-      <span class='summary-date'><%= event.summary_date %></span> - 
+      <span class='summary-date'><%= event.summary_date %></span>
+      </br>
       <span class='summary-time'><%= event.summary_time %></span>
-    </span> | 
+    </span>
      
     <span class='summary-name'><%= event.summary_name %></span> |
   
