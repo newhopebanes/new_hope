@@ -1,3 +1,11 @@
+div.groups{
+  height:100%;
+  overflow-y: scroll;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+}
+
 h1.group-name{
   padding-top:5px;
   
@@ -6,6 +14,7 @@ h1.group-name{
 h1.page-title{
 
   margin-bottom: 15px;
+  
 }
 
 hr{
@@ -38,6 +47,7 @@ li.group-entry
 
 a.group-name{
   font-weight: bold;
+  font-size: 15px;
 }
 
 input.create-group

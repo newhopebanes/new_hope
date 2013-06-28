@@ -19,7 +19,7 @@ html, body{
   height: 100%;
   width: 100%;
   margin: 0px;
-  /*background-color: #990100;*/
+  /*background-color: #700100;*/
   /*padding: 0px;*/
 }
 
@@ -50,7 +50,7 @@ div.top-section{
   height:100%;
   color: #7F6B6C;
   overflow: hidden;
-  background-color: #990100;
+  /*background-color: #700100;*/
   
   
 }
@@ -69,7 +69,7 @@ div.top-section{
 }
 
 .top-title h2{
-  background-color: #990100;
+  background-color: #700100;
   display: inline;
   color: black;
   float: right;
@@ -78,7 +78,7 @@ div.top-section{
 }
 
 .top-links{
-  background-color: #333;
+  background-color: #700100;
   color: white;
   float:right;
   width: 100%;
@@ -89,13 +89,7 @@ div.top-section{
   padding-right: 10px;
   margin-top: 7px;
   z-index:-10;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #B90504;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #B90504;
-
+  height: 21px;
 }
 
 .links_container
@@ -113,10 +107,10 @@ div.top-section{
 }
 
 .links_container a:hover{
-  background-color: #333;
   color: white;
+  background-color: #700100;
+  text-decoration: underline;
   font-family: Verdana, Geneva, sans-serif;
-  font-weight: bold;
 }
 .links_container a:visited{
   color: white;
@@ -140,7 +134,7 @@ div.bottom-section{
 }
 
 .left-bar{
-  background-color: #990100;
+  background-color: #700100;
   float: left;
   position:fixed;
   height: 100%;

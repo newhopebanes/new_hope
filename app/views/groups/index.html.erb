@@ -1,7 +1,7 @@
-<h1 class='page-title'>Peer Led Groups</h1>
+<h1>Peer Led Groups</h1>
 
-
-
+</br>
+<div class="groups">
 <ul>
     <% @groups.sort_by! {|g| g.name } %>
     <% @groups.each do |group| %>
@@ -17,6 +17,7 @@
     <% end %>
 
 </ul>
+</div>
 <% if admin %>
 <br />
 <%= link_to 'New Group', new_group_path , :class => 'btn btn-success'%>

@@ -8,8 +8,7 @@
 
 .contact_us_by_email_section
 {
-  width: 50%;
-  float: left;
+  width: 100%;
 }
 .message_sender
 {
@@ -86,24 +85,31 @@ span#disclaimer
 
 .who_to_contact_section
 {
-  width: 50%;
-  float: right;
+  width: 100%;
 }
 
 .who_to_contact_section h2
 {
-  float: right;
   margin-top: 1px;
   margin-bottom: 1px;
 }
 .who_to_contact
 {
+  width: 100%;
   border-style: solid;
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  float: right;
-  width: 90%;
-  height: 100%
+ 
+}
+
+/*================================================================*/
+/* Links Section*/
+/*================================================================*/
+
+
+.links a
+{
+  font-size: 15px;
 }
 
