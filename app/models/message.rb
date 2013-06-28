@@ -74,8 +74,6 @@ END
 
     def has_outgoing_email
       unless new_hope == CHECKED or bridges == CHECKED
-        puts "New hope: #{new_hope.to_s}"
-        puts "Bridges: #{bridges.to_s} #{bridges.class}"
         errors.add(:base, "You must set at least one outgoing email address")
       end
       return true

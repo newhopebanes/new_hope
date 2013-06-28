@@ -11,6 +11,7 @@ gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'annotate'
+  gem 'pry'
 end
 
 group :development, :test do

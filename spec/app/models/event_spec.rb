@@ -107,8 +107,8 @@ describe 'Events' do
 
   it 'filters list on target' do
     @events << FactoryGirl.create(:no_women_targets)
-
-    result = Event.get_events({:target => 'women'})
+    puts "IN TEST"
+    result = Event.get_events( { :target => { :women => '1' } })
 
     result.length.should eq(2)
   end

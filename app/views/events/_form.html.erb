@@ -50,8 +50,9 @@
 
       <%= f.simple_fields_for :complex_date do |d| %>
           
-          <%= d.association :date_type, :label => "Type of date", :as => :select  %>
-          
+          <!-- <%= d.association :date_type, :label => "Type of date", :as => :select  %> -->
+          <%= d.association :date_type,  :as => :hidden, :input_html => { :value => "1" } %>
+                            
           <%= d.input :fixed_date, :label => "Date"  %>
           
           <%= d.input :time, :label => "Time"  %>
@@ -77,6 +78,7 @@
       <%= f.input :cost %>
     
         <%= f.input :access, :as => :radio, :wrapper_html => { :class => 'inline' }  %>
+
         <%= f.input :access_details %>
     
         <%= f.association :referral, :as => :select %>

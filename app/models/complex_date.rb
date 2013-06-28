@@ -23,10 +23,6 @@ class ComplexDate < ActiveRecord::Base
     today = Date.today
     start_of_week = today.prev_day(calculate_start_day(today))
     end_of_week = today.next_day(calculate_end_day(today))
-    # puts "Today: #{today}"
-    # puts "start_of_week: #{start_of_week}"
-    # puts "end_of_week: #{end_of_week}"
-    # puts "fixed_date: #{fixed_date}"
     fixed_date >=  start_of_week and fixed_date <= end_of_week
   end
 

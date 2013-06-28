@@ -1,3 +1,4 @@
+require 'pry'
 class Event < ActiveRecord::Base
   @@result
   @@params
@@ -29,12 +30,16 @@ class Event < ActiveRecord::Base
   public
   # Refine and return a list of events
   def self.get_events params
-    
+    puts "IN METHOD"
+    puts params
     return all unless params
     
     @@result = all
     @@params = params
     @@search_critera = Search.new
+
+    
+
 
     if @@search_critera.cost.include?(@@params[:cost])
       refine_cost
@@ -44,7 +49,9 @@ class Event < ActiveRecord::Base
       refine_tags
     end
 
-    if @@search_critera.targetlist.include?(@@params[:target])
+    if @@params[:target]
+
+      
       refine_target
     end
 
@@ -66,8 +73,6 @@ class Event < ActiveRecord::Base
   private
 
     def self.refine_cost
-      # MONEY_REGEX = /(\d+)\.*(\d*)/
-
       @@result.keep_if do |e|
 
         if e.cost.downcase.strip == 'free'
@@ -96,7 +101,18 @@ class Event < ActiveRecord::Base
 
     def self.refine_target
       @@result.keep_if do |e|
-        e.targetset[@@params[:target]] == true
+        result = true
+        tags = []
+        @@params[:target].each do |t|
+          tags << t.first
+        end
+        # binding.pry
+        tags.each do |t|
+          unless e.targetset[t] == true
+            result = false
+          end
+        end
+        result
       end
     end
 
