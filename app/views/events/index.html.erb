@@ -1,12 +1,8 @@
-<div class="row">
-  <div class="span12">
-  <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%e %B %Y')) %>
-  </div>
-</div>
 
 
-</br>
-<div class="event-links">
+
+
+<span class="event-links">
   <form action="<%= events_search_path %>" method="post">
   
     <h5>Date</h5>
@@ -33,17 +29,21 @@
 
     </span>
 
-    <button class="btn btn-primary" >Search</button>
-    <a href="<%= events_path %>" class="btn btn-info">Reset</a>
+    <button class="btn btn-success" >Search</button>
+    <a href="<%= events_path %>" class="btn btn-warning">Reset</a>
 
   </form>
 
 
     
 
-</div>
-  <span style="margin-left: 10px;"> Click on an entry to display extra information and details</span>
-  <span style="margin-left: 10px;"> To add an event <%= link_to "contact us", contact_path %> </span>
+</span>
+
+
+  <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%e %B %Y')) %></h1>
+
+  <span style="margin-left: 10px; float: right;"> Click on an entry to display extra information and details</span>
+  <span style="margin-left: 10px; float: right;"> To add an event <%= link_to "contact us", contact_path %> </span>
 
 
 <div class="event-list">

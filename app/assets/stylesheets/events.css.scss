@@ -63,15 +63,17 @@ a.event-new
   width: 99%;
   float: right;
   border-radius: 5px;
+  background-color: white;
 
 }
 
 .event-links{
   color: white;
   border: solid;
-  width :15%;
-  height: 84%;
+  width :20%;
+  height: 100%;
   float: left;
+  margin-top: -13px;
   padding-left: 5px;
   padding-top: 0px;
   border-radius: 10px;
@@ -80,15 +82,16 @@ a.event-new
 }
 
 .event-list{
-  width: 82%;
-height: 72%;
-float: right;
-margin-right: 5px;
-overflow-y: scroll;
-padding: 5px;
-  border-color: #333;
-border-style: solid;
-border-radius: 5px;
+  width: 75%;
+  height: 100%;
+  float: right;
+  margin-right: 5px;
+  overflow-y: scroll;
+  padding: 5px;
+/*  border-color: #333;
+  border-style: solid;
+  border-radius: 5px;*/
+  background-color: whitesmoke;
 }
 
 .event-links a{
@@ -99,6 +102,10 @@ border-radius: 5px;
   &:visited{
     color:white;
   }
+}
+
+.page-title{
+  float: right;
 }
 
 /*===============================
@@ -113,6 +120,8 @@ span.summary-datetime
   width: auto;
   border-right-style: solid;
   border-right-width: 2px;
+  float: left;
+  width: 11%;
 }
 
 span.summary-date
@@ -127,18 +136,39 @@ span.summary-time
   font-size: 18px;
 }
 
+.summary-nameaddress{
+  display: inline-block;
+  width: 65%;
+}
+
 span.summary-name
 {
+  min-height: 27px;
+  max-width: 324px;
+  padding-top: 10px;
   margin-right: 10px;
   margin-left: 10px;
+  float: left;
   font-weight: bold;
-  color: red;
+  font-size: 29px;
+  color: #333;
+}
+
+span.summary-address{
+  float: right;
+  max-width: 109px
 }
 
 span.summary-right
 {
   float:right;
   margin-right:5px;
+  padding-left: 5px;
+  display: inline-block;
+  width: auto;
+  border-left-style: solid;
+  border-left-width: 2px;
+  width: 19%;
 }
 
 /*===============================

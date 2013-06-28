@@ -55,11 +55,17 @@ div.top-section{
   
 }
 
+.top-title{
+  overflow: hidden;
+  width: 960px;
+  margin: auto;
+}
+
 .top-title h1{
   color: black;
   font-family: Verdana, Geneva, sans-serif;
-  margin-top: 0px;
   display: inline;
+  
 }
 
 .top-title h2{
@@ -69,9 +75,6 @@ div.top-section{
   float: right;
   font-family: Verdana, Geneva, sans-serif;
   
-}
-.top-title{
-  overflow: hidden;
 }
 
 .top-links{
@@ -95,7 +98,13 @@ div.top-section{
 
 }
 
-.top-links a{
+.links_container
+{
+  width: 960px;
+  margin: auto;
+}
+
+.links_container a{
   float:right;
   padding-left:15px;
   padding-right:15px;
@@ -103,13 +112,13 @@ div.top-section{
   color: white;
 }
 
-.top-links a:hover{
+.links_container a:hover{
   background-color: #333;
   color: white;
   font-family: Verdana, Geneva, sans-serif;
   font-weight: bold;
 }
-.top-links a:visited{
+.links_container a:visited{
   color: white;
   font-family: Verdana, Geneva, sans-serif;
 }
@@ -186,14 +195,10 @@ div.left-links-link{
 }
 
 .content{
+  width: 960px;
   height:95%;
+  margin: auto;
   padding: 5px;
 }
-.content-inner
-{
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
+
 

@@ -187,6 +187,14 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def summary_address_line_one
+    "#{address.number}, #{address.street}"
+  end
+
+  def summary_address_postcode
+    "#{address.postcode}"
+  end
+
   def summary_cost
     cost  == '' ? 'Unknown' : cost
   end
