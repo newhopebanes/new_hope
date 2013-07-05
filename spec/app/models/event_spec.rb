@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 require_relative File.expand_path('../../../../app/models/event.rb', __FILE__)
 
@@ -81,7 +80,6 @@ describe 'Events' do
 
   it 'removes events in the past' do
     past_event = FactoryGirl.build(:today)
-    # binding.pry
     past_event.complex_date.fixed_date = ( Date.today - 1 )
     past_event.save
     @events << past_event

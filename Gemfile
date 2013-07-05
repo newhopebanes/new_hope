@@ -6,7 +6,6 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'bcrypt-ruby'
 gem 'gmail_sender'
-gem 'factory_girl_rails'
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
 
@@ -17,7 +16,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'sqlite3' 
+  gem 'sqlite3'
+  gem 'factory_girl_rails'
 end
 
 group :assets do

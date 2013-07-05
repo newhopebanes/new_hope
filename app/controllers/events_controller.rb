@@ -1,4 +1,3 @@
-require 'pry'
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
