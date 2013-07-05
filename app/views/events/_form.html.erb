@@ -42,7 +42,7 @@
         <%= f.input :phone %>
         <%= f.input :email %>
         
-        <%= f.association :contact, :as => :radio_buttons %>
+        <%= f.association :contact, :as => :select, :input_html => { :class => 'event-select' } %>
       
     </div>
 
@@ -77,11 +77,11 @@
 
       <%= f.input :cost %>
     
-        <%= f.input :access, :as => :radio, :wrapper_html => { :class => 'inline' }  %>
+        <%= f.input :access, :as => :select, :label => "Disabled access", :input_html => { :class => 'event-select' }  %>
 
         <%= f.input :access_details %>
     
-        <%= f.association :referral, :as => :select %>
+        <%= f.association :referral, :as => :select, :input_html => { :class => 'event-select' }   %>
         <%= f.input :joining_process %>
 
         
@@ -154,7 +154,7 @@
 
       </div>
 
-        <%= f.button :submit, :class => 'btn-primary btn-large'  %>
+        <%= f.button :submit, :class => 'btn-primary btn-large', :id =>  'event-submit'  %>
 
         <%= link_to 'Back', events_path, :class => 'btn-success btn-large ' %>
 

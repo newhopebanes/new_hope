@@ -1,5 +1,8 @@
 <h1>Peer Led Groups</h1>
-
+<% if admin %>
+<br />
+<%= link_to 'New Group', new_group_path , :class => 'btn btn-success'%>
+<% end %>
 </br>
 <div class="groups">
 <ul>
@@ -18,7 +21,3 @@
 
 </ul>
 </div>
-<% if admin %>
-<br />
-<%= link_to 'New Group', new_group_path , :class => 'btn btn-success'%>
-<% end %>

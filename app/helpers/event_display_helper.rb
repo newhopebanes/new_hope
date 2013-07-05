@@ -47,9 +47,6 @@ module EventDisplayHelper
      "#{email}"
   end
 
-  def display_directions
-  end
-
   def display_organisiation
     organisation  == '' ? '' : organisation
   end
@@ -57,4 +54,37 @@ module EventDisplayHelper
   def display_description
     description == '' ? 'Unknown' : description
   end
+
+  def display_directions_car?
+    directions_car.length > 0
+  end
+
+  def display_directions_car
+    directions_car
+  end
+
+  def display_directions_walking?
+    directions_walking.length > 0
+  end
+
+  def display_directions_walking
+    directions_walking
+  end
+
+  def display_directions_bus?
+    directions_bus.length > 0
+  end
+
+  def display_directions_bus
+    directions_bus
+  end
+
+  def display_directions_train?
+    directions_train.length > 0
+  end
+
+  def display_directions_train
+    directions_train
+  end
+
 end

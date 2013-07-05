@@ -8,7 +8,17 @@ div.groups{
 
 h1.group-name{
   padding-top:5px;
-  
+  float: right;
+}
+.group-time{
+  float: left;
+  clear: left;
+  font-weight: bold;
+}
+
+.group-address{
+  float: right;
+  margin-bottom: 10px;
 }
 
 h1.page-title{
@@ -22,7 +32,9 @@ hr{
   margin:0px;
 }
 
-div.group-description{
+div.group-description,
+div.group-details,
+{
   
   border:{
     style:solid;
@@ -30,9 +42,11 @@ div.group-description{
     width:1px;
     radius:10px;
   }
-
+  clear: both;
   padding:5px;
   margin-right:2px;
+  margin-bottom:10px;
+
 }
 
 #group_description

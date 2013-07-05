@@ -1,44 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class='group-name'><%= @group.name%></h1>
-<hr>
-</br>
-<div class="group-description">
-  <h3>Description</h3>
-  <p><%= @group.description %></p>
-</div>
 
-<div class ='basic-details'>
-  <h5 class='group-time'>When:  <%= @group.date %> - <%= @group.time %></h5>
-  <h5 class='group-time'>Where: <%= @group.venue == nil ? 'Unknown' : @group.venue %></h5>
+<%= render :partial => 'name' %>
 
-</div>
+<%= render :partial => 'address' %>
 
-<hr>
+<%= render :partial => 'description' %>
+
+<%= render :partial => 'details' %>
 
 
-<div class='contact-details'>
-<h5 class='group-contact'>Contact : <%= @group.contact %></h5>
-</div>
-<hr>
-</br>
-
-
-
-
-<div class='further-details'>
-
-  <h5>How to join</h5>
-    <p><%= @group.joining %></p>
-
-
-  <h5>How much does it cost?</h5>
-    <p><%= @group.cost %></p>
-
-
-  <h5>Is there disabled access</h5>
-    <p><%= @group.access %></p>
-</div>
 
 <% if admin %>
   | <%= link_to 'Edit', edit_group_path(@group) %>

@@ -22,5 +22,29 @@ class Group < ActiveRecord::Base
   accepts_nested_attributes_for :address
   validates :name, :presence => true
   validates :description,  :presence => true
+
+  def summary_address
+  	"#{address.number} #{address.street}, #{address.town}, "
+  end
+
+  def address_line_one
+  	"#{address.number} #{address.street}"
+  end
+  
+  def address_town
+  	"#{address.town}"
+  end
+
+  def address_district
+  	"#{address.district}"
+  end
+
+  def address_county
+  	"#{address.county}"
+  end
+
+  def address_postcode
+  	"#{address.postcode}"
+  end
     
 end

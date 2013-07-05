@@ -39,13 +39,23 @@
      <span><%= event.address.town %></span> |
      <span><%= event.display_access %></span>
    </div>
-
+<br>
    <p> <strong>Full Address: </strong> <%= event.summary_address %></p>
    <p> <strong>Contact: </strong> <%= event.contact_person %> | <%= event.display_contact %> </p>
    <p>  <strong>Joining: </strong> <%= event.joining_process %> </p>
    <p> <strong>Description: </strong> <%= event.display_description %></p>
-   <p> <strong>Directions: </strong> <%= event.display_directions %></p>
-
+   <% if event.display_directions_car?  %>
+   <p> <strong>Directions (Car): </strong> <%= event.display_directions_car %></p>
+  <% end %>
+  <% if event.display_directions_walking?  %>
+   <p> <strong>Directions (walking): </strong> <%= event.display_directions_walking %></p>
+  <% end %> 
+  <% if event.display_directions_bus?  %>
+   <p> <strong>Directions (bus): </strong> <%= event.display_directions_bus %></p>
+  <% end %> 
+  <% if event.display_directions_train?  %>
+   <p> <strong>Directions (train): </strong> <%= event.display_directions_train %></p>
+  <% end %> 
    <% if admin %>
      <div class="row">
        <div class="span6">
