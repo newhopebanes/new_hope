@@ -169,6 +169,14 @@ span.summary-right
   width: 19%;
 }
 
+a.print-button {
+float: left;
+margin-left: 30px;
+&:visited {
+    color: white;
+  }
+}
+
 /*===============================
 -----EVENT CREATION
 ===============================*/

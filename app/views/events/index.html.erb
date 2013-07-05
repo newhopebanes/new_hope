@@ -21,7 +21,7 @@
 
 
     <span class='search-filters'>
-      
+
     <%= render :partial => 'cost_drop_down' %>
     <%= render :partial => 'referral_drop_down' %>
     <%= render :partial => 'tag_drop_down' %>
@@ -41,6 +41,10 @@
 
 
   <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%e %B %Y')) %></h1>
+  
+  <%= link_to events_print_path(:events => @events), :class => "btn btn-primary btn-mini print-button" do %>
+    Print <span class="add-on"><i class="icon-print"></i></span>
+  <% end %>
 
   <span style="margin-left: 10px; float: right;"> Click on an entry to display extra information and details</span>
   <span style="margin-left: 10px; float: right;"> To add an event <%= link_to "contact us", contact_path %> </span>

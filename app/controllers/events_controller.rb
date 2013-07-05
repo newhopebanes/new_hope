@@ -1,3 +1,4 @@
+require 'pry'
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
@@ -14,9 +15,16 @@ class EventsController < ApplicationController
     end
   end
 
-  def index
+  def print
+    @events = Event.find params[:events]
+    
+    respond_to do |format|
+      format.html {render layout: false}
+      format.json { render json: @event, status: :created, location: @event }
+    end
+  end
 
-    puts params
+  def index
     @search = Search.new
     @events = Event.get_events(params)
     if params[:event]

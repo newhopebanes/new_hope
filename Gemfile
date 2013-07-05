@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'rack', '1.4.1'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'bcrypt-ruby'

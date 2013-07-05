@@ -44,6 +44,7 @@ FactoryGirl.define do
     organisation "Test Organisation"
     cost         "Free"
     access       "1" 
+    complex_date
     association :referral, :factory => :referral_self
   end
 
@@ -52,6 +53,7 @@ FactoryGirl.define do
     organisation "Test Organisation"
     cost         "£5.00"
     access       "1" 
+    complex_date
     association :referral, :factory => :referral_self
   end
 
@@ -98,7 +100,7 @@ FactoryGirl.define do
 
   factory :complex_date do
     event_id           "1"
-    fixed_date         Date.new(2001,2,3)
+    fixed_date         Date.new(2031,2,3)
     time               Time.now
     date_type
     offset_type

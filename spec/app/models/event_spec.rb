@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 require_relative File.expand_path('../../../../app/models/event.rb', __FILE__)
 
@@ -60,97 +61,87 @@ describe 'Event' do
 
 end
 
-
-
 describe 'Events' do
 
   before do
     @params = {}
     @events = Array.new
-    2.times do
 
-    @events << FactoryGirl.create(:populated_event)
+    2.times do
+      @events << FactoryGirl.create(:populated_event)
     end
 
   end
 
   it 'returns a list of events' do
     result = Event.get_events(@params)
+    puts result
+    result.length.should eq(2)
+  end
+
+  it 'removes events in the past' do
+    past_event = FactoryGirl.build(:today)
+    # binding.pry
+    past_event.complex_date.fixed_date = ( Date.today - 1 )
+    past_event.save
+    @events << past_event
+
+    result = Event.get_events(@params)
+    puts result
     result.length.should eq(2)
   end
 
   it 'filters list on cost' do
-
     @events << FactoryGirl.create(:paid_event)
-
     result = Event.get_events({:cost => 'free'})
-
     result.length.should eq(2)
   end
 
   it 'filters list on referral type' do
-
     @events << FactoryGirl.create(:self_event)
-
     result = Event.get_events({:referral => '1'})
-
     result.length.should eq(2)
   end
 
   it 'filters list on tag' do
     @events << FactoryGirl.create(:no_sports_tags)
-
     result = Event.get_events({:tag => 'sports'})
-
     result.length.should eq(2)
   end
 
   it 'filters list on target' do
     @events << FactoryGirl.create(:no_women_targets)
-    puts "IN TEST"
     result = Event.get_events( { :target => { :women => '1' } })
-
     result.length.should eq(2)
   end
 
   it 'filters list on events that occur today' do
     @events << FactoryGirl.create(:today)
-
     result = Event.get_events({ :quick_date => 'day' })
-
     result.length.should eq(1)
   end
 
   it 'filters list on events that occur this week' do
     @events << FactoryGirl.create(:today)
-
     result = Event.get_events({ :quick_date => 'week' })
-
     result.length.should eq(1)
   end
 
   it 'filters list on events that occur this month' do
     @events << FactoryGirl.create(:today)
-
     result = Event.get_events({ :quick_date => 'month' })
-
     result.length.should eq(1)
   end
 
   it 'filters list on events that occur on a given day' do
     dated_event = FactoryGirl.build(:today)
-    selected_date = Date.new(2013, 02, 15)
+    selected_date = Date.new(2035, 02, 15)
     dated_event.complex_date.fixed_date = selected_date
     dated_event.save
 
     @events <<  dated_event
-
-    result = Event.get_events({ :date => "2013-02-15" })
-
+    result = Event.get_events({ :date => "2035-02-15" })
     result.length.should eq(1)
   end
-
-
-
 
 end
