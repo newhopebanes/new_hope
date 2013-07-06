@@ -1,0 +1,24 @@
+<div class="section-title <%= 'section-title_' + id.to_s %>" onclick="toggleSection(<%= id.to_s %>)">
+	<span class="section-heading">Peer Research</span>
+	<span> (▲▼ Expand/Reduce)</span>
+</div>
+
+
+<div class="<%= 'section-details_' + id.to_s %>"onclick="toggleSection(<%= id.to_s %>)" hidden="true" >
+
+	<div class="section-title">
+		<span class="section-heading" >Peer Research</span>
+		<span> (▲▼ Expand/Reduce)</span>
+	</div>
+
+<p>New Hope members developed interview questions, attended interview training and interviewed 42 carers and people with lived experience of mental health issues to produce:</p>
+
+<h4>Bridging the Gap</h4>
+<p>What helps and what hinders people affected by mental health issues when accessing groups and support which would improve their overall wellbeing. Download the report. (Word/PDF) </p>
+
+<h4>New Hope – Website Contents</h4>
+<p>New Hope have presented the findings of this research to statutory services, clients, groups and organisations. If your group, team or organisation would like to request a presentation, with a chance to discuss how your group could help to improve wellbeing, please <%= link_to "contact us", contact_path, :class => "contact-link" %>.</p>
+
+
+</div>
+

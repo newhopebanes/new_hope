@@ -12,7 +12,7 @@
  *= require_tree .
  *= require bootstrap-datepicker
  */
- 
+
 /*Colour palette: http://www.colourlovers.com/palette/2509985/belkina */
 
 html, body{
@@ -51,8 +51,8 @@ div.top-section{
   color: #7F6B6C;
   overflow: hidden;
   /*background-color: #700100;*/
-  
-  
+
+
 }
 
 .top-title{
@@ -65,7 +65,7 @@ div.top-section{
   color: black;
   font-family: Verdana, Geneva, sans-serif;
   display: inline;
-  
+
 }
 
 .top-title h2{
@@ -74,7 +74,7 @@ div.top-section{
   color: black;
   float: right;
   font-family: Verdana, Geneva, sans-serif;
-  
+
 }
 
 .top-links{
@@ -116,7 +116,7 @@ div.top-section{
   color: white;
   font-family: Verdana, Geneva, sans-serif;
 }
-  
+
 
 
 /*==========================
@@ -190,9 +190,15 @@ div.left-links-link{
 
 .content{
   width: 960px;
-  height:95%;
+  height:90%;
   margin: auto;
   padding: 5px;
+}
+
+.scroll-container{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 

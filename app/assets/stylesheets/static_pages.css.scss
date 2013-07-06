@@ -8,7 +8,7 @@
 
 .contact_us_by_email_section
 {
-  width: 100%;
+  width: 97%;
 }
 .message_sender
 {
@@ -85,7 +85,7 @@ span#disclaimer
 
 .who_to_contact_section
 {
-  width: 100%;
+  width: 97%;
 }
 
 .who_to_contact_section h2
@@ -116,9 +116,26 @@ span#disclaimer
 /*================================================================*/
 /* About Section*/
 /*================================================================*/
+
+
 .section-heading{
   font-size: 18px;
   line-height: 20px;
   font-weight: bold;
+}
+
+.main-section-heading{
+  margin-bottom: 10px;
+}
+
+.section-title,
+{
+  margin-bottom: 5px;
+}
+
+a.contact-link{
+  font-weight: bold;
+  color: #0088cc;
+  text-decoration: none;
 }
 

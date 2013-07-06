@@ -1,0 +1,24 @@
+<div class="section-title <%= 'section-title_' + id.to_s %>" onclick="toggleSection(<%= id.to_s %>)">
+	<span class="section-heading">Training</span>
+	<span> (▲▼ Expand/Reduce)</span>
+</div>
+
+
+<div class="<%= 'section-details_' + id.to_s %>"onclick="toggleSection(<%= id.to_s %>)" hidden="true" >
+
+	<div class="section-title">
+		<span class="section-heading" >Training</span>
+		<span> (▲▼ Expand/Reduce)</span>
+	</div>
+
+
+	<p>St Mungo’s Building Bridges to Well Being facilitate training including Mentoring, Group Facilitation, Safeguarding and Protecting, Boundaries, Recovery & Recovery Star and First Aid. New Hope members are encouraged</p>
+
+	<h4>New Hope - Website Contents</h4>
+
+	<p>To be involved with this training and have the opportunity to co-deliver courses. To co-facilitate a course <%= link_to "contact us", contact_path, :class => "contact-link" %>.</p>
+
+	<p>Download details of upcoming training (Word/PDF)</p>
+
+</div>
+

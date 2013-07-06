@@ -1,12 +1,13 @@
-<div class="<%= 'section-title_' + id.to_s %>" onclick="toggleSection(<%= id.to_s %>)">
-	<span class="section-heading">Why Become a New Hope member?</span><span> - Click to expand</span>
+<div class="section-title <%= 'section-title_' + id.to_s %>" onclick="toggleSection(<%= id.to_s %>)">
+	<span class="section-heading">Why Become a New Hope member?</span>
+	<span> (▲▼ Expand/Reduce)</span>
 </div>
 
 
 <div class="<%= 'section-details_' + id.to_s %>"onclick="toggleSection(<%= id.to_s %>)" hidden="true" >
 
-	<div style="margin-bottom: 5px;">
-		<span class="section-heading" >Why Become a New Hope member?</span><span> - Click to hide</span>
+	<div class="section-title">
+		<span class="section-heading" >Why Become a New Hope member?</span><span> (▲▼ Expand/Reduce)</span>
 	</div>
 
 <ul >
