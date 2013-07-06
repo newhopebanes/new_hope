@@ -4,7 +4,7 @@
 
 <span class="event-links">
   <form action="<%= events_search_path %>" method="post">
-  
+
     <h5>Date</h5>
     <span class='search-filters'>
       <%= render :partial => 'date_drop_down' %>
@@ -16,7 +16,7 @@
       <span class="add-on"><i class="icon-calendar"></i></span>
     </div>
 
-  
+
     <h5>Filters</h5>
 
 
@@ -35,13 +35,13 @@
   </form>
 
 
-    
+
 
 </span>
 
 
   <h1 class='page-title'>What's On - <%= DateTime.now.to_date.strftime(('%e %B %Y')) %></h1>
-  
+
   <%= link_to events_print_path(:events => @events), :class => "btn btn-primary btn-mini print-button" do %>
     Print <span class="add-on"><i class="icon-print"></i></span>
   <% end %>
@@ -59,7 +59,7 @@
   <% if admin %>
     <%= link_to 'New Event', new_event_path, :class => 'btn btn-success event-new' %>
   <% end %>
-  
+
 </div>
 
 
@@ -72,12 +72,7 @@
 
 
 <script type="text/javascript" charset="utf-8">
- function toggleDetails(id){
 
-   $('.event-summary_' + id).toggle();
-
-   $('.event-details_' + id).toggle();
- };
 
 $("[data-behaviour~='datepicker']").datepicker({
     "format": "yyyy-mm-dd",

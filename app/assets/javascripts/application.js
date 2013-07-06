@@ -16,4 +16,16 @@
 //= require bootstrap
 //= require bootstrap-datepicker
 
+function toggleSection(id){
 
+   $('.section-title_' + id).toggle();
+
+   $('.section-details_' + id).toggle();
+ };
+
+ function toggleDetails(id){
+
+   $('.event-summary_' + id).toggle();
+
+   $('.event-details_' + id).toggle();
+ };
