@@ -1,21 +1,21 @@
 <h1>Peer Led Groups</h1>
 <% if admin %>
 <br />
-<%= link_to 'New Group', new_group_path , :class => 'btn btn-success'%>
+<%= link_to 'New Group', new_group_path , :class => 'btn btn-success btn-small group-button'%>
 <% end %>
 </br>
 <div class="groups">
 <ul>
     <% @groups.sort_by! {|g| g.name } %>
     <% @groups.each do |group| %>
-        
+
         <li class="group-entry">
             <%= link_to group.name , group, :class => 'group-name'%>
             <% if admin %>
-                | <%= link_to 'Edit', edit_group_path(group), :class => 'btn btn-info' %>
-                | <%= link_to 'Destroy',  group, method: :delete, data: { confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+                | <%= link_to 'Edit', edit_group_path(group), :class => 'btn btn-primary btn-mini group-button' %>
+                | <%= link_to 'Destroy',  group, method: :delete, data: { confirm: 'Are you sure?'}, :class => 'btn btn-danger btn-mini group-button' %>
             <% end %>
-            
+
         </li>
     <% end %>
 

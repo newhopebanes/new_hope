@@ -14,26 +14,25 @@
      </div>
      <div class="tab-pane" id="address">
        <%= f.simple_fields_for :address do |a| %>
-       
+
          <%= a.input :number, :label => "House Number / Name"  %>
          <%= a.input :street, :label => "Street"  %>
          <%= a.input :district, :label => "District or Area" %>
          <%= a.input :county, :label => "County"  %>
          <%= a.input :postcode, :label => "Postcode"  %>
-         
+
        <% end %>
-     </div> 
+     </div>
       <div class="tab-pane" id="contact">.
         <%= f.input :joining %>
         <%= f.input :contact %>
         <%= f.input :cost %>
         <%= f.input :access %>
-      </div> 
+      </div>
     </div>
-    <div class="buttons">
-      <%= f.button :submit, :class => 'btn-primary create-group'  %>
-      <%= link_to 'Back', groups_path, :class => 'btn btn-success back-group' %>
-    </div>
-   
-   
+
+      <%= f.button :submit, :class => 'btn-primary group-create'  %>
+      <%= link_to 'Back', groups_path, :class => 'btn btn-success group-back' %>
+
+
  <% end %>

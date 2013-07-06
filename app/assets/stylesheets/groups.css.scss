@@ -24,7 +24,7 @@ h1.group-name{
 h1.page-title{
 
   margin-bottom: 15px;
-  
+
 }
 
 hr{
@@ -32,10 +32,22 @@ hr{
   margin:0px;
 }
 
+a.group-button,
+input.group-create,
+a.group-back {
+  color:whitesmoke;
+  &:visited {
+    color: whitesmoke;
+  }
+  &:hover {
+    color: whitesmoke;
+  }
+}
+
 div.group-description,
 div.group-details,
 {
-  
+
   border:{
     style:solid;
     color:#000000;
@@ -64,20 +76,6 @@ a.group-name{
   font-size: 15px;
 }
 
-input.create-group
-{
-  position: fixed;
-  bottom: 25px;
-  left:120px;
-  width: 125px;
-}
-
-.back-group
-{
-  position: fixed;
-  bottom: 25px;
-  left:250px;
-}
 
 .tab-content input
 {

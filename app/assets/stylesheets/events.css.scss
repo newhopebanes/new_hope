@@ -3,23 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .target{
-  
+
 }
 
 .target-left{
   float:left;
-  
+
 }
 
 .target-right{
   float:right;
 }
 .tag{
-  
+
 }
 .tag-left{
   float:left;
-  
+
 }
 
 .tag-right{
@@ -29,31 +29,40 @@
 div .event-entry{
   border-style: solid;
   border-width:2px;
-  
+
 }
 
 a.event-link:hover{
   background-color: #5E1729;
   color: #7F6B6C;
-  
+
 }
 
 
-a.event-edit a.event-delete {
-  color:#FFFFFF;
+a.event-edit, a.event-delete, a.event-new {
+  color:whitesmoke;
   &:visited {
-    color: #666;
+    color: whitesmoke;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: whitesmoke;
+  }
+}
+
+input.event-create,
+a.event-back {
+  color:whitesmoke;
+  &:visited {
+    color: whitesmoke;
+  }
+  &:hover {
+    color: whitesmoke;
   }
 }
 
 a.event-new
 {
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-top: -6px;
 }
 
 .event-entry{

@@ -32,7 +32,7 @@
            <%= a.input :postcode, :label => "Postcode"  %>
 
         <% end %>
-      
+
     </div>
 
     <div class="tab-pane" id="contact">
@@ -41,51 +41,51 @@
         <%= f.input :contact_role %>
         <%= f.input :phone %>
         <%= f.input :email %>
-        
+
         <%= f.association :contact, :as => :select, :input_html => { :class => 'event-select' } %>
-      
+
     </div>
 
     <div class="tab-pane" id="date">
 
       <%= f.simple_fields_for :complex_date do |d| %>
-          
+
           <!-- <%= d.association :date_type, :label => "Type of date", :as => :select  %> -->
           <%= d.association :date_type,  :as => :hidden, :input_html => { :value => "1" } %>
-                            
+
           <%= d.input :fixed_date, :label => "Date"  %>
-          
+
           <%= d.input :time, :label => "Time"  %>
-          
+
           <!-- <%= d.association :offset_type, :label => "Type of offset", :as => :select  %> -->
-          
+
           <!-- <%= d.association :fixed_offset, :label => "Fixed Offset", :as => :select  %> -->
-          
+
           <!-- <%= d.association :dynamic_offset, :label => "Dynamic Offset", :as => :select  %> -->
-          
+
           <!-- <%= d.association :frequency, :label => "Dynamic Frequency", :as => :select  %> -->
-          
+
           <!-- <%= d.association :fixed_frequency, :label => "Fixed Frequency", :as => :select  %> -->
-          
+
           <!-- <%= d.association :day, :label => "Day", :as => :select  %> -->
-          
+
         <% end %>
-      
+
     </div>
 
     <div class="tab-pane" id="further">
 
       <%= f.input :cost %>
-    
+
         <%= f.input :access, :as => :select, :label => "Disabled access", :input_html => { :class => 'event-select' }  %>
 
         <%= f.input :access_details %>
-    
+
         <%= f.association :referral, :as => :select, :input_html => { :class => 'event-select' }   %>
         <%= f.input :joining_process %>
 
-        
-      
+
+
     </div>
 
     <div class="tab-pane" id="target">
@@ -106,12 +106,12 @@
               <%= t.input :carers, :as => :boolean, :label => "Carers"  %>
               <%= t.input :carers_mental_health, :as => :boolean, :label => "Carers for people with mental health issues"  %>
               <%= t.input :vulnerable, :as => :boolean, :label => "Vulnerable people"  %>
-              <%= t.input :anyone, :as => :boolean, :label => "Anyone"  %>  
+              <%= t.input :anyone, :as => :boolean, :label => "Anyone"  %>
           </div>
         </div>
               <%= t.input :other, :as => :string %>
         <% end %>
-      
+
     </div>
 
     <div class="tab-pane" id="tag">
@@ -135,7 +135,7 @@
         </div>
             <%= t.input :other, :as => :string %>
         <% end %>
-      
+
     </div>
 
     <div class="tab-pane" id="directions">
@@ -144,9 +144,9 @@
         <%= f.input :directions_bus %>
         <%= f.input :directions_train %>
         <%= f.input :directions_car %>
-    
+
         <%= f.input :other%>
-      
+
     </div>
 
 
@@ -154,9 +154,9 @@
 
       </div>
 
-        <%= f.button :submit, :class => 'btn-primary btn-large', :id =>  'event-submit'  %>
+        <%= f.button :submit, :class => 'btn-primary btn-large event-create', :id =>  'event-submit'  %>
 
-        <%= link_to 'Back', events_path, :class => 'btn-success btn-large ' %>
+        <%= link_to 'Back', events_path, :class => 'btn-success btn-large event-back' %>
 
 
     <% end %>

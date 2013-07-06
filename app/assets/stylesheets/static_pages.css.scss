@@ -139,3 +139,14 @@ a.contact-link{
   text-decoration: none;
 }
 
+input.link-group,
+a.link-back {
+  color:whitesmoke;
+  &:visited {
+    color: whitesmoke;
+  }
+  &:hover {
+    color: whitesmoke;
+  }
+}
+

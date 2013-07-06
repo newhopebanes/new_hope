@@ -3,12 +3,12 @@
   <div class="<%= 'event-summary_' + event.id.to_s %>">
     <span class='summary-datetime'>
       <span class='summary-date'><%= event.summary_date %></span>
-      
+
       <span class='summary-time'><%= event.summary_time %></span>
     </span>
     <span class='summary-nameaddress'>
       <span class='summary-name'><%= event.summary_name %></span>
-      
+
       <span class='summary-address'>
         <span>
           <%= event.summary_address_line_one %>
@@ -16,7 +16,7 @@
       </br>
         <span>
           <%= event.summary_address_postcode %>
-        </span> 
+        </span>
       </span>
     </span>
     <span class='summary-right'>
@@ -49,26 +49,23 @@
   <% end %>
   <% if event.display_directions_walking?  %>
    <p> <strong>Directions (walking): </strong> <%= event.display_directions_walking %></p>
-  <% end %> 
+  <% end %>
   <% if event.display_directions_bus?  %>
    <p> <strong>Directions (bus): </strong> <%= event.display_directions_bus %></p>
-  <% end %> 
+  <% end %>
   <% if event.display_directions_train?  %>
    <p> <strong>Directions (train): </strong> <%= event.display_directions_train %></p>
-  <% end %> 
+  <% end %>
    <% if admin %>
-     <div class="row">
-       <div class="span6">
-       <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event), 
-                        :class => 'btn btn-info event-edit'      %></span>
-       </div>
-       <div class="span6">
+
+       <span><%= link_to "Click here to EDIT #{event.name}", edit_event_path(event),
+                        :class => 'btn btn-primary btn-mini event-edit'      %></span>
+
        <span><%= link_to "Click here to DELETE #{event.name}", event,
-              :class => 'btn btn-danger event-delete', 
-              method: :delete, 
+              :class => 'btn btn-danger btn-mini event-delete',
+              method: :delete,
               data: { confirm: 'Are you sure?' } %></span>
-       </div>
-     </div>
+
    <% end %>
   </div>
 </div>
