@@ -1,0 +1,46 @@
+<h1 class="links-heading">Links</h1>
+<% if admin %>
+    <%= link_to 'New Link', new_link_path, :class => 'btn-success btn link-btn' %>
+<% end %>
+<table class="links-table">
+
+    <tr class="links-table-section">
+        <td>Emergency Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @emergency.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Non emergency Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @non_emergency.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Specific Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @specific.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Social / Other Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @social_other.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+</table>
+
+<br />
+

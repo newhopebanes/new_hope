@@ -1,0 +1,20 @@
+<%= simple_form_for(@link) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :url %>
+    <%= f.input :phone %>
+    <%= f.input :location %>
+    <%= f.input :opening %>
+    <%= f.input :text, :as => :text, :input_html => { :rows => 3 } %>
+    <%= f.association :link_type, :as => :select, :input_html => { :class => 'link-select' } %>
+  </div>
+
+
+    <%= f.button :submit, :class => 'btn-primary btn-large', :id =>  'event-submit'  %>
+
+        <%= link_to 'Back', events_path, :class => 'btn-success btn-large ' %>
+
+
+<% end %>

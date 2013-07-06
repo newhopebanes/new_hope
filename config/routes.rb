@@ -1,11 +1,13 @@
 HopeTest::Application.routes.draw do
 
 
+  resources :links
+
   get "users/new"
 
   get '/about' => 'static_pages#about'
 
-  get '/links' => 'static_pages#links'
+  # get '/links' => 'static_pages#links'
   
   get '/contact' => 'messages#new'
 
@@ -19,6 +21,8 @@ HopeTest::Application.routes.draw do
   resources :events
   
   resources :users
+
+  resources :links
   
   resources :sessions, only: [:new, :create, :destroy]
   
