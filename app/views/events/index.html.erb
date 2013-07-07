@@ -47,7 +47,7 @@
   <% end %>
 
   <span style="margin-left: 10px; float: right;"> Click on an entry to display extra information and details</span>
-  <span style="margin-left: 10px; float: right;"> To add an event <%= link_to "contact us", contact_path %> </span>
+  <span style="margin-left: 10px; float: right;"> To add an event <%= link_to "contact us", contact_path, :class => "contact-link" %></span>
 <% if admin %>
     <span style="margin-left: 10px; float: right;"><%= link_to 'New Event', new_event_path, :class => 'btn btn-success btn-mini event-new' %></span>
   <% end %>
