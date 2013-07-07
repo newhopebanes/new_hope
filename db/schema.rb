@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706092408) do
+ActiveRecord::Schema.define(:version => 20130707155835) do
 
   create_table "addresses", :force => true do |t|
     t.string   "event_id"
@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(:version => 20130706092408) do
   end
 
   create_table "groups", :force => true do |t|
-    t.string   "name",        :null => false
-    t.string   "description", :null => false
+    t.string   "name",                   :null => false
+    t.string   "description",            :null => false
     t.string   "date"
     t.string   "time"
     t.string   "venue"
@@ -126,9 +126,13 @@ ActiveRecord::Schema.define(:version => 20130706092408) do
     t.string   "contact"
     t.string   "cost"
     t.string   "access"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "address_id"
+    t.string   "image_one_file_name"
+    t.string   "image_one_content_type"
+    t.integer  "image_one_file_size"
+    t.datetime "image_one_updated_at"
   end
 
   create_table "link_types", :force => true do |t|

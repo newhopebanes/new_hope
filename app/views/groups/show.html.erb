@@ -1,3 +1,5 @@
+<div class="scroll-container">
+
 <p id="notice"><%= notice %></p>
 
 
@@ -9,9 +11,13 @@
 
 <%= render :partial => 'details' %>
 
+<% if @group.has_image %>
+<%= render :partial => 'images' %>
+<% end %>
 
 
 <% if admin %>
-  | <%= link_to 'Edit', edit_group_path(@group) %>
-  | <%= link_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' } %>
+	| <%= link_to 'Edit', edit_group_path(@group), :class => 'btn btn-primary btn-mini group-button' %>
+	| <%= link_to 'Destroy',  @group, method: :delete, data: { confirm: 'Are you sure?'}, :class => 'btn btn-danger btn-mini group-button' %>
 <% end %>
+</div>

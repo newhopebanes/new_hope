@@ -3,6 +3,8 @@
     <li class="active"><a href="#basic" data-toggle="tab">Basic Details</a></li>
     <li><a href="#address" data-toggle="tab">Address</a></li>
     <li><a href="#contact" data-toggle="tab">Contact</a></li>
+    <li><a href="#image" data-toggle="tab">Images</a></li>
+
   </ul>
 
   <div class="tab-content">
@@ -28,6 +30,10 @@
         <%= f.input :contact %>
         <%= f.input :cost %>
         <%= f.input :access %>
+      </div>
+      <div class="tab-pane" id="image">.
+        <%= f.file_field :image_one %>
+
       </div>
     </div>
 
