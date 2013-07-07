@@ -6,7 +6,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :phone
       t.string :location
       t.string :opening
-      t.string :text
+      t.text :text
       t.integer :link_type_id
 
       t.timestamps

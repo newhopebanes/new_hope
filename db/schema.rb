@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(:version => 20130707155835) do
     t.string   "phone"
     t.string   "location"
     t.string   "opening"
-    t.string   "text"
+    t.text     "text"
     t.integer  "link_type_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
