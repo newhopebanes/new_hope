@@ -4,6 +4,7 @@
 <%= link_to 'New Group', new_group_path , :class => 'btn btn-success btn-small group-button'%>
 <% end %>
 </br>
+<p>Below is a list of all registered groups. Click on any group name to view more details about the group. If you would like to have your group added, <%= link_to "contact us", contact_path, :class => "contact-link" %></p>
 <div class="groups">
 <ul>
     <% @groups.sort_by! {|g| g.name } %>

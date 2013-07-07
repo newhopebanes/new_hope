@@ -133,14 +133,15 @@ span#disclaimer
   margin-bottom: 5px;
 }
 
-a.contact-link{
+a.contact-link,
+a.doc-link{
   font-weight: bold;
   color: #0088cc;
   text-decoration: none;
 }
 
 input.link-group,
-a.link-back {
+a.link-back{
   color:whitesmoke;
   &:visited {
     color: whitesmoke;

@@ -8,7 +8,7 @@ HopeTest::Application.routes.draw do
   get '/about' => 'static_pages#about'
 
   # get '/links' => 'static_pages#links'
-  
+
   get '/contact' => 'messages#new'
 
   resources :groups
@@ -17,27 +17,27 @@ HopeTest::Application.routes.draw do
   match '/events/search' => 'events#search', :method => 'post'
 
   match '/events/print' => 'events#print', :method => 'get'
-  
+
   resources :events
-  
+
   resources :users
 
   resources :links
-  
+
   resources :sessions, only: [:new, :create, :destroy]
-  
+
   resources :messages, only: [:new, :create]
-  
+
   # match 'messages/new' => 'messages#new'
-  # 
+  #
   # match 'messages/send' => 'messages#create'
-  
+
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy'#, via: :delete
-  
-  get '/home' => 'static_pages#home'
-  root :to => 'static_pages#home'
+
+  get '/home' => 'static_pages#about'
+  root :to => 'static_pages#about'
 
 
 
