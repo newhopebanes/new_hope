@@ -8,6 +8,9 @@ gem 'bcrypt-ruby'
 gem 'gmail_sender'
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'paperclip'
+gem 'paperclip-dropbox'
+gem 'rmagick'
 
 group :development do
   gem 'annotate'

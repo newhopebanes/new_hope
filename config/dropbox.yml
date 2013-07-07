@@ -1,0 +1,8 @@
+app_key: "zrkwp4u4ko165jb"
+app_secret: "m7rc2dofe5vtpy2"
+access_token: "7to5l0sxc1wegz2h"
+access_token_secret: "sat776zhq41fd9h"
+user_id: "187440183"
+access_type: "dropbox"
+
+# :dropbox_credentials => Rails.root.join("config/dropbox.yml")
