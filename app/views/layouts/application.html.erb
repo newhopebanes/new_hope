@@ -9,52 +9,31 @@
 </head>
 
 <body>
-  <!--
+
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
-  -->
 
-
-
-  <div class="outer-container">
-
-    <div class="top-section">
-      <div class="top-bar">
-
-
-        <div class="top-title">
-          <%= image_tag("logo.png") %>
-          <!-- <h2>Making a difference in Mental Health </h2> -->
-        </div>
-
-        <div class="top-links">
-          <div class="links_container">
-            <%= link_to "LINKS", links_path %>
-          <%= link_to "CONTACT", contact_path %>
-          <%= link_to "PEER LED GROUPS", groups_path %>
-          <%= link_to "WHAT'S ON", events_path %>
-          <%= link_to "NEW HOPE", about_path %>
-          <% if admin %>
-            <%= link_to "Sign Out", signout_path %>
-          <% end %>
-          </div>
-
-        </div>
-
-      </div>
+  <header>
+    <div class="top-content">
+      <%= render :partial => "shared/top_title"  %>
+      <%= render :partial => "shared/top_links"  %>
     </div>
-  </div>
+  </header>
 
-
-  <div class="bottom-section">
-
-     <div class="content">
-        <%= yield %>
+  <article>
+    <div class="content">
+      <%= yield %>
     </div>
+  </article>
 
-  </div>
+  <footer>
+    <div class="footer-content">
+      <span class="update-counter">Site last updated: <%= Date.today %></span>
+      <%= image_tag "mungos_logo.png", :class => "mungos-logo" %>
 
+    </div>
+  </footer>
 
 </body>
 </html>
