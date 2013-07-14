@@ -19,13 +19,13 @@ class Event < ActiveRecord::Base
   has_one :tagset
   has_one :targetset
   accepts_nested_attributes_for :tagset, :targetset, :address, :complex_date
-  
+
   validates :name, :presence => true
   validates :organisation,  :presence => true
   validates :cost, :presence => true
   validates :access,  :presence => true
   validates :referral_id, :presence => true
-  
+
   scope :for_tag, lambda{|tag| joins(:tagset).where(tag + ' = ?',  true)}
   scope :for_target, lambda{|target| joins(:targetset).where(target + ' = ?',  true)}
 

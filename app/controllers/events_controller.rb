@@ -2,12 +2,14 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
-  
+  after_filter :record_update, :only => [:create, :update, :destroy]
+
+
   def search
 
     @search = Search.new
     @events = Event.get_events(params)
-    
+
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @event, status: :created, location: @event }
@@ -16,7 +18,7 @@ class EventsController < ApplicationController
 
   def print
     @events = Event.find params[:events]
-    
+
     respond_to do |format|
       format.html {render layout: false}
       format.json { render json: @event, status: :created, location: @event }
@@ -30,7 +32,7 @@ class EventsController < ApplicationController
       p = params[:event]
       @mem = {:tag => p[:tag], :target => p[:target], :referral => p[:referral], }
     end
-    
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -73,7 +75,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-    
+
 
     respond_to do |format|
       if @event.save
@@ -118,7 +120,7 @@ class EventsController < ApplicationController
 
 
 
-  
+
 end
 
 private

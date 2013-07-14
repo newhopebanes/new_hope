@@ -111,6 +111,12 @@
   end
 
 [
+  {:action => "Create site", :area => "all", :user => "application", :description => "Creating site"}
+].each do |attributes|
+   Update.find_or_create_by_user(attributes)
+  end
+
+[
   { :name => "Samaritans",
     :url => "http://www.samaritans.org/",
     :phone => "08457 90 90 90 ",

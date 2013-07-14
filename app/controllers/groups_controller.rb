@@ -1,9 +1,11 @@
 class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
-  
+
   before_filter :verify_is_admin, :only => [:new, :edit, :create, :update, :destroy]
-  
+  after_filter :record_update, :only => [:create, :update, :destroy]
+
+
   def index
     @groups = Group.all
 
