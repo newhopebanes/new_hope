@@ -153,3 +153,21 @@ img.mungos-logo{
   float: right;
 }
 
+/*==========================
+--------SHARED ELEMENTS
+===========================*/
+
+p#notice{
+  color: white;
+  font-size: 20px
+}
+
+#notice-wrapper{
+  display: inline-block;
+  width: 960px;
+  height: 20px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: green;
+}

@@ -1,4 +1,3 @@
-require 'pry'
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
@@ -9,9 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def record_update
-    binding.pry
-    @update = Update.new({:action => action_name, :area => controller_name, :user => current_user, :description => item_name})
-    @update.save
+    u = Update.new({:action => action_name, :area => controller_name, :user => current_user, :description => item_name})
+    u.save
   end
 
   private
