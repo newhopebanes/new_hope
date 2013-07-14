@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714113349) do
+ActiveRecord::Schema.define(:version => 20130714160543) do
 
   create_table "addresses", :force => true do |t|
     t.string   "event_id"
@@ -59,6 +59,25 @@ ActiveRecord::Schema.define(:version => 20130714113349) do
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "document_types", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "document_type_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "document_link_file_name"
+    t.string   "document_link_content_type"
+    t.integer  "document_link_file_size"
+    t.datetime "document_link_updated_at"
   end
 
   create_table "dynamic_offsets", :force => true do |t|

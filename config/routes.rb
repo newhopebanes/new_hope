@@ -1,6 +1,8 @@
 HopeTest::Application.routes.draw do
 
 
+  resources :documents
+
   resources :links
 
   get "users/new"

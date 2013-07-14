@@ -45,12 +45,16 @@
 
 
 	<h2 class="main-section-heading">Attachments</h2>
-
+	<% if admin %>
+		<%= link_to 'Add / Edit Documents', documents_path, :class => "btn btn-mini btn-success document-new document-add" %>
+	<% end %>
 	<ul>
+		<% @documents.each do |d| %>
 		<li>
-			Confidentiality Agreement (Word/PDF)
+			<a href="<%= d.document_link.url %>"><%= "#{d.name} (#{d.doc_type})" %></a>
 		</li>
-		<li>
+		<% end %>
+<!-- 		<li>
 			Code of Conduct (Word/PDF)
 		</li>
 		<li>
@@ -67,7 +71,7 @@
 		</li>
 		<li>
 			Meeting Minutes (Word/PDF)
-		</li>
+		</li> -->
 	</ul>
 
 </div>

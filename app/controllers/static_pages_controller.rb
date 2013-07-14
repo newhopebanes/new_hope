@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def about
+  	@documents = Document.all
   end
 
   def links
@@ -7,7 +8,7 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
-  
+
   def home
   end
 end

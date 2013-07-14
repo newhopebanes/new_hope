@@ -33,6 +33,15 @@
   end
 
 [
+  {:title => "Word", :position => 1},
+  {:title => "PDF", :position => 2},
+  {:title => "Text", :position => 3}
+
+].each do |attributes|
+   DocumentType.find_or_create_by_title(attributes)
+  end
+
+[
   {:title => "Fixed",   :position => 1},
   {:title => "Dynamic", :position => 2}
 ].each do |attributes|
