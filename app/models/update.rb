@@ -1,4 +1,3 @@
-require 'pry'
 class Update < ActiveRecord::Base
   attr_accessible :action, :area, :description, :user
 
