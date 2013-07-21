@@ -2,11 +2,19 @@
 <div class="image-wrapper">
 
 	<span class="image-one">
-		<%= image_tag(@group.image_one.url) %>
+		<%= link_to image_tag(@group.image_one.url), @group.image_one.url %>
 	</span>
+	<% if @group.image_two.exists? %>
 	<span class="image-two">
-		<%= image_tag(@group.image_two.url) %>
+		<%= link_to image_tag(@group.image_two.url), @group.image_two.url %>
 	</span>
+	<% end %>
+	<% if @group.image_three.exists? %>
+
+	<span class="image-three">
+		<%= link_to image_tag(@group.image_three.url), @group.image_three.url %>
+	</span>
+	<% end %>
 
 </div>
 
