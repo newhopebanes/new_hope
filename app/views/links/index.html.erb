@@ -33,11 +33,67 @@
     <% end %>
 
     <tr class="links-table-section">
+        <td>Young People Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @young_people.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>adults Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @adults.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Older People Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @older_people.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Family Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @family.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Housing Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @housing.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+    <tr class="links-table-section">
+        <td>Financial and Legal Links</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <% @financial_legal.each do |link| %>
+      <%= render :partial => 'single_link', :locals => {:link => link} %>
+    <% end %>
+
+
+
+    <tr class="links-table-section">
         <td>Social / Other Links</td>
         <td></td>
         <td></td>
     </tr>
-    <% @social_other.each do |link| %>
+    <% @other.each do |link| %>
       <%= render :partial => 'single_link', :locals => {:link => link} %>
     <% end %>
 

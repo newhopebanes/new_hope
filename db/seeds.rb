@@ -6,7 +6,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+require Rails.root.join("db/link_seeds.rb")
 [
   {:name => "etti",  :password => 'foobar', :password_confirmation => 'foobar'}
 ].each do |attributes|
@@ -114,9 +114,20 @@
   {:title => "Emergency",  :position => 1},
   {:title => "Non-Emergency", :position => 2},
   {:title => "Specific",  :position => 3},
-  {:title => "Social-Other", :position => 4},
+  {:title => "Young People",  :position => 4},
+  {:title => "Adults",  :position => 5},
+  {:title => "Older People",  :position => 6},
+  {:title => "Family",  :position => 7},
+  {:title => "Housing",  :position => 8},
+  {:title => "Financial and Legal",  :position => 9},
+  {:title => "Other", :position => 10},
 ].each do |attributes|
    LinkType.find_or_create_by_title(attributes)
+  end
+
+# Gets data from link_seeds.rb module
+LinkSeeds.data.each do |attributes|
+   Link.find_or_create_by_name(attributes)
   end
 
 [
@@ -126,61 +137,7 @@
   end
 
 [
-  { :name => "Samaritans",
-    :url => "http://www.samaritans.org/",
-    :phone => "08457 90 90 90 ",
-    :location => "National",
-    :opening => "24/7 365 days of the year ",
-    :text => "Support by telephone, email, letter.",
-    :link_type_id => 1
-  },
-  { :name => "Bath & District Samaritans",
-    :url => "http://www.bathsamaritans.org/",
-    :phone => "01225 460888",
-    :location => "BANES",
-    :opening => "",
-    :text => "Support by telephone, email, letter or face to face in Bath.",
-    :link_type_id => 1
-  },
-  { :name => "Intensive Services",
-    :url => "http://www.awp.nhs.uk/services/community/intensive-services/",
-    :phone => "01225 362700",
-    :location => "BANES",
-    :opening => "24/7 365 days of the year",
-    :text => "Assessments for those experiencing a mental health crisis. Assessments will be given within 4 hours of referral. This service is for use of people over the age of 18.",
-    :link_type_id => 1
-  },
-  { :name => "Women’s Aid",
-    :url => "http://www.womensaid.org.uk/",
-    :phone => "0808 2000 247",
-    :location => "National/Local",
-    :opening => "24/7 365 days of the year",
-    :text => "Domestic abuse helpline.",
-    :link_type_id => 1
-  },
-  { :name => "Saneline",
-    :url => "http://www.sane.org.uk/home",
-    :phone => "0845 767 8000",
-    :location => "National",
-    :opening => "Every day 6pm – 11pm",
-    :text => "Out of hours emotional support helpline for those affected by mental health issues, inclusive of clients, carers, supporters, friends and family.",
-    :link_type_id => 2
-  },
-  { :name => "Bipolar UK",
-    :url => "http://www.bipolaruk.org.uk/",
-    :phone => "020 7931 6480",
-    :location => "London Based – Local Services available",
-    :opening => "",
-    :text => "Provide a range of services to enable people affected by bipolar and associated illnesses to take control of their lives. Self-help groups available in Bath.",
-    :link_type_id => 3
-  },
-  { :name => "Community Arts Therapy Project (CAT)",
-    :url => "http://www.community-arts-therapies.org.uk/",
-    :phone => "07906 699660",
-    :location => "BANES",
-    :opening => "",
-    :text => "A small, local charity that aims to improve the everyday lives of those affected by mental health issues through the use of Arts Therapies using Art, Drama, Dance Movement and Music Therapies to promote social inclusion, challenge stigma and discrimination and enhance well-being for all. Also work with Carers.",
-    :link_type_id => 1},
+
 ].each do |attributes|
    Link.find_or_create_by_name(attributes)
   end

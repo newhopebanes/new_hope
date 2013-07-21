@@ -6,7 +6,13 @@ class LinksController < ApplicationController
     @emergency = Link.emergency
     @non_emergency = Link.non_emergency
     @specific = Link.specific
-    @social_other = Link.social_other
+    @young_people = Link.young_people
+    @adults = Link.adults
+    @older_people = Link.older_people
+    @family = Link.family
+    @housing = Link.housing
+    @financial_legal = Link.financial_legal
+    @other = Link.other
 
 
     respond_to do |format|
