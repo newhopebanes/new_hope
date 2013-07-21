@@ -1,6 +1,9 @@
 class Group < ActiveRecord::Base
-  attr_accessible :name, :description, :date, :time, :venue, :joining, :contact, :cost, :access, :address_id, :address_attributes, :image_one
+  attr_accessible :name, :description, :date, :time, :venue, :joining, :contact, :cost, :access, :address_id, :address_attributes, :image_one, :image_two
   has_attached_file :image_one,
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+  has_attached_file :image_two,
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   belongs_to :address

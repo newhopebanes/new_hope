@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714160543) do
+ActiveRecord::Schema.define(:version => 20130721104228) do
 
   create_table "addresses", :force => true do |t|
     t.string   "event_id"
@@ -152,6 +152,10 @@ ActiveRecord::Schema.define(:version => 20130714160543) do
     t.string   "image_one_content_type"
     t.integer  "image_one_file_size"
     t.datetime "image_one_updated_at"
+    t.string   "image_two_file_name"
+    t.string   "image_two_content_type"
+    t.integer  "image_two_file_size"
+    t.datetime "image_two_updated_at"
   end
 
   create_table "link_types", :force => true do |t|
