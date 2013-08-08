@@ -5,6 +5,9 @@ class Document < ActiveRecord::Base
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 
+  validates :name, :presence => true
+  validates :document_link, :presence => true
+
   def doc_type
   	DocumentType.find(document_type_id).title
   end
