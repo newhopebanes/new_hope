@@ -1,0 +1,24 @@
+<%= simple_form_for @admin, :defaults => { :input_html => { :class => 'span6' } }, :html => {:class => 'form-horizontal'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<p>Emails for recieving mail from the built in email sender</p>
+    <%= f.input :NewHopeEmail, :label => "New hope email" %>
+    <%= f.input :BridgesEmail, :label => "Building Bridges email" %>
+
+    <p>Contact details that appear on the contact page</p>
+
+	<%= f.simple_fields_for :internal_contacts do |c| %>
+		<p><strong><%= c.object.name  %></strong></p>
+	    <%= c.input :phone %>
+	    <%= c.input :email %>
+	    <%= c.input :address %>
+  	<% end %>
+
+  </div>
+
+  <div>
+    <%= f.button :submit, "Update", :class => 'btn btn-success btn-small event-edit'  %>
+    <%= link_to 'Back', admins_path, :class => 'btn btn-primary btn-small event-edit'  %>
+  </div>
+<% end %>

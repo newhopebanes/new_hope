@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   def new
     @message = Message.new
+    @hope = Admin.first.internal_contacts.find(1)
+    @bridges = Admin.first.internal_contacts.find(2)
   end
 
   def create

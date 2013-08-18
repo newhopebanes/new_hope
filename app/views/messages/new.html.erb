@@ -24,7 +24,10 @@
             <li>Add your group/event details to the website.</li>
           </ul>
         </p>
-        <p><b>Contact:</b> newhope@nh.com</p>
+        <p><b>Contact:</b></p>
+        <% if @hope.email.length > 0 %><p><%= @hope.email  %></p><% end %>
+        <% if @hope.phone.length > 0 %><p><%= @hope.phone  %></p><% end %>
+        <% if @hope.address.length > 0 %><p><%= @hope.address  %></p><% end %>
         <p><b>PLEASE NOTE - EMAILS ARE CHECKED BY VOLUNTEERS WEEKLY.
           NON-URGENT ENQUIRIES ONLY</b></p>
       </div>
@@ -41,9 +44,9 @@
           </ul>
         </p>
         <p><b>Contact:</b></p>
-        <p>rlillywhite@mungos.org etti.righton@mungos.org</p>
-        <p>07889 070393 06278 900187</p>
-        <p>Mulberry House, Weston Park, Bath, BA1 4AN</p>
+        <% if @bridges.email.length > 0 %><p><%= @bridges.email  %></p><% end %>
+        <% if @bridges.phone.length > 0 %><p><%= @bridges.phone  %></p><% end %>
+        <% if @bridges.address.length > 0 %><p><%= @bridges.address  %></p><% end %>
       </div>
 
     </div >

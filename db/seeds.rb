@@ -137,9 +137,16 @@ LinkSeeds.data.each do |attributes|
   end
 
 [
-
+  {:BridgesEmail => "Create site", :NewHopeEmail => "newhope.reciever@gmail.com", :BridgesEmail => "bridges.reciever@gmail.com", :id => 1}
 ].each do |attributes|
-   Link.find_or_create_by_name(attributes)
+   Admin.find_or_create_by_id(attributes)
+  end
+
+[
+  {:name => "New Hope", :email => "newhope.nh.com", :phone => "", :address => "", :admin_id => 1},
+  {:name => "Building Bridges", :email => "rlillywhite@mungos.org", :phone => "07889 070393, 06278900187", :address => "Mulberry House, Weston Park, Bath, BA1 4AN", :admin_id => 1}
+].each do |attributes|
+   InternalContact.find_or_create_by_name(attributes)
   end
 
 

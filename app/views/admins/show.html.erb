@@ -1,0 +1,22 @@
+<%= render :partial => "shared/notice" %>
+
+  <div >
+    <br>
+    <h3>Emails for recieving mail from the built in email sender</h3>
+    <br>
+    <p><strong>New hope email</strong> <%= @admin.NewHopeEmail %> </p>
+    <p><strong>Building Bridges email</strong> <%= @admin.BridgesEmail %> </p>
+<br>
+    <h3>Contact details that appear on the contact page</h3>
+<br>
+  <% @admin.internal_contacts.each do | c |  %>
+  <h4><%= c.name %></h4>
+  <p><strong>Phone:</strong> <%= c.phone %></p>
+  <p><strong>Email:</strong> <%= c.email %></p>
+  <p><strong>Address:</strong> <%= c.address %></p>
+  <br>
+<% end %>
+
+
+<%= link_to 'Edit', edit_admin_path(@admin), :class => 'btn btn-primary btn-small event-edit'  %> |
+<%= link_to 'Back', admins_path, :class => 'btn btn-primary btn-small event-edit'  %>

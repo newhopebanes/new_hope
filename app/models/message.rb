@@ -8,9 +8,9 @@ class Message
   USER_NAME = 'newhope.webapp@gmail.com'
   PASSWORD = 'newhopepassword'
   CHECKED = "1"
-  
-  NEW_HOPE = 'newhope.reciever@gmail.com'
-  BRIDGES = 'building_briges@email.com'
+
+  NEW_HOPE = Admin.first.NewHopeEmail #'newhope.reciever@gmail.com'
+  BRIDGES = Admin.first.BridgesEmail  #'bridges.reciever@gmail.com'
 
   # NEW_HOPE = 'turners8n@hotmail.com'
   # BRIDGES = 'turners8n@hotmail.com'
@@ -19,7 +19,7 @@ class Message
   validates_presence_of :name
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i, :if => :validate_email?
   validate :has_outgoing_email
-  
+
 
   @to
   #Build an address array based on bool flags
@@ -69,7 +69,7 @@ END
            :subject => @subject,
            :content => full_content)
   end
-  
+
   private
 
     def has_outgoing_email

@@ -1,6 +1,8 @@
 HopeTest::Application.routes.draw do
 
 
+  resources :admins
+
   resources :documents
 
   resources :links

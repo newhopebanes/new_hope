@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130721104847) do
+ActiveRecord::Schema.define(:version => 20130818100225) do
 
   create_table "addresses", :force => true do |t|
     t.string   "event_id"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20130721104847) do
     t.string   "postcode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "admins", :force => true do |t|
+    t.string   "NewHopeEmail"
+    t.string   "BridgesEmail"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "complex_dates", :force => true do |t|
@@ -160,6 +167,16 @@ ActiveRecord::Schema.define(:version => 20130721104847) do
     t.string   "image_three_content_type"
     t.integer  "image_three_file_size"
     t.datetime "image_three_updated_at"
+  end
+
+  create_table "internal_contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "address"
+    t.integer  "admin_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "link_types", :force => true do |t|
