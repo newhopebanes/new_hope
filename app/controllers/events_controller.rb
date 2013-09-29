@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def search
 
     @search = Search.new
-    @events = Event.get_events(params)
+    @events = Event.get_events(params, admin)
 
     respond_to do |format|
       format.html { render :index }
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def index
     @search = Search.new
-    @events = Event.get_events(params)
+    @events = Event.get_events(params, admin)
     if params[:event]
       p = params[:event]
       @mem = {:tag => p[:tag], :target => p[:target], :referral => p[:referral], }

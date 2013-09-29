@@ -1,15 +1,15 @@
 module EventsRefinementHelper
 	attr_accessor :result, :parameters, :search
   # Refine and return a list of events based on parameters passed in the request
-  def get_events parameter_list
+  def get_events parameter_list, is_admin
 
     return all unless parameter_list
-    
+
     self.result = all
     self.parameters = parameter_list
     self.search = Search.new
 
-    remove_past_events
+    remove_past_events(is_admin)
     refine_cost
     refine_tags
     refine_target
@@ -20,9 +20,12 @@ module EventsRefinementHelper
     self.result
   end
 
-  def remove_past_events
+  def remove_past_events is_admin
+    unless is_admin
     self.result.keep_if do |e|
       e.complex_date.fixed_date >= Date.today
+    end
+
     end
   end
 
@@ -34,11 +37,11 @@ module EventsRefinementHelper
         self.result.keep_if do |e|
           if e.cost.downcase.strip == 'free'
             true
-          
+
           elsif self.parameters[:cost] == 'less'
             result = /(\d+)\.*(\d*)/.match(e.cost)
             true if result and result[1].to_i <= 5
-          
+
           elsif self.parameters[:cost] == 'more'
             result = /(\d+)\.*(\d*)/.match(e.cost)
             true if result and result[1].to_i >= 5
@@ -88,7 +91,7 @@ module EventsRefinementHelper
     end
 
     def refine_date
-      if self.parameters.include?(:date) and self.parameters[:date].length == 10 
+      if self.parameters.include?(:date) and self.parameters[:date].length == 10
 
         self.result.keep_if do |e|
           e.complex_date.fixed_date == Date.parse(self.parameters[:date])
