@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20130818100225) do
   end
 
   create_table "complex_dates", :force => true do |t|
-    t.string   "event_id",           :null => false
+    t.integer  "event_id",           :null => false
     t.integer  "date_type_id",       :null => false
     t.date     "fixed_date"
     t.time     "time"
