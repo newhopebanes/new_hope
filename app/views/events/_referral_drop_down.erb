@@ -1,0 +1,6 @@
+<select name="referral">
+  <option value=""      <%= params[:referral] == nil ? "selected ='selected'" : "false" %> >Referral Type</option>
+  <option value="1"     <%= params[:referral] == '1' ? "selected ='selected'" : "false" %> >GP / Professional</option>
+  <option value="2"     <%= params[:referral] == '2' ? "selected ='selected'" : "false" %>>Self Refferal</option>
+  <option value="3"     <%= params[:referral] == '3' ? "selected ='selected'" : "false" %>>Other</option>
+</select>

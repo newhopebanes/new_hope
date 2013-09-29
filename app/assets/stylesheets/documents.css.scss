@@ -1,0 +1,37 @@
+// Place all the styles related to the documents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.document-edit, a.document-delete, a.document-new {
+  color:whitesmoke;
+  &:visited {
+    color: whitesmoke;
+  }
+  &:hover {
+    color: whitesmoke;
+  }
+}
+
+.document-submit{
+	margin-top: 10px;
+}
+a.document-add {
+	margin-bottom: 10px;
+}
+
+.document-form input,
+.document-form select
+{
+	width: 900px;
+	height: 40px;
+}
+
+.document-form textarea
+{
+	width: 900px;
+}
+
+.document-form input.btn
+{
+	width: 200px;
+}

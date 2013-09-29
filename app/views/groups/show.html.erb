@@ -1,0 +1,23 @@
+<div class="scroll-containerXXX">
+
+<%= render :partial => "shared/notice" %>
+
+
+<%= render :partial => 'name' %>
+
+<%= render :partial => 'address' %>
+
+<%= render :partial => 'description' %>
+
+<%= render :partial => 'details' %>
+
+<% if @group.has_image %>
+<%= render :partial => 'images' %>
+<% end %>
+
+
+<% if admin %>
+	| <%= link_to 'Edit', edit_group_path(@group), :class => 'btn btn-primary btn-mini group-button' %>
+	| <%= link_to 'Destroy',  @group, method: :delete, data: { confirm: 'Are you sure?'}, :class => 'btn btn-danger btn-mini group-button' %>
+<% end %>
+</div>

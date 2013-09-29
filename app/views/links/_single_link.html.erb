@@ -1,0 +1,22 @@
+<tr class="single-link">
+    <td>
+        <span class="link-name"><%= link.name %></span>
+        <br>
+        <a class="link-url" href="<%= link.url %>"><%= link.url %></a>
+        <br>
+        <span class="link-phone"><%= link.phone %></span>
+    </td>
+    <td>
+        <span class="link-location"><%= link.location %></span>
+        <br>
+        <span class="link-opening"><%= link.opening %></span>
+    </td>
+    <td>
+        <span class="link-text"><%= link.text %></span>
+        <% if admin %>
+    <span><%= link_to 'Edit', edit_link_path(link), :class => 'btn btn-primary btn-mini link-btn'  %></span>
+    <span><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-mini link-btn' %></span>
+    <% end %>
+    </td>
+
+  </tr>

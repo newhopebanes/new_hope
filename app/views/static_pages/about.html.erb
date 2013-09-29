@@ -1,0 +1,85 @@
+<div class="scroll-containerXXX">
+	<h1>New Hope</h1>
+
+<%= image_tag("home_header.png") %>
+<br>
+	<h1>About New Hope</h1>
+
+	</br>
+	<h2 class="main-section-heading">What is New Hope?</h2>
+
+	<p>
+	New Hope is a forum group which meets monthly and is made up of people affected by mental health issues (inclusive of clients, carers and supporters) who are involved in improving local groups and services and reducing stigma surrounding mental health. The latest meeting minutes can be downloaded below.</p>
+
+	</br>
+	<h2 class="main-section-heading">Our Mission:</h2>
+	<a href="https://dl.dropboxusercontent.com/s/wjztmu6mr04iszl/test_file.txt?token_hash=AAG4E8QYnf67krsU4pA94Xng3CKxm3fQiRyGkk3sjwAj4g&dl=1">
+		This is the test file
+	</a>
+	<p>
+	To reduce stigma surrounding mental health issues and to be actively involved in improving local services used by those affected by mental health issues.</p>
+
+	</br>
+	<h2 class="main-section-heading">Our Aim:</h2>
+
+	<p>
+	To use the skills and talents of the group to improve the experience of living with mental health issues in B&NES</p>
+
+
+	<%= render :partial => 'why_join', :locals => {:id => '1'} %>
+	<%= render :partial => 'involve', :locals => {:id => '2'} %>
+
+
+	<h2 class="main-section-heading">What we do?</h2>
+
+	<%= render :partial => 'peer_research', :locals => {:id => '3'} %>
+	<%= render :partial => 'peer_led_groups', :locals => {:id => '4'} %>
+	<%= render :partial => 'grant', :locals => {:id => '5'} %>
+	<%= render :partial => 'training', :locals => {:id => '6'} %>
+	<%= render :partial => 'events', :locals => {:id => '7'} %>
+	<%= render :partial => 'influence_services', :locals => {:id => '8'} %>
+	<%= render :partial => 'website', :locals => {:id => '9'} %>
+	<%= render :partial => 'office', :locals => {:id => '10'} %>
+
+	<%= render :partial => 'building_bridges'%>
+
+
+	<h2 class="main-section-heading">Attachments</h2>
+	<% if admin %>
+		<%= link_to 'Add / Edit Documents', documents_path, :class => "btn btn-mini btn-success document-new document-add" %>
+	<% end %>
+	<ul>
+		<% @documents.each do |d| %>
+		<li>
+			<a href="<%= d.document_link.url %>"><%= "#{d.name} (#{d.doc_type})" %></a>
+		</li>
+		<% end %>
+<!-- 		<li>
+			Code of Conduct (Word/PDF)
+		</li>
+		<li>
+			Peer Research Report - Bridging the Gap (Word/PDF)
+		</li>
+		<li>
+			<a class="doc-link" href="https://www.dropbox.com/s/5xzz48m6vvpwqsz/Grant_Application">Grant Application (Word/PDF)</a>
+		</li>
+		<li>
+			<a class="doc-link" href="https://www.dropbox.com/s/mp848p6gdurbb85/Grant_GuidanceNotes">Grant Guidance Notes (Word/PDF)</a>
+		</li>
+		<li>
+			Training Details (Word/PDF)
+		</li>
+		<li>
+			Meeting Minutes (Word/PDF)
+		</li> -->
+	</ul>
+
+</div>
+
+
+
+
+
+
+
+

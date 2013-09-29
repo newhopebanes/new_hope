@@ -1,0 +1,164 @@
+<div class="row">
+  <div class="span10 offset1">
+    <%= simple_form_for @event, :defaults => { :input_html => { :class => 'span6' } }, :html => {:class => 'form-horizontal'} do |f| %>
+
+    <ul class="nav nav-tabs" >
+    <li class="active"><a href="#basic" data-toggle="tab">Basic Details</a></li>
+    <li><a href="#address" data-toggle="tab">Address</a></li>
+    <li><a href="#contact" data-toggle="tab">Contact</a></li>
+    <li><a href="#date" data-toggle="tab">Date and Time</a></li>
+    <li><a href="#further" data-toggle="tab">Further Details</a></li>
+    <li><a href="#target" data-toggle="tab">Target</a></li>
+    <li><a href="#tag" data-toggle="tab">Tags</a></li>
+    <li><a href="#directions" data-toggle="tab">Directions</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="basic">
+
+        <%= f.input :name, :input_html => { :class => 'span8' } %>
+        <%= f.input :organisation %>
+        <%= f.input :description, :as => :text, :input_html => { :rows => 3 } %>
+    </div>
+
+
+    <div class="tab-pane" id="address">
+
+      <%= f.simple_fields_for :address do |a| %>
+
+           <%= a.input :number, :label => "House Number / Name"  %>
+           <%= a.input :street, :label => "Street"  %>
+           <%= a.input :district, :label => "Town / City"  %>
+           <%= a.input :county, :label => "County"  %>
+           <%= a.input :postcode, :label => "Postcode"  %>
+
+        <% end %>
+
+    </div>
+
+    <div class="tab-pane" id="contact">
+
+      <%= f.input :contact_person %>
+        <%= f.input :contact_role %>
+        <%= f.input :phone %>
+        <%= f.input :email %>
+
+        <%= f.association :contact, :as => :select, :input_html => { :class => 'event-select' } %>
+
+    </div>
+
+    <div class="tab-pane" id="date">
+
+      <%= f.simple_fields_for :complex_date do |d| %>
+
+          <!-- <%= d.association :date_type, :label => "Type of date", :as => :select  %> -->
+          <%= d.association :date_type,  :as => :hidden, :input_html => { :value => "1" } %>
+
+          <%= d.input :fixed_date, :label => "Date"  %>
+
+          <%= d.input :time, :label => "Time"  %>
+
+          <!-- <%= d.association :offset_type, :label => "Type of offset", :as => :select  %> -->
+
+          <!-- <%= d.association :fixed_offset, :label => "Fixed Offset", :as => :select  %> -->
+
+          <!-- <%= d.association :dynamic_offset, :label => "Dynamic Offset", :as => :select  %> -->
+
+          <!-- <%= d.association :frequency, :label => "Dynamic Frequency", :as => :select  %> -->
+
+          <!-- <%= d.association :fixed_frequency, :label => "Fixed Frequency", :as => :select  %> -->
+
+          <!-- <%= d.association :day, :label => "Day", :as => :select  %> -->
+
+        <% end %>
+
+    </div>
+
+    <div class="tab-pane" id="further">
+
+      <%= f.input :cost %>
+
+        <%= f.input :access, :as => :select, :label => "Disabled access", :input_html => { :class => 'event-select' }  %>
+
+        <%= f.input :access_details %>
+
+        <%= f.association :referral, :as => :select, :input_html => { :class => 'event-select' }   %>
+        <%= f.input :joining_process %>
+
+
+
+    </div>
+
+    <div class="tab-pane" id="target">
+
+      <%= f.simple_fields_for :targetset do |t| %>
+        <div class="row">
+          <div class="span4">
+              <%= t.input :adults, :as => :boolean, :label => "Adults over 18" %>
+              <%= t.input :under_18, :as => :boolean, :label => "People under 18"  %>
+              <%= t.input :men, :as => :boolean, :label => "Men"  %>
+              <%= t.input :women, :as => :boolean, :label => "Women"  %>
+              <%= t.input :mental_health, :as => :boolean, :label => "People with mental health issues"  %>
+              <%= t.input :learning_difficulties, :as => :boolean, :label => "People with learning difficulties"  %>
+          </div>
+          <div class="span4 offset1">
+              <%= t.input :drug_alcohol, :as => :boolean, :label => "People with Drug / Alcohol Issues"  %>
+              <%= t.input :homelessness, :as => :boolean, :label => "People with homelessness issues"  %>
+              <%= t.input :carers, :as => :boolean, :label => "Carers"  %>
+              <%= t.input :carers_mental_health, :as => :boolean, :label => "Carers for people with mental health issues"  %>
+              <%= t.input :vulnerable, :as => :boolean, :label => "Vulnerable people"  %>
+              <%= t.input :anyone, :as => :boolean, :label => "Anyone"  %>
+          </div>
+        </div>
+              <%= t.input :other, :as => :string %>
+        <% end %>
+
+    </div>
+
+    <div class="tab-pane" id="tag">
+
+      <%= f.simple_fields_for :tagset do |t| %>
+        <div class="row">
+          <div class="span4">
+            <%= t.input :sports, :as => :boolean, :label => "Sports and Games"  %>
+            <%= t.input :outdoors, :as => :boolean, :label => "Outdoors activities"  %>
+            <%= t.input :creative, :as => :boolean, :label => "Creative Arts"  %>
+            <%= t.input :wellbeing, :as => :boolean, :label => "Health and Wellbeing"  %>
+            <%= t.input :social, :as => :boolean, :label => "Social activities"  %>
+          </div>
+          <div class="span4 offset1">
+            <%= t.input :faith, :as => :boolean, :label => "Faith"  %>
+            <%= t.input :food, :as => :boolean, :label => "Food and Drink"  %>
+            <%= t.input :learning, :as => :boolean, :label => "Learning"  %>
+            <%= t.input :exercise, :as => :boolean, :label => "Fitness and exercise"  %>
+            <%= t.input :lifestyle, :as => :boolean, :label => "Lifestyle"  %>
+          </div>
+        </div>
+            <%= t.input :other, :as => :string %>
+        <% end %>
+
+    </div>
+
+    <div class="tab-pane" id="directions">
+
+      <%= f.input :directions_walking %>
+        <%= f.input :directions_bus %>
+        <%= f.input :directions_train %>
+        <%= f.input :directions_car %>
+
+        <%= f.input :other%>
+
+    </div>
+
+
+
+
+      </div>
+
+        <%= f.button :submit, :class => 'btn-primary btn-large event-create', :id =>  'event-submit'  %>
+
+        <%= link_to 'Back', events_path, :class => 'btn-success btn-large event-back' %>
+
+
+    <% end %>
+  </div>
+</div>

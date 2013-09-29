@@ -1,0 +1,71 @@
+// Place all the styles related to the Links controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.links-table{
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+}
+
+tr.single-link td,
+tr.links-table-section{
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+
+.links-table-section td
+{
+	font-weight: bold;
+	font-size: 20px;
+	padding-left: 10px;
+	height: 40px;
+	background-color: #700100;
+	color: whitesmoke;
+
+}
+
+span.link-name
+{
+	font-weight: bold;
+	font-size: 18px;
+	text-decoration: underline;
+}
+
+span.link-phone{
+	font-weight: bold;
+}
+
+tr.single-link td a,
+tr.single-link td a:hover,
+tr.single-link td a:visited{
+	color: #0088cc;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.link-btn,
+a.link-btn:hover,
+a.link-btn:visited,
+tr.single-link td a.link-btn,
+tr.single-link td a.link-btn:hover,
+tr.single-link td a.link-btn:visited{
+	color: white;
+}
+
+form div.link-form input{
+	width: 600px;
+	height: 40px;
+}
+
+form div.link-form select{
+	width: 615px;
+	height: 40px;
+}
+form div.link-form textarea{
+	width: 600px;
+	height: 340px;
+}
+

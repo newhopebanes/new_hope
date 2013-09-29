@@ -1,0 +1,249 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.target{
+
+}
+
+.target-left{
+  float:left;
+
+}
+
+.target-right{
+  float:right;
+}
+.tag{
+
+}
+.tag-left{
+  float:left;
+
+}
+
+.tag-right{
+  float:right;
+}
+
+div .event-entry{
+  border-style: solid;
+  border-width:2px;
+
+}
+
+a.event-link:hover{
+  background-color: #5E1729;
+  color: #7F6B6C;
+
+}
+
+
+a.event-edit, a.event-delete, a.event-new {
+  color:whitesmoke;
+  &:visited {
+    color: whitesmoke;
+  }
+  &:hover {
+    color: whitesmoke;
+  }
+}
+
+input.event-create,
+a.event-back {
+  color:whitesmoke;
+  &:visited {
+    color: whitesmoke;
+  }
+  &:hover {
+    color: whitesmoke;
+  }
+}
+
+a.event-new
+{
+  margin-top: -6px;
+}
+
+.event-entry{
+  cursor:pointer;
+  margin-bottom:5px;
+  padding: 2px;
+  width: 99%;
+  float: right;
+  border-radius: 5px;
+  background-color: white;
+
+}
+
+.event-links{
+  color: white;
+  border: solid;
+  width :20%;
+  height: 100%;
+  float: left;
+  margin-top: -13px;
+  padding-left: 5px;
+  padding-top: 0px;
+  border-radius: 10px;
+  border-color: #333;
+  background-color: #333;
+}
+
+.event-list{
+  width: 75%;
+  height: 100%;
+  float: right;
+  margin-right: 5px;
+  overflow-y: scroll;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+}
+
+.event-links a{
+  color: white;
+  &:hover{
+    color:white;
+  }
+  &:visited{
+    color:white;
+  }
+}
+
+.page-title{
+  float: right;
+}
+
+/*===============================
+-----EVENT SUMMARY
+===============================*/
+
+span.summary-datetime
+{
+  margin-right: 10px;
+  padding-right: 5px;
+  display: inline-block;
+  width: auto;
+  border-right-style: solid;
+  border-right-width: 2px;
+  float: left;
+  width: 11%;
+}
+
+span.summary-date
+{
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+span.summary-time
+{
+  font-size: 16px;
+}
+
+.summary-nameaddress{
+  display: inline-block;
+  width: 65%;
+}
+
+span.summary-name
+{
+  min-height: 27px;
+  max-width: 324px;
+  padding-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  float: left;
+  font-weight: bold;
+  font-size: 29px;
+  color: #333;
+}
+
+span.summary-address{
+  float: right;
+  width: 100px
+}
+
+span.summary-right
+{
+  float:right;
+  margin-right:5px;
+  padding-left: 5px;
+  display: inline-block;
+  width: auto;
+  border-left-style: solid;
+  border-left-width: 2px;
+  width: 19%;
+}
+
+a.print-button {
+float: left;
+margin-left: 30px;
+&:visited {
+    color: white;
+  }
+}
+
+/*===============================
+-----EVENT CREATION
+===============================*/
+
+#event_complex_date_attributes_fixed_date_1i
+{
+  width: 70px;
+}
+
+#event_complex_date_attributes_fixed_date_2i
+{
+  width: 150px;
+}
+
+#event_complex_date_attributes_fixed_date_3i,
+#event_complex_date_attributes_time_4i,
+#event_complex_date_attributes_time_5i
+{
+  width: 50px;
+}
+
+.tab-content
+{
+  overflow-x: hidden;
+
+}
+
+.event-select{
+  width: 613px;
+}
+
+#event-submit{
+  margin-bottom: 5px;
+}
+
+
+/*===============================
+-----EVENT SEARCH
+===============================*/
+
+.event-links a.btn{
+  color: white;
+}
+
+.search-target{
+  margin-bottom: 5px;
+}
+
+.search-target input{
+  margin-right: 5px;
+}
+
+.search-datepicker
+{
+  width: 143px;
+}
+
+.search-filters select
+{
+  width: 185px;
+}

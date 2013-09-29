@@ -1,0 +1,21 @@
+<div class="section-title <%= 'section-title_' + id.to_s %>" onclick="toggleSection(<%= id.to_s %>)">
+	<span class="section-heading">Events</span>
+	<span> (▲▼ Expand/Reduce)</span>
+</div>
+
+
+<div class="<%= 'section-details_' + id.to_s %>"onclick="toggleSection(<%= id.to_s %>)" hidden="true" >
+
+	<div class="section-title">
+		<span class="section-heading" >Events</span>
+		<span> (▲▼ Expand/Reduce)</span>
+	</div>
+
+
+	<p>New Hope members helped to plan and co-facilitate World Mental Health Day 2012 in collaboration with other groups and professionals. We were also part of a Human Library in September 2012. This year we are going to put on a summer carnival celebrating the lives and achievements of those who have been affected by mental health issues. In October we will be part of the What Works conference, a chance to discuss and build on positive experiences between those affected by mental health issues and professionals.</p>
+
+
+	<p>To get involved <%= link_to "contact us", contact_path, :class => "contact-link" %>.</p>
+
+</div>
+

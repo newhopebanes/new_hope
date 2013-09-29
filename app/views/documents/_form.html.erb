@@ -1,0 +1,13 @@
+<%= simple_form_for 	@document, :html => {:class => 'document-form'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.association :document_type, :as => :select %>
+    <%= f.file_field :document_link%>
+
+  </div>
+    <%= f.button :submit, :class => "btn btn-success document-new document-submit" %>
+
+<% end %>

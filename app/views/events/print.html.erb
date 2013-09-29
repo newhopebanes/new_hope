@@ -1,0 +1,15 @@
+<h1>What's on</h1>
+
+<div class="event-list">
+  <% @events.each do |event| %>
+    <h3><%= event.name %> ( <%= event.summary_date %> <%= event.summary_time %> )</h3>
+    <span><strong>Address: </strong><%= event.summary_address %></span> <br>
+    <span><strong>Contact: </strong><%= event.summary_contact %></span>
+    <span>(<%= event.display_contact %>)</span><br>
+    <span><strong>Cost: </strong><%= event.summary_cost %></span>
+    <p><strong>Description: </strong><%= event.description %></p>
+	
+  <% end %>
+
+  
+</div>

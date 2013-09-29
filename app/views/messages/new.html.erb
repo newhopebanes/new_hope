@@ -1,0 +1,66 @@
+<div class="message_page_content">
+
+  <%= render :partial => "shared/notice" %>
+
+  <div class="contact_us_by_email_section">
+    <h2 id="contact_us_by_email">Send us a message</h2>
+
+    <%= render 'message' %>
+  </div>
+
+
+  <div class="who_to_contact_section">
+    <h2>Who do I contact?</h2>
+    <div class="who_to_contact">
+
+      <div class="contact_entry">
+        <h4>New Hope</h4>
+        <p><b>Who are we?: </b> We are new hope, a group of
+          volunteers making a positive difference in the community.</p>
+        <p><b>Contact about:</b>
+          <ul>
+            <li>Questions about the website.</li>
+            <li>Getting involved in the website.</li>
+            <li>Add your group/event details to the website.</li>
+          </ul>
+        </p>
+        <p><b>Contact:</b></p>
+        <% if @hope.email.length > 0 %><p><%= @hope.email  %></p><% end %>
+        <% if @hope.phone.length > 0 %><p><%= @hope.phone  %></p><% end %>
+        <% if @hope.address.length > 0 %><p><%= @hope.address  %></p><% end %>
+        <p><b>PLEASE NOTE - EMAILS ARE CHECKED BY VOLUNTEERS WEEKLY.
+          NON-URGENT ENQUIRIES ONLY</b></p>
+      </div>
+
+      <div class="contact_entry">
+        <h4>Building Bridges to Well Being</h4>
+        <p><b>Who are we?: </b> A project run by St Mungo's
+          which helped to set up new hope.</p>
+        <p><b>Contact about:</b>
+          <ul>
+            <li>Starting a Peer Led Group</li>
+            <li>Getting Involved.</li>
+            <li>Urgent problems with the website.</li>
+          </ul>
+        </p>
+        <p><b>Contact:</b></p>
+        <% if @bridges.email.length > 0 %><p><%= @bridges.email  %></p><% end %>
+        <% if @bridges.phone.length > 0 %><p><%= @bridges.phone  %></p><% end %>
+        <% if @bridges.address.length > 0 %><p><%= @bridges.address  %></p><% end %>
+      </div>
+
+    </div >
+  </div>
+</div>
+
+<script>
+$(function(){
+  $(".message_sender_content textarea").focus(function() {
+  console.log('in func')
+  var m = '- Type Message Here -'
+  var t = $(this).text();
+  if (m === t) {$(this).text('')};
+});
+})
+
+</script>

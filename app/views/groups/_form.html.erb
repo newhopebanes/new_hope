@@ -1,0 +1,45 @@
+<%= simple_form_for @group, :html => {:class => 'form-horizontal'} do |f| %>
+  <ul class="nav nav-tabs" >
+    <li class="active"><a href="#basic" data-toggle="tab">Basic Details</a></li>
+    <li><a href="#address" data-toggle="tab">Address</a></li>
+    <li><a href="#contact" data-toggle="tab">Contact</a></li>
+    <li><a href="#image" data-toggle="tab">Images</a></li>
+
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="basic">
+     <%= f.input :name %>
+     <%= f.input :description, :as => :text, :input_html => { :cols => 50, :rows => 13 } %>
+     <%= f.input :date %>
+     <%= f.input :time %>
+     </div>
+     <div class="tab-pane" id="address">
+       <%= f.simple_fields_for :address do |a| %>
+
+         <%= a.input :number, :label => "House Number / Name"  %>
+         <%= a.input :street, :label => "Street"  %>
+         <%= a.input :district, :label => "District or Area" %>
+         <%= a.input :county, :label => "County"  %>
+         <%= a.input :postcode, :label => "Postcode"  %>
+
+       <% end %>
+     </div>
+      <div class="tab-pane" id="contact">.
+        <%= f.input :joining %>
+        <%= f.input :contact %>
+        <%= f.input :cost %>
+        <%= f.input :access %>
+      </div>
+      <div class="tab-pane" id="image">.
+        <%= f.file_field :image_one %>
+        <%= f.file_field :image_two %>
+        <%= f.file_field :image_three %>
+      </div>
+    </div>
+
+      <%= f.button :submit, :class => 'btn-primary group-create'  %>
+      <%= link_to 'Back', groups_path, :class => 'btn btn-success group-back' %>
+
+
+ <% end %>

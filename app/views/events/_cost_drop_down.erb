@@ -1,0 +1,6 @@
+<select name="cost">
+  <option value=""      <%= params[:cost] == nil ? "selected ='selected'" : "false" %> >Cost</option>
+  <option value="free"     <%= params[:cost] == 'free' ? "selected ='selected'" : "false" %> >Free</option>
+  <option value="less"     <%= params[:cost] == 'less' ? "selected ='selected'" : "false" %>>Less than £5</option>
+  <option value="more"     <%= params[:cost] == 'more' ? "selected ='selected'" : "false" %>>More than £5</option>
+</select>

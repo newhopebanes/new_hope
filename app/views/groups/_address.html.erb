@@ -1,0 +1,27 @@
+<div class="group-address">
+
+	<% if @group.address_line_one.length > 0%>
+		<span><%= @group.address_line_one  %></span>
+		<br>
+	<% end %>
+
+	<% if @group.address_town.length > 0%>
+		<span><%= @group.address_town %></span>
+		<br>
+	<% end %>
+
+	<% if @group.address_district.length > 0%>
+		<span><%= @group.address_district  %></span>
+		<br>
+	<% end %>
+	
+	<% if @group.address_county.length > 0%>
+		<span><%= @group.address_county  %></span>
+		<br>
+	<% end %>
+	
+	<% if @group.address_postcode.length > 0%>
+		<span><%= @group.address_postcode  %></span>
+	<% end %>
+
+</div>
