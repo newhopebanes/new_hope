@@ -18,9 +18,18 @@
 
 function toggleSection(id){
 
-   $('.section-title_' + id).toggle();
+	var title = $('.section-title_' + id);
+	var details = $('.section-details_' + id);
 
-   $('.section-details_' + id).toggle();
+	if (title.is(":visible")) {
+		details.show();
+		title.hide();
+	}
+	else{
+		title.show();
+		details.hide();
+	}
+
  };
 
  function toggleDetails(id){
