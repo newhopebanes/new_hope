@@ -79,9 +79,11 @@
 
 	$(function(){
 
-		$('.section-details_' + id).hide();
-		$('.section-details_' + id).find('div').hide();
-
+		for (var i=0;i<11;i++)
+		{
+			$('.section-details_' + i).hide();
+			$('.section-details_' + i).find('div').hide();
+		}
 	});
 
 
