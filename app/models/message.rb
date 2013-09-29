@@ -6,7 +6,7 @@ class Message
   extend ActiveModel::Naming
 
   USER_NAME = 'newhope.webapp@gmail.com'
-  PASSWORD = 'newhopepassword'
+  PASSWORD = 'new123hope'
   CHECKED = "1"
 
   NEW_HOPE = Admin.first.NewHopeEmail #'newhope.reciever@gmail.com'
