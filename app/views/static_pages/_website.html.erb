@@ -6,10 +6,10 @@
 
 <div class="<%= 'section-details_' + id.to_s %>"onclick="toggleSection(<%= id.to_s %>)" hidden="true" >
 
-
+	<div class="section-title" hidden="true" >
 		<span class="section-heading" >Website</span>
 		<span> (▲▼ Expand/Reduce)</span>
-
+	</div>
 
 
 	<p>New Hope have designed and maintain this website with the support of St Mungos’s Building Bridges to Well Being. New Hope members volunteer to respond to messages and make sure that the website is up-to-date. If you would like to get involved with maintaining the website, please <%= link_to "contact us", contact_path, :class => "contact-link" %></p>

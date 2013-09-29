@@ -18,9 +18,21 @@
 
 function toggleSection(id){
 
-   $('.section-title_' + id).toggle();
+	var title = $('.section-title_' + id);
+	var details = $('.section-details_' + id);
+	var heading = details.find('div');
 
-   $('.section-details_' + id).toggle();
+	if (title.is(":visible")) {
+		details.show();
+		heading.show();
+		title.hide();
+	}
+	else{
+		details.hide();
+		heading.hide();
+		title.show();
+	}
+
  };
 
  function toggleDetails(id){
