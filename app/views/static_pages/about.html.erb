@@ -75,11 +75,16 @@
 	</ul>
 
 </div>
+<%= javascript_tag do %>
+
+	$(function(){
+
+		$('.section-details_' + id).hide();
+		$('.section-details_' + id).find('div').hide();
+
+	});
 
 
-
-
-
-
+<% end %>
 
 
